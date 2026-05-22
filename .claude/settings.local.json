@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "Bash(curl -s http://localhost:3001/api/health)",
+      "Bash(curl -s http://localhost:3001/api/zodiac/list)",
+      "Bash(curl -s \"http://localhost:3001/api/zodiac/detail/$\\(node -e \"console.log\\(encodeURIComponent\\('白羊座'\\)\\)\"\\)\")",
+      "Bash(curl -s \"http://localhost:3001/api/zodiac/match?zodiac1=$\\(node -e \"console.log\\(encodeURIComponent\\('白羊座'\\)\\)\"\\)&zodiac2=$\\(node -e \"console.log\\(encodeURIComponent\\('狮子座'\\)\\)\"\\)\")",
+      "Bash(curl -s \"http://localhost:3001/api/zodiac/daily-tip?zodiac=$\\(node -e \"console.log\\(encodeURIComponent\\('双子座'\\)\\)\"\\)\")",
+      "Bash(curl -s \"http://localhost:3001/api/zodiac/birthday?month=4&day=15\")",
+      "Bash(curl -s http://localhost:3001/api/character/list)",
+      "Bash(curl -s -X POST http://localhost:3001/api/character/match -H 'Content-Type: application/json' -d '{\"zodiac\":\"白羊座\",\"answers\":[\"A\",\"B\",\"C\",\"A\",\"A\",\"B\"]}')",
+      "Bash(kill %1)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(npx --version)",
+      "Bash(npx degit *)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "F:/work/wechatt/StarWhisper/.claude/hooks/session-start-context.sh"
+          },
+          {
+            "type": "command",
+            "command": "F:/work/wechatt/StarWhisper/.claude/hooks/context-monitor.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "F:/work/wechatt/StarWhisper/.claude/hooks/post-compact-restore.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE '(rm -rf /|rm -rf ~/|sudo rm -rf|> /dev/sda|mkfs|dd if=/dev)'; then echo 'BLOCKED: Destructive system command detected.' >&2; exit 2; fi"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT_FILE_PATH\" | grep -qE '(pnpm-lock\\.yaml|package-lock\\.json|\\.env$|\\.env\\.local$)'; then echo 'BLOCKED: Protected file.' >&2; exit 2; fi"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "F:/work/wechatt/StarWhisper/.claude/hooks/pre-compact-memory-flush.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "F:/work/wechatt/StarWhisper/.claude/hooks/stop-verify.sh"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "F:/work/wechatt/StarWhisper/.claude/hooks/session-end-log.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

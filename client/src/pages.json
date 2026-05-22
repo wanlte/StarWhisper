@@ -1,0 +1,92 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "星语小馆",
+        "navigationBarBackgroundColor": "#1a1a2e",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/detail/detail",
+      "style": {
+        "navigationBarTitleText": "星座详情",
+        "navigationBarBackgroundColor": "#1a1a2e",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/match/match",
+      "style": {
+        "navigationBarTitleText": "星座配对",
+        "navigationBarBackgroundColor": "#1a1a2e",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/character/character",
+      "style": {
+        "navigationBarTitleText": "角色匹配",
+        "navigationBarBackgroundColor": "#1a1a2e",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/result/result",
+      "style": {
+        "navigationBarTitleText": "匹配结果",
+        "navigationBarBackgroundColor": "#1a1a2e",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/mypage/mypage",
+      "style": {
+        "navigationBarTitleText": "个人中心",
+        "navigationBarBackgroundColor": "#1a1a2e",
+        "navigationBarTextStyle": "white"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#D4A574",
+    "backgroundColor": "#1a1a2e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "星座",
+        "iconPath": "/static/icons/tab-zodiac.png",
+        "selectedIconPath": "/static/icons/tab-zodiac-active.png"
+      },
+      {
+        "pagePath": "pages/character/character",
+        "text": "角色匹配",
+        "iconPath": "/static/icons/tab-character.png",
+        "selectedIconPath": "/static/icons/tab-character-active.png"
+      },
+      {
+        "pagePath": "pages/mypage/mypage",
+        "text": "我的",
+        "iconPath": "/static/icons/tab-my.png",
+        "selectedIconPath": "/static/icons/tab-my-active.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#1a1a2e",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "星语小馆",
+    "backgroundColor": "#0f0f23",
+    "backgroundTextStyle": "light"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^c-(.*)": "@/components/c-$1/c-$1.vue"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import './variables.scss';
+
+page {
+  background-color: $bg-deep;
+  color: $text-primary;
+  font-size: $font-md;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  min-height: 100vh;
+}
+
+// Flex 布局
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col { display: flex; flex-direction: column; }
+
+// 边距
+.p-sm { padding: $spacing-sm; }
+.p-md { padding: $spacing-md; }
+.p-lg { padding: $spacing-lg; }
+.m-sm { margin: $spacing-sm; }
+.m-md { margin: $spacing-md; }
+.m-lg { margin: $spacing-lg; }
+
+// 文字
+.text-accent { color: $color-accent; }
+.text-secondary { color: $text-secondary; }
+.text-center { text-align: center; }
+.text-sm { font-size: $font-sm; }
+.text-lg { font-size: $font-lg; }
+.text-xl { font-size: $font-xl; }
+
+// 卡片
+.card {
+  background: $bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  backdrop-filter: blur(10px);
+}
+
+// 按钮 reset
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-md;
+  font-size: $font-md;
+  cursor: pointer;
+}
+.btn-primary {
+  background: linear-gradient(135deg, $color-primary, $color-primary-light);
+  color: $text-primary;
+}
+.btn-accent {
+  background: linear-gradient(135deg, $color-accent, $color-accent-light);
+  color: #1a1a2e;
+}
+.btn-outline {
+  border: 2rpx solid $color-accent;
+  color: $color-accent;
+  background: transparent;
+}
