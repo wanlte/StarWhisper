@@ -19,7 +19,9 @@
       "Bash(taskkill //F //IM node.exe)",
       "Bash(npx --version)",
       "Bash(npx degit *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git stash *)",
+      "Bash(git commit -m ' *)"
     ]
   },
   "hooks": {
