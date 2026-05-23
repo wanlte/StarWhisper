@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = '/api';
 
 function request(path, options = {}) {
   const { method = 'GET', data = null } = options;

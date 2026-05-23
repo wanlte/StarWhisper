@@ -59,6 +59,46 @@
         { "key": "C", "text": "被朋友需要，和大家在一起", "weights": { "adventure": 3, "thought": 0, "social": 10, "rest": 0 } },
         { "key": "D", "text": "平静舒适，没有压力", "weights": { "adventure": 0, "thought": 2, "social": 0, "rest": 10 } }
       ]
+    },
+    {
+      "id": 7,
+      "text": "面对刚认识的人，你通常会？",
+      "options": [
+        { "key": "A", "text": "主动介绍自己，打开话匣子", "weights": { "adventure": 8, "thought": 0, "social": 8, "rest": 0 } },
+        { "key": "B", "text": "先观察对方，判断该怎么沟通", "weights": { "adventure": 0, "thought": 8, "social": 2, "rest": 6 } },
+        { "key": "C", "text": "找共同话题，迅速拉近距离", "weights": { "adventure": 2, "thought": 4, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "微笑回应，保持舒适的距离", "weights": { "adventure": 0, "thought": 0, "social": 4, "rest": 8 } }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "哪种工作环境最适合你？",
+      "options": [
+        { "key": "A", "text": "快节奏、结果导向，每天不一样", "weights": { "adventure": 10, "thought": 0, "social": 2, "rest": 0 } },
+        { "key": "B", "text": "安静独立的空间，深度钻研", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 6 } },
+        { "key": "C", "text": "团队紧密协作、氛围活跃", "weights": { "adventure": 2, "thought": 0, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "稳定有序、压力可控的节奏", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "面对重要决定时，你更相信？",
+      "options": [
+        { "key": "A", "text": "直觉——第一感觉往往是对的", "weights": { "adventure": 10, "thought": 0, "social": 2, "rest": 0 } },
+        { "key": "B", "text": "数据——充分分析和推演再决定", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 2 } },
+        { "key": "C", "text": "朋友——听听身边人的看法", "weights": { "adventure": 0, "thought": 2, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "时间——让子弹飞一会儿", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "哪种情况会让你最不安？",
+      "options": [
+        { "key": "A", "text": "被限制自由，不能随心所欲", "weights": { "adventure": 10, "thought": 0, "social": 2, "rest": 0 } },
+        { "key": "B", "text": "在不了解的领域被迫做决定", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 4 } },
+        { "key": "C", "text": "长时间没有社交和互动", "weights": { "adventure": 2, "thought": 0, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "计划被打乱，充满不确定性", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
     }
   ]
 }

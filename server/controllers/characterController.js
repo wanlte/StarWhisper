@@ -15,8 +15,8 @@ function getList(req, res) {
 function matchCharacter(req, res) {
   const { zodiac, answers } = req.body;
   if (!zodiac) return res.json(fail('请选择星座'));
-  if (!answers || !Array.isArray(answers) || answers.length !== 6) {
-    return res.json(fail('请完成全部6道题目'));
+  if (!answers || !Array.isArray(answers) || answers.length !== 10) {
+    return res.json(fail('请完成全部10道题目'));
   }
 
   const characters = readJSON('characters.json');
@@ -34,7 +34,7 @@ function matchCharacter(req, res) {
   }
 
   // Normalize quiz scores to 0-1
-  const maxQuiz = 60;
+  const maxQuiz = 100;
   const normQuiz = {};
   for (const [attr, score] of Object.entries(quizScores)) {
     normQuiz[attr] = score / maxQuiz;

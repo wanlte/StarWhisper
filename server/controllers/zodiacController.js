@@ -55,19 +55,28 @@ function getBirthday(req, res) {
   if (m < 1 || m > 12 || d < 1 || d > 31) return res.json(fail('日期格式无效'));
 
   const zodiacs = readJSON('zodiac.json');
+
+  const toOrdinal = (mon, day) => mon * 100 + day;
+  const target = toOrdinal(m, d);
+
   const found = zodiacs.find(z => {
     const parts = z.dateRange.split(' - ');
     const startParts = parts[0].split('月');
     const endParts = parts[1].split('月');
 
-    const startMonth = parseInt(startParts[0]);
-    const startDay = parseInt(startParts[1].replace('日', ''));
-    const endMonth = parseInt(endParts[0]);
-    const endDay = parseInt(endParts[1].replace('日', ''));
+    const sm = parseInt(startParts[0]);
+    const sd = parseInt(startParts[1].replace('日', ''));
+    const em = parseInt(endParts[0]);
+    const ed = parseInt(endParts[1].replace('日', ''));
 
-    if (startMonth === m && d >= startDay) return true;
-    if (endMonth === m && d <= endDay) return true;
-    return false;
+    const start = toOrdinal(sm, sd);
+    const end = toOrdinal(em, ed);
+
+    if (start <= end) {
+      return target >= start && target <= end;
+    }
+    // Cross-year range (e.g. 摩羯座 12/22 - 1/19)
+    return target >= start || target <= end;
   });
 
   if (!found) return res.json(fail('未找到匹配的星座'));

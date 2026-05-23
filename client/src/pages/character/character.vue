@@ -4,7 +4,7 @@
     <!-- Step 1: Select Zodiac -->
     <view v-if="step === 1" class="step fade-in">
       <text class="step-title">🎭 角色匹配</text>
-      <text class="step-desc">先选择你的星座，再回答6道趣味问题
+      <text class="step-desc">先选择你的星座，再回答10道趣味问题
 看看哪个猎奇角色最懂你</text>
       <view class="zodiac-grid">
         <view
@@ -117,6 +117,30 @@ onMounted(async () => {
       { key: 'B', text: '学到新东西，有收获感' },
       { key: 'C', text: '被朋友需要，和大家在一起' },
       { key: 'D', text: '平静舒适，没有压力' }
+    ]},
+    { text: '面对刚认识的人，你通常会？', options: [
+      { key: 'A', text: '主动介绍自己，打开话匣子' },
+      { key: 'B', text: '先观察对方，判断该怎么沟通' },
+      { key: 'C', text: '找共同话题，迅速拉近距离' },
+      { key: 'D', text: '微笑回应，保持舒适的距离' }
+    ]},
+    { text: '哪种工作环境最适合你？', options: [
+      { key: 'A', text: '快节奏、结果导向，每天不一样' },
+      { key: 'B', text: '安静独立的空间，深度钻研' },
+      { key: 'C', text: '团队紧密协作、氛围活跃' },
+      { key: 'D', text: '稳定有序、压力可控的节奏' }
+    ]},
+    { text: '面对重要决定时，你更相信？', options: [
+      { key: 'A', text: '直觉——第一感觉往往是对的' },
+      { key: 'B', text: '数据——充分分析和推演再决定' },
+      { key: 'C', text: '朋友——听听身边人的看法' },
+      { key: 'D', text: '时间——让子弹飞一会儿' }
+    ]},
+    { text: '哪种情况会让你最不安？', options: [
+      { key: 'A', text: '被限制自由，不能随心所欲' },
+      { key: 'B', text: '在不了解的领域被迫做决定' },
+      { key: 'C', text: '长时间没有社交和互动' },
+      { key: 'D', text: '计划被打乱，充满不确定性' }
     ]}
   ];
 });

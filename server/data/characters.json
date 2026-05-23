@@ -190,5 +190,133 @@
     },
     "visualTag": "半人高巨蚊、长吻刺入太阳穴、消化后排出金色微光粉尘",
     "visualPrompt": "memory mosquito, human-sized mosquito creature, proboscis entering temples to extract memories, glowing golden dust excrement, unsettling but oddly helpful, dark whimsical"
+  },
+  {
+    "id": 13,
+    "name": "星尘肺",
+    "emoji": "🌌",
+    "concept": "呼吸时呼出微型星座，肺部是透明星云。情绪波动时体内星光会忽明忽暗，像一座活着的宇宙",
+    "tagline": "每次呼吸，我都在创造一个新的银河",
+    "zodiacAffinity": ["水瓶座", "双鱼座", "射手座"],
+    "attributes": { "adventure": 0.7, "thought": 0.8, "social": 0.4, "rest": 0.1 },
+    "personality": {
+      "resonance": "你是一个造梦者——脑子里永远在诞生新的想法、新的计划、新的世界观。别人看到的是眼前，你看到的是星辰大海。",
+      "shadow": "有时候太沉浸在自己的宇宙里，忘了地面上的柴米油盐和身边的人。",
+      "advice": "你的想象力是无限的宇宙。偶尔也需要着陆，找一个人分享你呼出的星光——那份美丽值得被看见。"
+    },
+    "visualTag": "呼吸时呼出微型星座、肺部透明星云、体内星光闪烁",
+    "visualPrompt": "star-dust lung, miniature constellations exhaled with every breath, transparent nebula lungs, internal galaxy pulsing with emotions, cosmic anatomy surrealism"
+  },
+  {
+    "id": 14,
+    "name": "皮肤抄写员",
+    "emoji": "📜",
+    "concept": "每寸皮肤都写满了无人能懂的文字，睡着时文字会自行擦掉旧章重新排列成新的篇章，醒来时故事已截然不同",
+    "tagline": "今早醒来……我已经不是昨天那个人了",
+    "zodiacAffinity": ["处女座", "双子座", "摩羯座"],
+    "attributes": { "adventure": 0.3, "thought": 0.9, "social": 0.2, "rest": 0.6 },
+    "personality": {
+      "resonance": "你每天都在自我迭代——今天的观点会推翻昨天的看法，新的体验会刷新旧的认知。你不是善变，而是在进化。",
+      "shadow": "偶尔不确定自己到底是谁，因为\"版本更新\"太快。",
+      "advice": "你是一本每天都在重写的书——这不是bug，是feature。拥抱变化，但保留几行属于自己的核心代码。"
+    },
+    "visualTag": "全身皮肤写满文字、睡眠时文字自动重排、墨迹在血管中流动",
+    "visualPrompt": "skin scribe, body covered in ever-changing tattooed text, words rearrange during sleep, ink flowing through veins, living manuscript, dark academic surrealism"
+  },
+  {
+    "id": 15,
+    "name": "万镜裂片",
+    "emoji": "🪞",
+    "concept": "身体由无数碎镜片拼接而成，每片映出不同的可能自我——勇敢的你、怯懦的你、疯狂的你、温柔的你",
+    "tagline": "你看到的只是我的其中一面",
+    "zodiacAffinity": ["天秤座", "双鱼座", "巨蟹座"],
+    "attributes": { "adventure": 0.4, "thought": 0.6, "social": 0.7, "rest": 0.3 },
+    "personality": {
+      "resonance": "你的多重面向让人着迷——在A朋友面前是开心果，在B朋友面前是知心姐姐/哥哥，独处时又完全是另一个人。",
+      "shadow": "偶尔觉得碎片之间互相矛盾，担心别人发现\"不统一\"的自己。",
+      "advice": "你不需要缩小到只剩一面。所有碎片拼在一起才是完整的你——而完整本身就足够迷人。"
+    },
+    "visualTag": "碎镜片拼接身体、每片映出不同表情、镜面之间飘着银色光尘",
+    "visualPrompt": "mirror shard being, body made of countless mirror fragments, each shard reflecting a different personality facet, silver dust floating between shards, fractured identity surrealism"
+  },
+  {
+    "id": 16,
+    "name": "脑室租客",
+    "emoji": "🧠",
+    "concept": "头脑里住着另一个意识，它时常替你接话、半夜喂你灵感、偶尔偷吃你的记忆零食。它的建议往往出奇地准",
+    "tagline": "等一下……我脑里的室友有话要说",
+    "zodiacAffinity": ["双子座", "水瓶座", "白羊座"],
+    "attributes": { "adventure": 0.6, "thought": 0.7, "social": 0.6, "rest": 0.1 },
+    "personality": {
+      "resonance": "你的大脑里永远有两个声音在对话——一个说要理智，一个说要放飞；一个负责白日梦，一个负责把白日梦变成方案。",
+      "shadow": "偶尔脑子里辩论太激烈会陷入\"分析瘫痪\"，决定不了就什么也不做。",
+      "advice": "你脑中的室友不是干扰，是你最有趣的合作者。学会和它分工合作：一个发散，一个收敛。"
+    },
+    "visualTag": "半透明头颅可见另一个微型意识体、神经元间穿梭的光点、偶尔的\"脑内对话\"溢出口",
+    "visualPrompt": "brain tenant, translucent skull revealing a second miniature consciousness residing inside, synaptic light trails, two voices sharing one mouth, cerebral surrealism"
+  },
+  {
+    "id": 17,
+    "name": "蜡人",
+    "emoji": "🕯️",
+    "concept": "身体是一支缓慢燃烧的蜡烛，每流一滴蜡泪就失去一小段记忆，但永远不会为同一件事伤心两次",
+    "tagline": "该忘的就让它熔掉吧",
+    "zodiacAffinity": ["天蝎座", "摩羯座", "金牛座"],
+    "attributes": { "adventure": 0.2, "thought": 0.5, "social": 0.4, "rest": 0.8 },
+    "personality": {
+      "resonance": "你有一种罕见的超能力——能从伤痛中站起来然后真的向前走。别人还在纠结昨天的事，你已经把目光放在明天。",
+      "shadow": "偶尔忘记的不是该忘的，而是不该忘的——比如某些珍贵的人和瞬间。",
+      "advice": "遗忘是恩赐也是代价。偶尔用一个本子记下那些不该熔掉的瞬间，给自己留一些可回味的甜蜜。"
+    },
+    "visualTag": "身体缓慢融化流淌、每滴蜡泪带着微光记忆碎片、烛芯心脏在胸腔中跳动",
+    "visualPrompt": "candle person, body slowly melting with every emotion, each wax tear carrying tiny memory fragments, wick heart glowing in translucent chest, melancholic warmth surrealism"
+  },
+  {
+    "id": 18,
+    "name": "珊瑚骨人",
+    "emoji": "🪸",
+    "concept": "骨骼是活珊瑚构造，透过半透明的皮肤能看到色彩斑斓的共生藻在骨间游动，随情绪变换颜色",
+    "tagline": "我的骨架是一座活着的花园",
+    "zodiacAffinity": ["巨蟹座", "金牛座", "双鱼座"],
+    "attributes": { "adventure": 0.2, "thought": 0.5, "social": 0.7, "rest": 0.7 },
+    "personality": {
+      "resonance": "你的温柔不是软弱——像珊瑚礁一样，表面柔软但能让一整片生态围绕你生长。朋友们在你的庇护下感到安全和被接纳。",
+      "shadow": "给了别人太多养分，有时忘了自己的骨骼也需要滋养。",
+      "advice": "你是海底花园的根基。记得给自己补充阳光和养分——你的花园需要你的健康来支撑。"
+    },
+    "visualTag": "半透明皮肤下可见活珊瑚骨骼、共生藻色彩随情绪变化、指尖生出海葵触须",
+    "visualPrompt": "coral skeleton human, living coral bones visible through translucent skin, symbiotic algae shifting colors with mood, anemone-like fingertips, bioluminescent reef anatomy"
+  },
+  {
+    "id": 19,
+    "name": "共振腔",
+    "emoji": "🔊",
+    "concept": "胸腔是一个中空的共鸣腔，不说一句话却能传递纯粹的情绪——快乐的频率让人头皮发麻，悲伤的频率让人胸口发闷",
+    "tagline": "沉默是我最大的音量",
+    "zodiacAffinity": ["天蝎座", "狮子座", "摩羯座"],
+    "attributes": { "adventure": 0.3, "thought": 0.6, "social": 0.6, "rest": 0.5 },
+    "personality": {
+      "resonance": "你不需要说很多话别人就能感受到你的情绪——你的存在本身就有一种气场。一个眼神、一个沉默，胜过千言万语。",
+      "shadow": "偶尔想让别人感受到自己的情绪，却发现大多数人只听得见\"话\"，听不见\"频率\"。",
+      "advice": "你拥有无声的感染力。不需要解释自己——对的人能听到你的频率。"
+    },
+    "visualTag": "胸腔是中空的共鸣腔、情绪以可见的声波纹扩散、周围空气微微震动",
+    "visualPrompt": "resonance cavity, hollow chest acting as emotional amplifier, visible sound waves radiating pure feelings, air rippling with unspoken emotion, acoustic body surrealism"
+  },
+  {
+    "id": 20,
+    "name": "记忆刺绣师",
+    "emoji": "🪡",
+    "concept": "十根手指是缝纫针，能把别人的记忆绣成一幅画。每完成一幅刺绣，那个人就能用全新的视角看待那段过往",
+    "tagline": "把伤疤绣成花纹，是我的手艺",
+    "zodiacAffinity": ["处女座", "天秤座", "巨蟹座"],
+    "attributes": { "adventure": 0.3, "thought": 0.8, "social": 0.7, "rest": 0.5 },
+    "personality": {
+      "resonance": "你是朋友圈里的\"意义制造机\"——善于从平淡日常中发现诗意，从艰难经历里提炼成长。你让别人看到了他们自己看不到的美。",
+      "shadow": "忙着给别人的记忆\"绣花\"，却对自己过往里的一些刺痛视而不见。",
+      "advice": "给别人绣花之前，先给自己最扎心的那段记忆绣上一朵花——你值得自己的手艺。"
+    },
+    "visualTag": "十指是银针、绣出的图案悬浮空中、指尖缠绕彩色记忆丝线",
+    "visualPrompt": "memory embroiderer, fingers tipped with silver needles, embroidered memory tapestries floating in air, colored threads of recollection trailing from fingertips, textile surrealism"
   }
 ]
