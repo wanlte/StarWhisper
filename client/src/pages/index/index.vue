@@ -72,7 +72,7 @@ const goMatch = () => {
 };
 
 const goCharacter = () => {
-  uni.navigateTo({ url: '/pages/character/character' });
+  uni.switchTab({ url: '/pages/character/character' });
 };
 
 const goMypage = () => {
