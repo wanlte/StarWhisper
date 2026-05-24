@@ -1,21 +1,62 @@
 // #ifdef H5
 const BASE_URL = '';
 // #endif
+
 // #ifdef MP-WEIXIN
-const BASE_URL = 'https://your-server.com';
+import { CLOUD_ENV_ID } from './config';
+wx.cloud.init({ env: CLOUD_ENV_ID });
 // #endif
 
 function request(path, options = {}) {
-  const { method = 'GET', data = null } = options;
+  const { method = 'GET', data: bodyData = null } = options;
 
+  // #ifdef MP-WEIXIN
+  return new Promise((resolve, reject) => {
+    // 解析路径：/api/{函数名}/{action}[/{pathParam}][?query...]
+    const urlParts = path.split('?');
+    const pathOnly = urlParts[0];
+    const queryString = urlParts[1] || '';
+    const segments = pathOnly.split('/').filter(s => s);
+
+    const functionName = segments[1];  // zodiac | character
+    const action = segments[2];        // list | detail | match | ...
+    const pathParam = segments[3] || null;
+
+    const queryParams = {};
+    if (queryString) {
+      queryString.split('&').forEach(pair => {
+        const [key, value] = pair.split('=');
+        queryParams[key] = decodeURIComponent(value || '');
+      });
+    }
+
+    const callData = { action, ...queryParams };
+    if (pathParam) callData.name = decodeURIComponent(pathParam);
+    if (bodyData) Object.assign(callData, bodyData);
+
+    wx.cloud.callFunction({ name: functionName, data: callData })
+      .then(res => {
+        if (res.result.code === 0) {
+          resolve(res.result.data);
+        } else {
+          uni.showToast({ title: res.result.message || '请求失败', icon: 'none' });
+          reject(res.result);
+        }
+      })
+      .catch(err => {
+        uni.showToast({ title: '云函数调用失败', icon: 'none' });
+        reject(err);
+      });
+  });
+  // #endif
+
+  // #ifdef H5
   return new Promise((resolve, reject) => {
     uni.request({
       url: BASE_URL + path,
       method,
-      data,
-      header: {
-        'Content-Type': 'application/json'
-      },
+      data: bodyData,
+      header: { 'Content-Type': 'application/json' },
       success: (res) => {
         if (res.statusCode === 200) {
           const result = res.data;
@@ -36,6 +77,7 @@ function request(path, options = {}) {
       }
     });
   });
+  // #endif
 }
 
 const api = {

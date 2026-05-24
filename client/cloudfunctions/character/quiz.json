@@ -1,0 +1,104 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "周末你最想怎么过？",
+      "options": [
+        { "key": "A", "text": "户外冒险，去没去过的地方", "weights": { "adventure": 10, "thought": 2, "social": 4, "rest": 0 } },
+        { "key": "B", "text": "安静看本书或研究感兴趣的东西", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 6 } },
+        { "key": "C", "text": "约朋友聚会或参加活动", "weights": { "adventure": 4, "thought": 0, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "在家舒服地待着，享受独处时光", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "遇到困难你通常会？",
+      "options": [
+        { "key": "A", "text": "直接冲，干就完了", "weights": { "adventure": 10, "thought": 0, "social": 2, "rest": 0 } },
+        { "key": "B", "text": "冷静分析各种可能的方案", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 4 } },
+        { "key": "C", "text": "找朋友或同事商量", "weights": { "adventure": 2, "thought": 2, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "等等看，时机到了自然能解决", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "你更喜欢哪种颜色？",
+      "options": [
+        { "key": "A", "text": "热烈的红色或橙色", "weights": { "adventure": 10, "thought": 0, "social": 5, "rest": 0 } },
+        { "key": "B", "text": "深邃的蓝色或紫色", "weights": { "adventure": 2, "thought": 10, "social": 0, "rest": 4 } },
+        { "key": "C", "text": "温暖的黄色或粉色", "weights": { "adventure": 4, "thought": 0, "social": 10, "rest": 2 } },
+        { "key": "D", "text": "沉稳的绿色或灰色", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "哪种描述最像你？",
+      "options": [
+        { "key": "A", "text": "行动派——想到就做，不喜欢等待", "weights": { "adventure": 10, "thought": 0, "social": 2, "rest": 0 } },
+        { "key": "B", "text": "思考者——喜欢分析和深入理解", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 3 } },
+        { "key": "C", "text": "社交达人——和人相处让我充电", "weights": { "adventure": 3, "thought": 0, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "倾听者——安静陪伴也是一种力量", "weights": { "adventure": 0, "thought": 3, "social": 3, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "你最看重什么？",
+      "options": [
+        { "key": "A", "text": "自由——不被束缚做想做的事", "weights": { "adventure": 10, "thought": 4, "social": 0, "rest": 0 } },
+        { "key": "B", "text": "成就——实现目标获得认可", "weights": { "adventure": 2, "thought": 8, "social": 0, "rest": 4 } },
+        { "key": "C", "text": "关系——和家人朋友的紧密连接", "weights": { "adventure": 0, "thought": 0, "social": 10, "rest": 4 } },
+        { "key": "D", "text": "安全——稳定的生活和内心安宁", "weights": { "adventure": 0, "thought": 3, "social": 2, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "你理想中的一天？",
+      "options": [
+        { "key": "A", "text": "充满刺激和惊喜", "weights": { "adventure": 10, "thought": 0, "social": 4, "rest": 0 } },
+        { "key": "B", "text": "学到新东西，有收获感", "weights": { "adventure": 1, "thought": 10, "social": 0, "rest": 3 } },
+        { "key": "C", "text": "被朋友需要，和大家在一起", "weights": { "adventure": 3, "thought": 0, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "平静舒适，没有压力", "weights": { "adventure": 0, "thought": 2, "social": 0, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "面对刚认识的人，你通常会？",
+      "options": [
+        { "key": "A", "text": "主动介绍自己，打开话匣子", "weights": { "adventure": 8, "thought": 0, "social": 8, "rest": 0 } },
+        { "key": "B", "text": "先观察对方，判断该怎么沟通", "weights": { "adventure": 0, "thought": 8, "social": 2, "rest": 6 } },
+        { "key": "C", "text": "找共同话题，迅速拉近距离", "weights": { "adventure": 2, "thought": 4, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "微笑回应，保持舒适的距离", "weights": { "adventure": 0, "thought": 0, "social": 4, "rest": 8 } }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "哪种工作环境最适合你？",
+      "options": [
+        { "key": "A", "text": "快节奏、结果导向，每天不一样", "weights": { "adventure": 10, "thought": 0, "social": 2, "rest": 0 } },
+        { "key": "B", "text": "安静独立的空间，深度钻研", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 6 } },
+        { "key": "C", "text": "团队紧密协作、氛围活跃", "weights": { "adventure": 2, "thought": 0, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "稳定有序、压力可控的节奏", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "面对重要决定时，你更相信？",
+      "options": [
+        { "key": "A", "text": "直觉——第一感觉往往是对的", "weights": { "adventure": 10, "thought": 0, "social": 2, "rest": 0 } },
+        { "key": "B", "text": "数据——充分分析和推演再决定", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 2 } },
+        { "key": "C", "text": "朋友——听听身边人的看法", "weights": { "adventure": 0, "thought": 2, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "时间——让子弹飞一会儿", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "哪种情况会让你最不安？",
+      "options": [
+        { "key": "A", "text": "被限制自由，不能随心所欲", "weights": { "adventure": 10, "thought": 0, "social": 2, "rest": 0 } },
+        { "key": "B", "text": "在不了解的领域被迫做决定", "weights": { "adventure": 0, "thought": 10, "social": 0, "rest": 4 } },
+        { "key": "C", "text": "长时间没有社交和互动", "weights": { "adventure": 2, "thought": 0, "social": 10, "rest": 0 } },
+        { "key": "D", "text": "计划被打乱，充满不确定性", "weights": { "adventure": 0, "thought": 4, "social": 0, "rest": 10 } }
+      ]
+    }
+  ]
+}

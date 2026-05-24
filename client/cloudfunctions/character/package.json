@@ -1,0 +1,9 @@
+{
+  "name": "starwhisper-character",
+  "version": "1.0.0",
+  "description": "星语小馆 - 角色匹配云函数",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

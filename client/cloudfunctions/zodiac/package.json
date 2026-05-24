@@ -1,0 +1,9 @@
+{
+  "name": "starwhisper-zodiac",
+  "version": "1.0.0",
+  "description": "星语小馆 - 星座相关云函数",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}
