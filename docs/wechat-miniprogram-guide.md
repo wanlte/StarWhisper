@@ -99,7 +99,7 @@ cp manifest.example.json manifest.json
 
 ```json
 "mp-weixin": {
-    "appid": "wx1234567890abcdef",
+    "appid": "your_appid",
 ```
 
 > `touristappid` 是游客模式，仅限开发调试。正式预览和发布必须用真实 AppID。
