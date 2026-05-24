@@ -2,11 +2,6 @@
 const BASE_URL = '';
 // #endif
 
-// #ifdef MP-WEIXIN
-import { CLOUD_ENV_ID } from './config';
-wx.cloud.init({ env: CLOUD_ENV_ID });
-// #endif
-
 function request(path, options = {}) {
   const { method = 'GET', data: bodyData = null } = options;
 

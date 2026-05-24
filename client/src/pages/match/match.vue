@@ -64,7 +64,10 @@ const canMatch = computed(() => zodiacA.value.name && zodiacB.value.name);
 async function showPicker(target) {
   pickTarget.value = target;
   if (!zodiacList.value.length) {
-    try { zodiacList.value = await getZodiacList(); } catch (e) {}
+    try { zodiacList.value = await getZodiacList(); } catch (e) {
+      uni.showToast({ title: '加载星座列表失败，请检查云函数是否已部署', icon: 'none' });
+      return;
+    }
   }
   const names = zodiacList.value.map(z => z.name);
   uni.showActionSheet({
