@@ -1,4 +1,9 @@
-const BASE_URL = '/api';
+// #ifdef H5
+const BASE_URL = '';
+// #endif
+// #ifdef MP-WEIXIN
+const BASE_URL = 'https://your-server.com';
+// #endif
 
 function request(path, options = {}) {
   const { method = 'GET', data = null } = options;
