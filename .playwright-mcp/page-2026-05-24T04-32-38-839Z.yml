@@ -1,0 +1,18 @@
+- generic [ref=e107]:
+  - generic [ref=e109]:
+    - img [ref=e112] [cursor=pointer]
+    - generic [ref=e115]: 星座配对
+  - generic [ref=e119]:
+    - generic [ref=e120]:
+      - generic [ref=e121]: 💑 星座配对
+      - generic [ref=e122]: 看看你们的星座有多合拍
+    - generic [ref=e123]:
+      - generic [ref=e124]:
+        - generic [ref=e125]: ❓
+        - generic [ref=e126]: 选择星座
+      - generic [ref=e127]: ×
+      - generic [ref=e128]:
+        - generic [ref=e129]: ❓
+        - generic [ref=e130]: 选择星座
+    - generic [ref=e131] [cursor=pointer]: 🔮 开始配对
+    - generic [ref=e132]: 仅供娱乐 · 不涉及迷信内容

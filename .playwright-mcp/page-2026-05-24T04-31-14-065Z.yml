@@ -1,0 +1,31 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: 星语小馆
+        - generic [ref=e10]: 探索你的星座故事
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]: 💑
+          - generic [ref=e14]: 星座配对
+        - generic [ref=e15]:
+          - generic [ref=e16]: 🎭
+          - generic [ref=e17]: 角色匹配
+        - generic [ref=e18]:
+          - generic [ref=e19]: 👤
+          - generic [ref=e20]: 个人中心
+      - generic [ref=e21]: 仅供娱乐 · 不涉及迷信内容
+    - generic [ref=e23]:
+      - generic [ref=e26] [cursor=pointer]:
+        - img [ref=e28]
+        - generic [ref=e29]: 星座
+      - generic [ref=e31] [cursor=pointer]:
+        - img [ref=e33]
+        - generic [ref=e34]: 角色匹配
+      - generic [ref=e36] [cursor=pointer]:
+        - img [ref=e38]
+        - generic [ref=e39]: 我的
+  - generic:
+    - generic:
+      - generic:
+        - paragraph: 网络错误
