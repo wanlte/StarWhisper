@@ -42,6 +42,27 @@
       </view>
     </view>
     <text class="disclaimer">仅供娱乐 · 不涉及迷信内容</text>
+
+    <!-- Custom Picker Modal -->
+    <view v-if="pickerVisible" class="picker-overlay" @click="closePicker">
+      <view class="picker-panel" @click.stop>
+        <text class="picker-title">选择星座</text>
+        <scroll-view class="picker-list" scroll-y>
+          <view
+            v-for="z in zodiacList"
+            :key="z.id"
+            class="picker-item"
+            @click="selectZodiac(z)"
+          >
+            <text class="picker-emoji">{{ z.emoji }}</text>
+            <text class="picker-name">{{ z.name }}</text>
+          </view>
+        </scroll-view>
+        <view class="picker-cancel" @click="closePicker">
+          <text>取消</text>
+        </view>
+      </view>
+    </view>
   </view>
 </template>
 
@@ -49,64 +70,51 @@
 import { ref, computed } from 'vue';
 import StarryBackground from '@/components/StarryBackground.vue';
 import { getZodiacList, getZodiacMatch } from '@/api/zodiac';
-import { zodiacEmojis } from '@/utils/zodiac';
 import { addHistory } from '@/utils/storage';
 
 const zodiacA = ref({});
 const zodiacB = ref({});
 const result = ref(null);
 const zodiacList = ref([]);
-
 const pickTarget = ref(null);
+const pickerVisible = ref(false);
 
 const canMatch = computed(() => zodiacA.value.name && zodiacB.value.name);
 
 async function showPicker(target) {
   pickTarget.value = target;
   if (!zodiacList.value.length) {
-    console.log('[DEBUG] calling uni.cloud.callFunction directly...');
-    uni.cloud.callFunction({
-      name: 'zodiac',
-      data: { action: 'list' },
-      success: (res) => {
-        console.log('[DEBUG] callFunction success:', JSON.stringify(res));
-        zodiacList.value = res.result.data;
-        const names = zodiacList.value.map(z => z.name);
-        uni.showActionSheet({
-          itemList: names,
-          success: (res2) => {
-            const z = zodiacList.value[res2.tapIndex];
-            const item = { name: z.name, emoji: z.emoji };
-            if (pickTarget.value === 'a') zodiacA.value = item;
-            else zodiacB.value = item;
-          }
-        });
-      },
-      fail: (err) => {
-        console.log('[DEBUG] callFunction fail:', JSON.stringify(err));
-        uni.showToast({ title: '云函数调用失败: ' + (err.errMsg || 'timeout'), icon: 'none' });
-      }
-    });
-    return;
-  }
-  const names = zodiacList.value.map(z => z.name);
-  uni.showActionSheet({
-    itemList: names,
-    success: (res) => {
-      const z = zodiacList.value[res.tapIndex];
-      const item = { name: z.name, emoji: z.emoji };
-      if (pickTarget.value === 'a') zodiacA.value = item;
-      else zodiacB.value = item;
+    uni.showLoading({ title: '加载中...' });
+    try { zodiacList.value = await getZodiacList(); } catch (e) {
+      uni.showToast({ title: '加载星座列表失败', icon: 'none' });
+      return;
+    } finally {
+      uni.hideLoading();
     }
-  });
+  }
+  pickerVisible.value = true;
+}
+
+function selectZodiac(z) {
+  const item = { name: z.name, emoji: z.emoji };
+  if (pickTarget.value === 'a') zodiacA.value = item;
+  else zodiacB.value = item;
+  pickerVisible.value = false;
+}
+
+function closePicker() {
+  pickerVisible.value = false;
 }
 
 async function doMatch() {
   if (!canMatch.value) return;
   try {
+    uni.showLoading({ title: '配对中...' });
     result.value = await getZodiacMatch(zodiacA.value.name, zodiacB.value.name);
     addHistory({ type: 'match', zodiac1: zodiacA.value.name, zodiac2: zodiacB.value.name });
-  } catch (e) {}
+  } catch (e) {} finally {
+    uni.hideLoading();
+  }
 }
 </script>
 
@@ -124,7 +132,7 @@ async function doMatch() {
 .selector {
   display: flex; flex-direction: column; align-items: center; padding: 36rpx 48rpx;
   background: rgba(255,255,255,0.06); border-radius: 20rpx;
-  border: 2rpx solid rgba(255,255,255,0.1); transition: all 0.2s;
+  border: 2rpx solid rgba(255,255,255,0.1); transition: all 0.2s; cursor: pointer;
 }
 .selector:active { background: rgba(212,165,116,0.12); border-color: rgba(212,165,116,0.3); }
 .sel-emoji { font-size: 60rpx; margin-bottom: 8rpx; }
@@ -147,4 +155,31 @@ async function doMatch() {
 
 .fade-in { animation: fadeIn 0.5s ease-out; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20rpx); } to { opacity: 1; transform: translateY(0); } }
+
+/* Picker Modal */
+.picker-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 100;
+  background: rgba(0,0,0,0.6);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.picker-panel {
+  width: 100%; max-height: 70vh;
+  background: #1a1a2e; border-radius: 32rpx 32rpx 0 0;
+  padding: 32rpx 0 0;
+}
+.picker-title { font-size: 32rpx; color: #D4A574; text-align: center; display: block; margin-bottom: 24rpx; }
+.picker-list { max-height: 50vh; padding: 0 32rpx; }
+.picker-item {
+  display: flex; align-items: center; gap: 24rpx; padding: 24rpx 16rpx;
+  border-bottom: 1rpx solid rgba(255,255,255,0.06);
+  cursor: pointer;
+}
+.picker-item:active { background: rgba(212,165,116,0.08); }
+.picker-emoji { font-size: 40rpx; }
+.picker-name { font-size: 28rpx; color: #CCC; }
+.picker-cancel {
+  text-align: center; padding: 28rpx; margin-top: 16rpx;
+  border-top: 1rpx solid rgba(255,255,255,0.08);
+  font-size: 28rpx; color: #999; cursor: pointer;
+}
 </style>
