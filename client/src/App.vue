@@ -13,7 +13,7 @@ import { onLaunch } from '@dcloudio/uni-app';
 onLaunch(() => {
   console.log('星语小馆 StarWhisper 启动');
   // #ifdef MP-WEIXIN
-  wx.cloud.init({ env: CLOUD_ENV_ID });
+  uni.cloud.init({ env: CLOUD_ENV_ID });
   console.log('Cloud init OK, env:', CLOUD_ENV_ID);
   // #endif
 });

@@ -64,10 +64,30 @@ const canMatch = computed(() => zodiacA.value.name && zodiacB.value.name);
 async function showPicker(target) {
   pickTarget.value = target;
   if (!zodiacList.value.length) {
-    try { zodiacList.value = await getZodiacList(); } catch (e) {
-      uni.showToast({ title: '加载星座列表失败，请检查云函数是否已部署', icon: 'none' });
-      return;
-    }
+    console.log('[DEBUG] calling uni.cloud.callFunction directly...');
+    uni.cloud.callFunction({
+      name: 'zodiac',
+      data: { action: 'list' },
+      success: (res) => {
+        console.log('[DEBUG] callFunction success:', JSON.stringify(res));
+        zodiacList.value = res.result.data;
+        const names = zodiacList.value.map(z => z.name);
+        uni.showActionSheet({
+          itemList: names,
+          success: (res2) => {
+            const z = zodiacList.value[res2.tapIndex];
+            const item = { name: z.name, emoji: z.emoji };
+            if (pickTarget.value === 'a') zodiacA.value = item;
+            else zodiacB.value = item;
+          }
+        });
+      },
+      fail: (err) => {
+        console.log('[DEBUG] callFunction fail:', JSON.stringify(err));
+        uni.showToast({ title: '云函数调用失败: ' + (err.errMsg || 'timeout'), icon: 'none' });
+      }
+    });
+    return;
   }
   const names = zodiacList.value.map(z => z.name);
   uni.showActionSheet({

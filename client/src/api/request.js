@@ -29,19 +29,22 @@ function request(path, options = {}) {
     if (pathParam) callData.name = decodeURIComponent(pathParam);
     if (bodyData) Object.assign(callData, bodyData);
 
-    wx.cloud.callFunction({ name: functionName, data: callData })
-      .then(res => {
+    uni.cloud.callFunction({
+      name: functionName,
+      data: callData,
+      success: (res) => {
         if (res.result.code === 0) {
           resolve(res.result.data);
         } else {
           uni.showToast({ title: res.result.message || '请求失败', icon: 'none' });
           reject(res.result);
         }
-      })
-      .catch(err => {
+      },
+      fail: (err) => {
         uni.showToast({ title: '云函数调用失败', icon: 'none' });
         reject(err);
-      });
+      }
+    });
   });
   // #endif
 
