@@ -1,0 +1,11 @@
+- generic [ref=e4]:
+  - generic [ref=e6]:
+    - img [ref=e9] [cursor=pointer]
+    - generic [ref=e12]: 塔罗占卜
+  - generic [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e18]: 🌙
+      - generic [ref=e19]: 塔罗占卜
+      - generic [ref=e21]: "静心凝神，将你的问题默念于心{'\\n'} 然后从六张牌中，选择三张感应最强的牌"
+      - generic [ref=e23] [cursor=pointer]: ✨ 开始抽牌
+    - generic [ref=e24]: 仅供娱乐 · 不涉及迷信内容

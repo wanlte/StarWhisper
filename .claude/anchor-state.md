@@ -1,18 +1,16 @@
-# Anchor State — 2026-05-24T12-24-29 (Compaction #1)
+# Anchor State — 2026-05-25T15-18-49 (Compaction #3)
 
 ## Recovery
 
-Read backup: `.claude/backups/pre-compact-2026-05-24T12-24-29.md`
-Read daily log: `memory/daily/2026-05-24.md`
+Read backup: `.claude/backups/pre-compact-2026-05-25T15-18-49.md`
+Read daily log: `memory/daily/2026-05-25.md`
 
 ## Recent Daily Log (last 40 lines)
 
-# Session Log — 2026-05-24
-
-### 12:18 — Session ended
-- Files modified: 4
+# Session Log — 2026-05-25
 
 
 ## Compaction Health
 
-First compaction. Finish current task quickly.
+**WARNING: Context compacted 3 times. Quality is degrading.**
+**Write handoff doc and start a new session.**

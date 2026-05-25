@@ -1,6 +1,5 @@
 {
   "cloudfunctionRoot": "cloudfunctions/",
-  "lazyCodeLoading": "requiredComponents",
   "setting": {
     "urlCheck": false
   }

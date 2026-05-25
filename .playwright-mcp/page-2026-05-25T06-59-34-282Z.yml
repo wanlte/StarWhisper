@@ -1,0 +1,34 @@
+- generic [ref=e3]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: 🔮
+      - generic [ref=e10]: 星语小馆
+      - generic [ref=e11]: 探索你的星座故事
+    - generic [ref=e14]: 星辰正在排列...
+    - generic [ref=e16] [cursor=pointer]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: ✨
+        - generic [ref=e23]: 塔罗占卜
+        - generic [ref=e24]: 翻一张牌 · 聆听星空的指引
+      - generic [ref=e25]: →
+    - generic [ref=e26]:
+      - generic [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: 💑
+        - generic [ref=e29]: 星座配对
+      - generic [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 🎭
+        - generic [ref=e32]: 角色匹配
+      - generic [ref=e33] [cursor=pointer]:
+        - generic [ref=e34]: 👤
+        - generic [ref=e35]: 个人中心
+    - generic [ref=e36]: 仅供娱乐 · 不涉及迷信内容
+  - generic [ref=e38]:
+    - generic [ref=e41] [cursor=pointer]:
+      - img [ref=e43]
+      - generic [ref=e44]: 星座
+    - generic [ref=e46] [cursor=pointer]:
+      - img [ref=e48]
+      - generic [ref=e49]: 角色匹配
+    - generic [ref=e51] [cursor=pointer]:
+      - img [ref=e53]
+      - generic [ref=e54]: 我的

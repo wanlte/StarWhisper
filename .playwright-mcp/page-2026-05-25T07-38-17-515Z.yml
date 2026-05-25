@@ -1,0 +1,10 @@
+- generic [ref=e8]:
+  - generic [ref=e11] [cursor=pointer]:
+    - img [ref=e13]
+    - generic [ref=e14]: 星座
+  - generic [ref=e16] [cursor=pointer]:
+    - img [ref=e18]
+    - generic [ref=e19]: 角色匹配
+  - generic [ref=e21] [cursor=pointer]:
+    - img [ref=e23]
+    - generic [ref=e24]: 我的

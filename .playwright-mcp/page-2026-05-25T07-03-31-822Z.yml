@@ -1,0 +1,89 @@
+- generic [ref=e3]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: 🔮
+      - generic [ref=e10]: 星语小馆
+      - generic [ref=e11]: 探索你的星座故事
+    - generic [ref=e12]:
+      - generic [ref=e13]: 点击中央卡片查看详情
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]: ♈
+            - generic [ref=e18]: 白羊座
+            - generic [ref=e19]: Aries
+            - generic [ref=e20]: 火象
+          - generic [ref=e21] [cursor=pointer]:
+            - generic [ref=e22]: ♉
+            - generic [ref=e23]: 金牛座
+            - generic [ref=e24]: Taurus
+          - generic [ref=e25] [cursor=pointer]:
+            - generic [ref=e26]: ♊
+            - generic [ref=e27]: 双子座
+            - generic [ref=e28]: Gemini
+          - generic [ref=e29] [cursor=pointer]:
+            - generic [ref=e30]: ♋
+            - generic [ref=e31]: 巨蟹座
+            - generic [ref=e32]: Cancer
+          - generic [ref=e33] [cursor=pointer]:
+            - generic [ref=e34]: ♌
+            - generic [ref=e35]: 狮子座
+            - generic [ref=e36]: Leo
+          - generic:
+            - generic: ♍
+            - generic: 处女座
+            - generic: Virgo
+          - generic:
+            - generic: ♎
+            - generic: 天秤座
+            - generic: Libra
+          - generic:
+            - generic: ♏
+            - generic: 天蝎座
+            - generic: Scorpio
+          - generic:
+            - generic: ♐
+            - generic: 射手座
+            - generic: Sagittarius
+          - generic:
+            - generic: ♑
+            - generic: 摩羯座
+            - generic: Capricorn
+          - generic:
+            - generic: ♒
+            - generic: 水瓶座
+            - generic: Aquarius
+          - generic:
+            - generic: ♓
+            - generic: 双鱼座
+            - generic: Pisces
+        - generic [ref=e51] [cursor=pointer]:
+          - generic [ref=e52]: 🔮
+          - generic [ref=e53]: 双选配对
+    - generic [ref=e55] [cursor=pointer]:
+      - generic [ref=e60]:
+        - generic [ref=e61]: ✨
+        - generic [ref=e62]: 塔罗占卜
+        - generic [ref=e63]: 翻一张牌 · 聆听星空的指引
+      - generic [ref=e64]: →
+    - generic [ref=e65]:
+      - generic [ref=e66] [cursor=pointer]:
+        - generic [ref=e67]: 💑
+        - generic [ref=e68]: 星座配对
+      - generic [ref=e69] [cursor=pointer]:
+        - generic [ref=e70]: 🎭
+        - generic [ref=e71]: 角色匹配
+      - generic [ref=e72] [cursor=pointer]:
+        - generic [ref=e73]: 👤
+        - generic [ref=e74]: 个人中心
+    - generic [ref=e75]: 仅供娱乐 · 不涉及迷信内容
+  - generic [ref=e77]:
+    - generic [ref=e80] [cursor=pointer]:
+      - img [ref=e82]
+      - generic [ref=e83]: 星座
+    - generic [ref=e85] [cursor=pointer]:
+      - img [ref=e87]
+      - generic [ref=e88]: 角色匹配
+    - generic [ref=e90] [cursor=pointer]:
+      - img [ref=e92]
+      - generic [ref=e93]: 我的
