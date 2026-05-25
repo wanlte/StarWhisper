@@ -48,6 +48,14 @@
         "navigationBarBackgroundColor": "#1a1a2e",
         "navigationBarTextStyle": "white"
       }
+    },
+    {
+      "path": "pages/tarot/tarot",
+      "style": {
+        "navigationBarTitleText": "塔罗占卜",
+        "navigationBarBackgroundColor": "#1a1a2e",
+        "navigationBarTextStyle": "white"
+      }
     }
   ],
   "tabBar": {

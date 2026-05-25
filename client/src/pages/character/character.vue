@@ -1,8 +1,8 @@
 <template>
-  <view class="page-character">
+  <view class="page-character page-bg">
     <StarryBackground />
     <!-- Step 1: Select Zodiac -->
-    <view v-if="step === 1" class="step fade-in">
+    <view v-if="step === 1" class="step content-layer fade-in">
       <text class="step-title">🎭 角色匹配</text>
       <text class="step-desc">先选择你的星座，再回答10道趣味问题
 看看哪个猎奇角色最懂你</text>
@@ -28,7 +28,7 @@
     </view>
 
     <!-- Step 2: Quiz -->
-    <view v-if="step === 2" class="step fade-in">
+    <view v-if="step === 2" class="step content-layer fade-in">
       <text class="step-title">第 {{ currentQ + 1 }} / {{ questions.length }} 题</text>
       <view class="progress-bar">
         <view class="progress-fill" :style="{ width: ((currentQ + 1) / questions.length * 100) + '%' }" />
@@ -54,7 +54,7 @@
     </view>
 
     <!-- Step 3: Loading -->
-    <view v-if="step === 3" class="step loading-step">
+    <view v-if="step === 3" class="step content-layer loading-step">
       <LoadingWrapper :loading="true" text="正在召唤你的专属角色..." />
     </view>
   </view>
@@ -169,11 +169,9 @@ async function submitQuiz() {
 
 <style lang="scss" scoped>
 .page-character {
-  min-height: 100vh;
-  background: linear-gradient(180deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   padding: 0 32rpx 120rpx;
 }
-.step { position: relative; z-index: 2; }
+.step { }
 .step-title { display: block; text-align: center; font-size: 40rpx; font-weight: bold; color: #D4A574; padding: 60rpx 0 12rpx; }
 .step-desc { display: block; text-align: center; font-size: 26rpx; color: #999; line-height: 1.7; padding: 0 40rpx 40rpx; white-space: pre-wrap; }
 

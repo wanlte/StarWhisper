@@ -8,7 +8,7 @@ page {
   min-height: 100vh;
 }
 
-// Flex 布局
+// Flex
 .flex-center { display: flex; align-items: center; justify-content: center; }
 .flex-between { display: flex; align-items: center; justify-content: space-between; }
 .flex-col { display: flex; flex-direction: column; }
@@ -34,7 +34,69 @@ page {
   background: $bg-card;
   border-radius: $radius-md;
   padding: $spacing-md;
-  backdrop-filter: blur(10px);
+}
+
+// 磨砂玻璃卡片
+.glass-card {
+  background: $glass-bg;
+  border-radius: $radius-lg;
+  border: 1rpx solid $glass-border;
+  box-shadow: $glass-inset-highlight, $glass-shadow;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 16rpx; right: 16rpx;
+    height: 1rpx;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  }
+}
+
+.glass-card-interactive {
+  @extend .glass-card;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+  &:active {
+    transform: scale(0.97);
+    border-color: $glass-border-active;
+    box-shadow: $glass-inset-highlight, $shadow-glow-gold;
+  }
+}
+
+.glass-card-glow {
+  @extend .glass-card;
+  border-color: $glass-border-active;
+  box-shadow: $glass-inset-highlight, $shadow-glow-gold;
+}
+
+// 3D 卡片基础
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.card-3d-lift {
+  @extend .card-3d;
+
+  &:active {
+    transform: translateY(-6rpx);
+    box-shadow: $shadow-elevated, $shadow-glow-purple;
+  }
+}
+
+// 发光文字
+.glow-text {
+  text-shadow: 0 0 20rpx rgba(212, 165, 116, 0.3),
+               0 0 40rpx rgba(212, 165, 116, 0.1);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 20rpx rgba(139, 125, 186, 0.4),
+               0 0 40rpx rgba(107, 91, 154, 0.15);
 }
 
 // 按钮 reset
@@ -59,4 +121,50 @@ page {
   border: 2rpx solid $color-accent;
   color: $color-accent;
   background: transparent;
+}
+
+// 全局页面背景
+.page-bg {
+  min-height: 100vh;
+  background: linear-gradient(180deg, $bg-deep 0%, $bg-dark 30%, $nebula-deep 60%, $bg-mid 100%);
+  position: relative;
+}
+
+// 内容层级
+.content-layer {
+  position: relative;
+  z-index: 2;
+}
+
+// 入场动画
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12rpx); }
+}
+
+.anim-fade-in-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.anim-scale-in {
+  animation: scaleIn 0.5s ease-out both;
+}
+
+.anim-float {
+  animation: floatY 4s ease-in-out infinite;
 }

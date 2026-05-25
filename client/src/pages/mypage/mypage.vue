@@ -1,11 +1,11 @@
 <template>
-  <view class="page-mypage">
+  <view class="page-mypage page-bg">
     <StarryBackground />
-    <view class="hero">
+    <view class="hero content-layer">
       <text class="hero-title">👤 个人中心</text>
     </view>
     <!-- Birthday & Zodiac -->
-    <view class="card section">
+    <view class="glass-card section content-layer">
       <text class="section-title">🎂 生日识星座</text>
       <view class="birthday-row">
         <picker mode="date" :value="birthday" @change="onBirthdayChange">
@@ -20,7 +20,7 @@
       </view>
     </view>
     <!-- History -->
-    <view class="card section">
+    <view class="glass-card section content-layer">
       <text class="section-title">📋 最近浏览</text>
       <view v-if="history.length === 0" class="empty">
         <text class="empty-text">还没有浏览记录
@@ -36,7 +36,7 @@
       </view>
     </view>
     <!-- Disclaimer -->
-    <view class="card section">
+    <view class="glass-card section content-layer">
       <text class="section-title">📜 关于星语小馆</text>
       <text class="about-text">
         星语小馆是一款纯娱乐性质的星座趣味小程序。所有内容仅供参考娱乐，不构成任何形式的指导建议。
@@ -46,7 +46,7 @@
         愿你在星语小馆找到一份温暖和乐趣 ✨
       </text>
     </view>
-    <view class="btn btn-outline disclaimer-btn" @click="showDisclaimer = true">
+    <view class="btn btn-outline disclaimer-btn content-layer" @click="showDisclaimer = true">
       📜 查看免责声明
     </view>
     <DisclaimerModal :visible="showDisclaimer" @agree="showDisclaimer = false" @close="showDisclaimer = false" />
@@ -103,13 +103,11 @@ function goHistory(item) {
 
 <style lang="scss" scoped>
 .page-mypage {
-  min-height: 100vh;
-  background: linear-gradient(180deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   padding: 0 32rpx 120rpx;
 }
-.hero { position: relative; z-index: 2; text-align: center; padding: 60rpx 0 40rpx; }
+.hero { text-align: center; padding: 60rpx 0 40rpx; }
 .hero-title { font-size: 40rpx; font-weight: bold; color: #D4A574; }
-.section { position: relative; z-index: 2; margin-bottom: 24rpx; }
+.section { margin-bottom: 24rpx; padding: 28rpx; }
 .section-title { font-size: 30rpx; font-weight: bold; color: #D4A574; display: block; margin-bottom: 20rpx; }
 
 .birthday-row { display: flex; align-items: center; gap: 24rpx; }
@@ -129,5 +127,5 @@ function goHistory(item) {
 .hi-arrow { font-size: 32rpx; color: #666; }
 
 .about-text { font-size: 26rpx; color: #B0B0C0; line-height: 1.8; white-space: pre-wrap; }
-.disclaimer-btn { position: relative; z-index: 2; width: 400rpx; margin: 16rpx auto; padding: 20rpx; font-size: 26rpx; }
+.disclaimer-btn { width: 400rpx; margin: 16rpx auto; padding: 20rpx; font-size: 26rpx; border-radius: 24rpx; }
 </style>

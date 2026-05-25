@@ -1,44 +1,52 @@
 <template>
-  <view class="page-index">
+  <view class="page-index page-bg">
     <StarryBackground />
+
     <!-- Header -->
-    <view class="header">
-      <text class="header-title">星语小馆</text>
+    <view class="header content-layer">
+      <text class="header-icon">🔮</text>
+      <text class="header-title glow-text">星语小馆</text>
       <text class="header-sub">探索你的星座故事</text>
     </view>
-    <!-- Zodiac Grid -->
+
+    <!-- Constellation Carousel -->
     <LoadingWrapper :loading="loading" text="星辰正在排列...">
-      <view class="zodiac-grid">
-        <view
-          v-for="item in zodiacList"
-          :key="item.id"
-          class="zodiac-item"
-          :style="{ animationDelay: (item.id * 0.05) + 's' }"
-          @click="goDetail(item.name)"
-        >
-          <text class="zodiac-emoji">{{ item.emoji }}</text>
-          <text class="zodiac-name">{{ item.name }}</text>
-          <text class="zodiac-en">{{ item.nameEn }}</text>
-        </view>
+      <view class="hero-section content-layer">
+        <text class="section-hint">点击中央卡片查看详情</text>
+        <ConstellationCarousel
+          :zodiacs="zodiacList"
+          :selectMode="selectMode"
+          @select="goDetail"
+          @select-first="onSelectFirst"
+          @select-second="onSelectSecond"
+          @toggle-select-mode="toggleSelectMode"
+        />
       </view>
     </LoadingWrapper>
-    <!-- Action Bar -->
-    <view class="action-bar">
-      <view class="action-btn" @click="goMatch">
-        <text class="action-icon">💑</text>
-        <text class="action-text">星座配对</text>
+
+    <!-- Tarot Entry Module -->
+    <view class="secondary-section content-layer">
+      <TarotEntry @click="goTarot" />
+    </view>
+
+    <!-- Action Strip -->
+    <view class="action-strip content-layer">
+      <view class="action-item glass-card-interactive" @click="goMatch">
+        <text class="action-emoji">💑</text>
+        <text class="action-label">星座配对</text>
       </view>
-      <view class="action-btn primary" @click="goCharacter">
-        <text class="action-icon">🎭</text>
-        <text class="action-text">角色匹配</text>
+      <view class="action-item glass-card-interactive" @click="goCharacter">
+        <text class="action-emoji">🎭</text>
+        <text class="action-label">角色匹配</text>
       </view>
-      <view class="action-btn" @click="goMypage">
-        <text class="action-icon">👤</text>
-        <text class="action-text">个人中心</text>
+      <view class="action-item glass-card-interactive" @click="goMypage">
+        <text class="action-emoji">👤</text>
+        <text class="action-label">个人中心</text>
       </view>
     </view>
-    <!-- Disclaimer footer -->
-    <text class="disclaimer">仅供娱乐 · 不涉及迷信内容</text>
+
+    <!-- Disclaimer -->
+    <text class="disclaimer content-layer">仅供娱乐 · 不涉及迷信内容</text>
   </view>
 </template>
 
@@ -46,29 +54,54 @@
 import { ref, onMounted } from 'vue';
 import StarryBackground from '@/components/StarryBackground.vue';
 import LoadingWrapper from '@/components/LoadingWrapper.vue';
+import ConstellationCarousel from '@/components/ConstellationCarousel.vue';
+import TarotEntry from '@/components/TarotEntry.vue';
 import { getZodiacList } from '@/api/zodiac';
 import { addHistory } from '@/utils/storage';
 
 const zodiacList = ref([]);
 const loading = ref(true);
+const selectMode = ref(false);
+const selectedFirst = ref(null);
 
 onMounted(async () => {
   try {
     zodiacList.value = await getZodiacList();
   } catch (e) {
-    // Fallback to local emoji list
+    // Fallback to empty, component handles gracefully
   } finally {
     loading.value = false;
   }
 });
 
-const goDetail = (name) => {
-  addHistory({ type: 'zodiac', name });
-  uni.navigateTo({ url: '/pages/detail/detail?name=' + encodeURIComponent(name) });
+function toggleSelectMode() {
+  selectMode.value = !selectMode.value;
+  selectedFirst.value = null;
+}
+
+function onSelectFirst(z) {
+  selectedFirst.value = z;
+}
+
+function onSelectSecond(z) {
+  selectMode.value = false;
+  uni.navigateTo({
+    url: `/pages/match/match?zodiac1=${encodeURIComponent(selectedFirst.value.name)}&zodiac2=${encodeURIComponent(z.name)}`
+  });
+  selectedFirst.value = null;
+}
+
+const goDetail = (z) => {
+  addHistory({ type: 'zodiac', name: z.name });
+  uni.navigateTo({ url: '/pages/detail/detail?name=' + encodeURIComponent(z.name) });
 };
 
 const goMatch = () => {
   uni.navigateTo({ url: '/pages/match/match' });
+};
+
+const goTarot = () => {
+  uni.navigateTo({ url: '/pages/tarot/tarot' });
 };
 
 const goCharacter = () => {
@@ -82,82 +115,83 @@ const goMypage = () => {
 
 <style lang="scss" scoped>
 .page-index {
-  min-height: 100vh;
-  background: linear-gradient(180deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   padding-bottom: 120rpx + env(safe-area-inset-bottom);
 }
+
+/* Header */
 .header {
-  padding: 120rpx 40rpx 48rpx;
+  padding: 100rpx 40rpx 32rpx;
   text-align: center;
-  position: relative; z-index: 2;
+}
+.header-icon {
+  font-size: 48rpx;
+  display: block;
+  margin-bottom: 8rpx;
+  animation: floatY 4s ease-in-out infinite;
 }
 .header-title {
   display: block;
-  font-size: 52rpx; font-weight: bold;
-  background: linear-gradient(180deg, #D4A574, #F0C99A);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  margin-bottom: 12rpx;
+  font-size: 56rpx;
+  font-weight: bold;
+  background: linear-gradient(180deg, #F0C99A 0%, #D4A574 40%, #B8865A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8rpx;
 }
 .header-sub {
-  font-size: 28rpx; color: #999;
+  display: block;
+  font-size: 26rpx;
+  color: #8888AA;
 }
-.zodiac-grid {
-  position: relative; z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+/* Hero */
+.hero-section {
+  padding: 0 0 16rpx;
+}
+.section-hint {
+  display: block;
+  text-align: center;
+  font-size: 22rpx;
+  color: #666688;
+  margin-bottom: 8rpx;
+}
+
+/* Action Strip */
+.action-strip {
+  display: flex;
+  justify-content: center;
   gap: 20rpx;
-  padding: 0 32rpx;
+  padding: 24rpx 32rpx;
 }
-.zodiac-item {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 28rpx 12rpx;
-  background: rgba(255, 255, 255, 0.05);
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+  padding: 22rpx 32rpx;
+  min-width: 160rpx;
   border-radius: 20rpx;
-  border: 1rpx solid rgba(255, 255, 255, 0.06);
-  transition: all 0.2s;
-  animation: fadeInUp 0.4s ease-out both;
+  cursor: pointer;
 }
-.zodiac-item:active {
-  background: rgba(212, 165, 116, 0.12);
-  border-color: rgba(212, 165, 116, 0.3);
+.action-emoji {
+  font-size: 40rpx;
 }
-.zodiac-emoji { font-size: 48rpx; margin-bottom: 8rpx; }
-.zodiac-name { font-size: 24rpx; color: #DDD; font-weight: bold; }
-.zodiac-en { font-size: 18rpx; color: #888; margin-top: 4rpx; }
+.action-label {
+  font-size: 22rpx;
+  color: #BBB;
+}
 
-.action-bar {
-  position: relative; z-index: 2;
-  display: flex; justify-content: center; gap: 24rpx;
-  padding: 48rpx 32rpx 24rpx;
-}
-.action-btn {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 28rpx 36rpx;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 20rpx;
-  border: 1rpx solid rgba(255, 255, 255, 0.08);
-  transition: all 0.2s;
-}
-.action-btn.primary {
-  background: rgba(212, 165, 116, 0.12);
-  border-color: rgba(212, 165, 116, 0.3);
-}
-.action-btn:active {
-  transform: scale(0.95);
-  background: rgba(212, 165, 116, 0.15);
-}
-.action-icon { font-size: 44rpx; margin-bottom: 8rpx; }
-.action-text { font-size: 24rpx; color: #CCC; }
-
+/* Disclaimer */
 .disclaimer {
-  display: block; text-align: center;
-  font-size: 22rpx; color: #666;
-  padding: 24rpx 0;
-  position: relative; z-index: 2;
+  display: block;
+  text-align: center;
+  font-size: 20rpx;
+  color: #555;
+  padding: 24rpx 0 32rpx;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20rpx); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10rpx); }
 }
 </style>
