@@ -6,9 +6,19 @@
     <view v-if="stage === 'intro'" class="tarot-intro content-layer">
       <view class="intro-icon anim-float">🌙</view>
       <text class="intro-title glow-text">塔罗占卜</text>
+      <view v-if="isPremium" class="premium-badge">
+        <text>✦ 高级占卜 ✦</text>
+      </view>
       <text class="intro-desc">
-        静心凝神，将你的问题默念于心{'\n'}
-        然后从六张牌中，选择三张感应最强的牌
+        <template v-if="isPremium">
+          静心凝神，将你的问题默念于心{'\n'}
+          从九张牌中，选择五张与你感应最强的牌{'\n'}
+          获得更全面深入的塔罗指引
+        </template>
+        <template v-else>
+          静心凝神，将你的问题默念于心{'\n'}
+          然后从六张牌中，选择三张感应最强的牌
+        </template>
       </text>
       <view class="intro-btn glass-card-interactive" @click="startDraw">
         <text>✨ 开始抽牌</text>
@@ -17,8 +27,8 @@
 
     <!-- Stage 2: Draw -->
     <view v-if="stage === 'draw'" class="tarot-draw content-layer">
-      <text class="draw-title">选择三张与你感应的牌</text>
-      <text class="draw-sub">已选 {{ selectedCards.length }} / 3</text>
+      <text class="draw-title">选择{{ isPremium ? '五' : '三' }}张与你感应的牌</text>
+      <text class="draw-sub">已选 {{ selectedCards.length }} / {{ isPremium ? 5 : 3 }}</text>
 
       <view class="draw-grid">
         <TarotCard
@@ -33,7 +43,7 @@
       </view>
 
       <view
-        v-if="selectedCards.length === 3"
+        v-if="selectedCards.length === (isPremium ? 5 : 3)"
         class="reveal-btn glass-card-interactive"
         @click="revealAll"
       >
@@ -62,8 +72,15 @@
       </view>
 
       <text class="reading-summary">
-        三张牌的组合揭示了你的问题。过去影响现在，现在塑造未来。{'\n'}
-        记住，塔罗是自我探索的工具，最终的抉择永远在你手中。
+        <template v-if="isPremium">
+          五张牌的深度解读揭示了问题全貌。{'\n'}
+          现状是起点，挑战是考验，过去是根源，未来是方向，建议是行动。{'\n'}
+          记住，塔罗是自我探索的工具，最终的抉择永远在你手中。
+        </template>
+        <template v-else>
+          三张牌的组合揭示了你的问题。过去影响现在，现在塑造未来。{'\n'}
+          记住，塔罗是自我探索的工具，最终的抉择永远在你手中。
+        </template>
       </text>
 
       <view class="reading-actions">
@@ -81,7 +98,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import StarryBackground from '@/components/StarryBackground.vue';
 import TarotCard from '@/components/TarotCard.vue';
 
@@ -89,7 +106,17 @@ const stage = ref('intro');
 const drawCards = ref([]);
 const selectedCards = ref([]);
 const revealedCards = ref([]);
-const positions = ['过去', '现在', '未来'];
+
+// Read type query param (regular / premium)
+const pages = getCurrentPages();
+const query = pages[pages.length - 1]?.options || {};
+const isPremium = computed(() => query.type === 'premium');
+
+const positions = computed(() =>
+  isPremium.value
+    ? ['现状', '挑战', '过去', '未来', '建议']
+    : ['过去', '现在', '未来']
+);
 
 const majorArcana = [
   { name: '愚者', symbol: '🧭', meaning: '新的开始，冒险与无限可能', number: '0' },
@@ -125,10 +152,12 @@ function shuffle(arr) {
   return a;
 }
 
+const poolSize = computed(() => isPremium.value ? 9 : 6);
+const pickCount = computed(() => isPremium.value ? 5 : 3);
+
 function startDraw() {
-  // Pick 6 random cards for the draw pool
   const shuffled = shuffle(majorArcana);
-  drawCards.value = shuffled.slice(0, 6).map(c => ({ ...c, revealed: false }));
+  drawCards.value = shuffled.slice(0, poolSize.value).map(c => ({ ...c, revealed: false }));
   selectedCards.value = [];
   revealedCards.value = [];
   stage.value = 'draw';
@@ -138,7 +167,7 @@ function pickCard(card, i) {
   if (card.revealed) return;
   if (selectedCards.value.includes(i)) {
     selectedCards.value = selectedCards.value.filter(idx => idx !== i);
-  } else if (selectedCards.value.length < 3) {
+  } else if (selectedCards.value.length < pickCount.value) {
     selectedCards.value = [...selectedCards.value, i];
   }
 }
@@ -183,7 +212,17 @@ function goHome() {
   font-size: 52rpx; font-weight: bold;
   background: linear-gradient(180deg, #F0C99A 0%, #D4A574 50%, #B8865A 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  margin-bottom: 32rpx;
+  margin-bottom: 16rpx;
+}
+.premium-badge {
+  margin-bottom: 24rpx;
+  padding: 6rpx 24rpx;
+  border-radius: 20rpx;
+  background: linear-gradient(135deg, rgba(212,165,116,0.18), rgba(240,201,154,0.08));
+  border: 1rpx solid rgba(212,165,116,0.3);
+  font-size: 22rpx;
+  color: #F0C99A;
+  letter-spacing: 4rpx;
 }
 .intro-desc {
   font-size: 26rpx; color: #AAAACC; text-align: center;
