@@ -26,7 +26,7 @@
 
     <!-- Tarot Entry Module -->
     <view class="secondary-section content-layer">
-      <TarotEntry @click="goTarot" />
+      <TarotEntry @draw="onTarotDraw" />
     </view>
 
     <!-- Action Strip -->
@@ -100,8 +100,8 @@ const goMatch = () => {
   uni.navigateTo({ url: '/pages/match/match' });
 };
 
-const goTarot = () => {
-  uni.navigateTo({ url: '/pages/tarot/tarot' });
+const onTarotDraw = (type) => {
+  uni.navigateTo({ url: '/pages/tarot/tarot?type=' + type });
 };
 
 const goCharacter = () => {

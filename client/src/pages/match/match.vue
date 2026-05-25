@@ -94,7 +94,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onLoad } from 'vue';
+import { ref, computed } from 'vue';
 import StarryBackground from '@/components/StarryBackground.vue';
 import { getZodiacList, getZodiacMatch } from '@/api/zodiac';
 import { addHistory } from '@/utils/storage';
@@ -109,21 +109,19 @@ const pickerVisible = ref(false);
 const canMatch = computed(() => zodiacA.value.name && zodiacB.value.name);
 
 // Pre-fill from URL params (from homepage dual-select)
-const query = ref({});
-onLoad((options) => {
-  query.value = options || {};
-});
+const pages = getCurrentPages();
+const query = pages[pages.length - 1]?.options || {};
 
 async function initZodiacs() {
   try {
     zodiacList.value = await getZodiacList();
     // Pre-fill from URL params
-    if (query.value.zodiac1) {
-      const m1 = zodiacList.value.find(z => z.name === decodeURIComponent(query.value.zodiac1));
+    if (query.zodiac1) {
+      const m1 = zodiacList.value.find(z => z.name === decodeURIComponent(query.zodiac1));
       if (m1) zodiacA.value = { name: m1.name, emoji: m1.emoji, dateRange: m1.dateRange };
     }
-    if (query.value.zodiac2) {
-      const m2 = zodiacList.value.find(z => z.name === decodeURIComponent(query.value.zodiac2));
+    if (query.zodiac2) {
+      const m2 = zodiacList.value.find(z => z.name === decodeURIComponent(query.zodiac2));
       if (m2) zodiacB.value = { name: m2.name, emoji: m2.emoji, dateRange: m2.dateRange };
     }
     // Auto-match if both pre-filled
