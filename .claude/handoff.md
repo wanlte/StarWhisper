@@ -1,38 +1,46 @@
-# Handoff — 2026-05-25
+# Handoff — 2026-05-27
 
 ## Session Summary
 
-Continued the StarWhisper UI redesign from compaction #3. Applied reference-image-inspired enhancements to three components and fixed two build-blocking bugs.
+Fixed two blocking bugs in the StarWhisper uni-app project (Vue 3 cross-compiling to mp-weixin + H5), rebuilt both targets, and verified the H5 build in Playwright.
 
-## Completed This Session
+## Bugs Fixed
 
-### Reference-image enhancements (before compaction)
-- **StarryBackground**: Added 4 meteor/shooting star trails with diagonal streak animation
-- **ConstellationCarousel**: Element-based color coding (fire/air → purple-pink glow, earth/water → blue-cyan glow), card star pattern backgrounds, differentiated glow rings per element
-- **TarotEntry**: Complete rewrite — section header with star decorations, 7 fanned card backs, Temperance preview card, dual CTA buttons (抽牌/高级抽牌)
+### Bug #1: Constellation carousel cards disappeared in mp-weixin
+- **Root cause**: `.carousel` and `.carousel-track` had no explicit `width`; WeChat mini program's flex layout collapsed them to 0 width when block elements in a flex column with `align-items: center` were used
+- **Fix in `ConstellationCarousel.vue`**: Added `width: 100%` to both `.carousel` and `.carousel-track`
+- **Fix in `index.vue`**: Changed `flex: 1 0 480rpx` shorthand to individual properties `flex-grow: 1; flex-shrink: 0; flex-basis: 480rpx` on `.carousel-section` (WeChat mini program doesn't support `flex` shorthand with rpx)
 
-### Bug fixes (after compaction)
-- **index.vue**: Fixed TarotEntry event binding — changed `@click="goTarot"` to `@draw="onTarotDraw(type)"` to match new component emit interface
-- **match.vue**: Fixed `onLoad` import error — replaced `import { onLoad } from 'vue'` with `getCurrentPages()` synchronous query extraction (uni-app H5 doesn't export `onLoad` from Vue)
+### Bug #2: Character matching retest stuck on loading
+- **Root cause**: `redirectTo` can't be used for tabBar pages; retry function wasn't properly resetting quiz state
+- **Fix**: Retry uses `uni.switchTab` for tabBar pages; `onShow` from `@dcloudio/uni-app` resets `step`, `currentQ`, `answers` when `step === 3`
 
-## Build Status
-- ✅ H5 build (`vite build --mode h5`): passes
-- ✅ MP-Weixin build (`vite build --mode production`): passes
+## Build Verification
 
-## Remaining Work
-
-### Next priority
-1. **Verify UI in browser** — start dev server and visually check the enhanced components render correctly
-2. **Test navigation flow** — index → tarot page via TarotEntry buttons (regular vs premium)
-3. **Verify element color coding** — check all 12 zodiac signs display correct colors in carousel
-4. **Test dual-select flow** — pick two zodiacs from carousel, verify redirect to match page with pre-filled params
-
-### Nice-to-have
-5. tarot.vue could use the `type` query param to differentiate regular vs premium experience
-6. Add page transition animations between routes
+- H5 build: Verified in Playwright — 5 cards visible in elliptical fan distribution, proper scaling/z-index, no element overlap
+- mp-weixin build: wxss/wxml output confirmed with all fixes; `lazyCodeLoading: "requiredComponents"` injected via postbuild script
+- Console: Only harmless favicon.ico 404, no runtime errors
 
 ## Key Files Modified
+
 | File | Change |
 |------|--------|
-| `client/src/pages/index/index.vue` | Fixed TarotEntry event binding |
-| `client/src/pages/match/match.vue` | Fixed onLoad → getCurrentPages() |
+| `client/src/components/ConstellationCarousel.vue` | Added `width: 100%` to `.carousel` and `.carousel-track` |
+| `client/src/pages/index/index.vue` | Flex shorthand → individual properties on `.carousel-section` |
+| `client/src/pages/character/character.vue` | `onShow` state reset for retest flow |
+| `client/src/pages/result/result.vue` | Retry via `uni.switchTab` |
+| `client/src/components/StarryBackground.vue` | Complete rewrite (nebula, cross stars, meteors, mist) |
+| `client/src/components/TarotEntry.vue` | Complete rewrite (magic star card, mist, draw button) |
+| `client/src/styles/variables.scss` | New color variables (indigo/pink-purple palette) |
+| `client/src/styles/global.scss` | Updated `.page-bg` gradient |
+
+## Next Steps for User
+
+1. Import `client/dist/build/mp-weixin/` into WeChat Developer Tools
+2. Verify carousel cards display (5 fan-shaped cards visible, swipe works)
+3. Test character matching → complete test → "再测一次" → confirm retest works
+4. Check lazyCodeLoading shows "已通过" in developer tools audit
+
+## Uncommitted
+
+20 modified files, all staged changes. Build output is current and verified.
