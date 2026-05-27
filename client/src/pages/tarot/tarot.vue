@@ -71,17 +71,32 @@
         </view>
       </view>
 
-      <text class="reading-summary">
-        <template v-if="isPremium">
-          五张牌的深度解读揭示了问题全貌。{'\n'}
-          现状是起点，挑战是考验，过去是根源，未来是方向，建议是行动。{'\n'}
-          记住，塔罗是自我探索的工具，最终的抉择永远在你手中。
-        </template>
-        <template v-else>
-          三张牌的组合揭示了你的问题。过去影响现在，现在塑造未来。{'\n'}
-          记住，塔罗是自我探索的工具，最终的抉择永远在你手中。
-        </template>
-      </text>
+      <!-- Comprehensive interpretation -->
+      <view class="reading-insight-box">
+        <view class="insight-header">
+          <text class="insight-icon">🔮</text>
+          <text class="insight-title">综合解读</text>
+        </view>
+        <text class="insight-content">{{ readingInsight }}</text>
+      </view>
+
+      <!-- Action recommendation -->
+      <view class="reading-advice-box">
+        <view class="advice-header">
+          <text class="advice-icon">💫</text>
+          <text class="advice-title">行动建议</text>
+        </view>
+        <text class="advice-content">{{ readingAdvice }}</text>
+      </view>
+
+      <!-- Key takeaway -->
+      <view class="reading-key-box">
+        <view class="key-header">
+          <text class="key-icon">✨</text>
+          <text class="key-title">关键提示</text>
+        </view>
+        <text class="key-content">{{ keyTakeaway }}</text>
+      </view>
 
       <view class="reading-actions">
         <view class="action-btn glass-card-interactive" @click="resetDraw">
@@ -117,6 +132,78 @@ const positions = computed(() =>
     ? ['现状', '挑战', '过去', '未来', '建议']
     : ['过去', '现在', '未来']
 );
+
+// Generate comprehensive interpretation based on revealed cards
+const readingInsight = computed(() => {
+  if (revealedCards.value.length === 0) return '';
+  const cards = revealedCards.value;
+  if (cards.length === 3) {
+    return `从牌面来看，过去的"${cards[0].name}"暗示着${cards[0].meaning.split('，')[0]}的经历在长久影响着你。`
+      + `而现在"${cards[1].name}"的出现表明你正处在${cards[1].meaning.split('，')[0]}的关键节点。`
+      + `未来"${cards[2].name}"则指引着${cards[2].meaning.split('，')[0]}的方向。`
+      + `三张牌的流转揭示了一条清晰的因果脉络：过去的经历塑造了当下的选择，而当下的行动正铺就通向未来的道路。`;
+  }
+  // Premium 5-card reading
+  return `这是一次深度的五牌解读。现状"${cards[0].name}"揭示${cards[0].meaning.split('，')[0]}正是当下核心。`
+    + `挑战"${cards[1].name}"指出${cards[1].meaning.split('，')[0]}是必须面对的考验。`
+    + `过去"${cards[2].name}"表明${cards[2].meaning.split('，')[0]}如同一颗种子，早已埋下今日的局面。`
+    + `未来"${cards[3].name}"预示${cards[3].meaning.split('，')[0]}。`
+    + `建议"${cards[4].name}"则是宇宙给你的直接提示。`;
+});
+
+// Generate actionable advice
+const readingAdvice = computed(() => {
+  if (revealedCards.value.length === 0) return '';
+  const map = revealedCards.value.map(c => c.name);
+  const themes = revealedCards.value.map(c => c.meaning);
+
+  if (map.some(n => ['死神', '高塔', '倒吊人'].includes(n))) {
+    return '牌面中出现了变革之牌，当下的关键不在于奋力向前，而在于放下执着、接受变化。'
+      + '给自己一些安静的时间，审视内心真正的渴望，而非外界赋予的期望。'
+      + '改变虽然令人不安，却是通往更高阶段的必经之路。';
+  }
+  if (map.some(n => ['星星', '太阳', '世界'].includes(n))) {
+    return '星光照耀着你的道路，这是充满希望与活力的时期。'
+      + '大胆地迈出步伐，相信自己的直觉与能力。'
+      + '在行动中保持感恩之心，好运将不期而至。保持开放，迎接生命中的美好奇迹。';
+  }
+  if (map.some(n => ['恋人', '女皇', '女祭司'].includes(n))) {
+    return '人际关系与内在智慧是当下的焦点。倾听你内心的声音，它比你想象的更有智慧。'
+      + '在与他人互动中寻找平衡，既不失去自我，也不拒绝连接。'
+      + '慢下来，让每一次选择都源自真心而非焦虑。';
+  }
+  if (map.some(n => ['魔术师', '战车', '力量'].includes(n))) {
+    return '你拥有超乎想象的能力与资源。现在是集中精力、果敢行动的时刻。'
+      + '不要让恐惧阻挡你的脚步——你所需要的一切早已在你手中。'
+      + '以温柔而坚定的方式驾驭你的力量，胜利属于有耐心和勇气的灵魂。';
+  }
+  if (map.some(n => ['隐者', '正义', '节制'].includes(n))) {
+    return '向内探索比向外追寻更能带来答案。这段时间适合反思、学习与整合。'
+      + '做出每一个决定前先问自己：这符合我内心真正的价值观吗？'
+      + '耐心地调和生活中的矛盾面，中庸之道将指引你走向和谐。';
+  }
+  return '综合所有牌面的指引，建议你保持开放的心态，接纳不确定性。'
+    + '每一个变化都蕴含着成长的机会。相信过程，也相信自己的判断力。'
+    + '当下最重要的是：觉察自己的情绪，然后带着觉知做出每一个微小选择。';
+});
+
+// Key takeaway - a single memorable insight
+const keyTakeaway = computed(() => {
+  if (revealedCards.value.length === 0) return '';
+  const firstCard = revealedCards.value[0];
+  const lastCard = revealedCards.value[revealedCards.value.length - 1];
+  const insights = [
+    `"${firstCard.name}"提醒你：${firstCard.meaning.split('，')[0]}。`,
+    `命运的低语：从"${firstCard.name}"到"${lastCard.name}"，这是一段关于成长的旅程。`,
+    `所有的牌都指向同一个真理：答案不在牌中，而在你心中。`,
+    `深呼吸，此刻的你已经拥有了面对一切的力量。`,
+    `塔罗揭示的不是宿命，而是你内心深处早已知道的真相。`,
+    `"${lastCard.name}"是你的北极星——${lastCard.meaning.split('，')[0]}。`,
+  ];
+  // Pick based on a simple deterministic hash of card names
+  const hash = revealedCards.value.reduce((s, c) => s + c.name.length, 0);
+  return insights[hash % insights.length];
+});
 
 const majorArcana = [
   { name: '愚者', symbol: '🧭', meaning: '新的开始，冒险与无限可能', number: '0' },
@@ -311,5 +398,62 @@ function goHome() {
   font-size: 24rpx; color: #CCC; cursor: pointer;
 }
 
-.disclaimer { display: block; text-align: center; font-size: 20rpx; color: #555; padding: 32rpx 0; position: relative; z-index: 2; }
+/* ── Comprehensive Insight Box ── */
+.reading-insight-box,
+.reading-advice-box,
+.reading-key-box {
+  width: 100%;
+  max-width: 640rpx;
+  border-radius: 18rpx;
+  padding: 24rpx 22rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+.reading-insight-box {
+  background: linear-gradient(160deg,
+    rgba(40, 20, 80, 0.5) 0%,
+    rgba(25, 12, 60, 0.55) 100%
+  );
+  border: 1rpx solid rgba(180, 150, 220, 0.22);
+}
+.reading-advice-box {
+  background: linear-gradient(160deg,
+    rgba(25, 50, 40, 0.45) 0%,
+    rgba(15, 35, 28, 0.5) 100%
+  );
+  border: 1rpx solid rgba(140, 200, 170, 0.2);
+}
+.reading-key-box {
+  background: linear-gradient(160deg,
+    rgba(60, 30, 20, 0.45) 0%,
+    rgba(45, 20, 12, 0.5) 100%
+  );
+  border: 1rpx solid rgba(220, 170, 130, 0.25);
+  margin-bottom: 36rpx;
+}
+.insight-header,
+.advice-header,
+.key-header {
+  display: flex; align-items: center; gap: 8rpx; margin-bottom: 14rpx;
+}
+.insight-icon, .advice-icon, .key-icon { font-size: 28rpx; }
+.insight-title {
+  font-size: 26rpx; font-weight: bold;
+  color: #D0B8E8;
+}
+.advice-title {
+  font-size: 26rpx; font-weight: bold;
+  color: #90D0B0;
+}
+.key-title {
+  font-size: 26rpx; font-weight: bold;
+  color: #E8C090;
+}
+.insight-content, .advice-content, .key-content {
+  font-size: 22rpx; color: #B0A0C8;
+  line-height: 1.75;
+}
+.advice-content { color: #A0C0B0; }
+.key-content { color: #D0B0A0; font-weight: 500; }
 </style>

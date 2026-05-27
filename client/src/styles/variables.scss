@@ -1,4 +1,4 @@
-// 星空紫 + 浅金 主题色
+// 星空靛蓝 + 粉紫 主题色
 $color-primary: #6B5B9A;
 $color-primary-light: #8B7DBA;
 $color-primary-dark: #4A3D7A;
@@ -13,12 +13,40 @@ $nebula-cyan: #2EC4B6;
 $nebula-pink: #C44D8E;
 $nebula-deep: #1E0A3C;
 
+// 新背景渐变系统 (深靛蓝 → 粉紫)
+$bg-deep-indigo: #0B0B2E;
+$bg-navy: #151B4A;
+$bg-purple-mid: #2D1A50;
+$bg-pink-purple: #3D1E5C;
+$bg-mist-bottom: #2A1845;
+
 // 背景
 $bg-deep: #0a0a1a;
 $bg-dark: #0f0f2e;
 $bg-mid: #1a1a3e;
 $bg-card: rgba(255, 255, 255, 0.06);
 $bg-card-hover: rgba(255, 255, 255, 0.12);
+
+// 浅金色
+$pale-gold: #E8D5B0;
+$pale-gold-light: #F5ECD7;
+$pale-gold-glow: rgba(232, 213, 176, 0.35);
+
+// 淡紫光
+$lavender-glow: rgba(180, 160, 220, 0.4);
+$pink-glow: rgba(210, 140, 180, 0.35);
+
+// 卡牌双色调
+// 冷调 (蓝紫)
+$card-cool-from: #1A1A4E;
+$card-cool-to: #3B2F7A;
+$card-cool-border: rgba(140, 160, 220, 0.45);
+$card-cool-glow: rgba(100, 130, 220, 0.3);
+// 暖调 (粉紫)
+$card-warm-from: #2E1648;
+$card-warm-to: #5C2D7A;
+$card-warm-border: rgba(210, 140, 190, 0.45);
+$card-warm-glow: rgba(200, 120, 170, 0.3);
 
 // 磨砂玻璃
 $glass-bg: rgba(255, 255, 255, 0.04);

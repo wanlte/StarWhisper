@@ -1,6 +1,5 @@
 <template>
   <view class="carousel">
-    <!-- Arc track -->
     <view
       class="carousel-track"
       @touchstart="onTouchStart"
@@ -10,67 +9,28 @@
       <view
         v-for="(z, i) in zodiacs"
         :key="z.id"
-        class="carousel-card glass-card"
+        class="carousel-card"
         :class="[
-          elementClass(z.element),
+          cardTheme(i),
           {
             'is-center': isCenter(i),
             'is-selected': selectMode && firstPickIdx === i,
-            'is-dimming': selectMode && firstPickIdx !== null && firstPickIdx !== i && !isCenter(i)
+            'is-dimming': selectMode && firstPickIdx !== null && firstPickIdx !== i,
+            'is-hidden': !isVisible(i)
           }
         ]"
         :style="cardStyle(i)"
-        @click.stop="handleTap(z, i)"
+        :data-index="i"
+        @click="onCardTap"
       >
-        <!-- Star pattern background -->
-        <view class="card-stars">
-          <view v-for="n in 8" :key="n" class="card-star-dot"
-            :style="{
-              left: (15 + Math.random() * 70) + '%',
-              top: (10 + Math.random() * 80) + '%',
-              opacity: 0.15 + Math.random() * 0.3,
-              animationDelay: Math.random() * 2 + 's'
-            }"
-          />
-        </view>
-        <!-- Directional light -->
-        <view class="card-highlight" />
-        <!-- Card border glow layer -->
+        <view class="card-glass-surface" />
         <view class="card-glow-ring" />
-        <!-- Content -->
+        <view class="card-top-highlight" />
         <text class="card-emoji">{{ z.emoji }}</text>
         <text class="card-name">{{ z.name }}</text>
-        <text class="card-en">{{ z.nameEn }}</text>
-        <text v-if="isCenter(i)" class="card-element">{{ z.element }} · {{ z.rulingPlanet }}</text>
-        <!-- Selected badge -->
         <view v-if="selectMode && firstPickIdx === i" class="selected-badge">
           <text>已选</text>
         </view>
-      </view>
-    </view>
-
-    <!-- Dot indicators -->
-    <view class="carousel-dots">
-      <view
-        v-for="(z, i) in zodiacs" :key="'dot-'+z.id"
-        class="dot" :class="{ active: centerIndex === i }"
-        @click.stop="snapTo(i)"
-      />
-    </view>
-
-    <!-- Mode toggle -->
-    <view class="carousel-tools">
-      <view
-        v-if="!selectMode"
-        class="mode-toggle glass-card-interactive"
-        @click.stop="$emit('toggleSelectMode')"
-      >
-        <text class="toggle-icon">🔮</text>
-        <text class="toggle-text">双选配对</text>
-      </view>
-      <view v-else class="mode-toggle mode-toggle--active" @click.stop="$emit('toggleSelectMode')">
-        <text class="toggle-icon">✕</text>
-        <text class="toggle-text">取消配对</text>
       </view>
     </view>
   </view>
@@ -84,63 +44,90 @@ const props = defineProps({
   selectMode: { type: Boolean, default: false }
 });
 
-const emit = defineEmits([
-  'select', 'selectFirst', 'selectSecond', 'toggleSelectMode'
-]);
+const emit = defineEmits(['select', 'selectFirst', 'selectSecond']);
 
 const centerIndex = ref(0);
 const dragOffset = ref(0);
 const firstPickIdx = ref(null);
 const isDragging = ref(false);
 let touchStartX = 0;
-let touchStartCenter = 0;
 
 const TOTAL = computed(() => props.zodiacs.length);
-const STEP_ANGLE = 22;
+const stepAngle = computed(() => TOTAL.value > 0 ? 360 / TOTAL.value : 30);
+const FAN_HALF = 75;
 
 function toRad(deg) { return deg * Math.PI / 180; }
 
-// Map element to color class
-function elementClass(element) {
-  if (!element) return 'card--fire';
-  if (element === '火象' || element === '风象') return 'card--fire';
-  return 'card--water';
+function cardTheme(i) {
+  return i % 2 === 0 ? 'card--cool' : 'card--warm';
+}
+
+function angleDiff(i) {
+  if (TOTAL.value === 0) return 0;
+  const center = centerIndex.value + dragOffset.value;
+  let diff = i - center;
+  diff = ((diff % TOTAL.value) + TOTAL.value) % TOTAL.value;
+  if (diff > TOTAL.value / 2) diff -= TOTAL.value;
+  return diff;
+}
+
+function isVisible(i) {
+  if (TOTAL.value === 0) return false;
+  const diff = angleDiff(i);
+  return Math.abs(diff * stepAngle.value) <= FAN_HALF + 5;
+}
+
+function isCenter(i) {
+  if (TOTAL.value === 0) return false;
+  return Math.abs(angleDiff(i)) < 0.55;
 }
 
 function cardStyle(i) {
-  const center = centerIndex.value;
-  const offset = dragOffset.value;
-  const effIdx = i - (center + offset);
-  const angleDeg = effIdx * STEP_ANGLE;
+  if (TOTAL.value === 0) return { display: 'none' };
+
+  const diff = angleDiff(i);
+  const angleDeg = diff * stepAngle.value;
+  const absAngle = Math.abs(angleDeg);
+
+  if (absAngle > FAN_HALF + 5) {
+    return { display: 'none' };
+  }
+
   const angleRad = toRad(angleDeg);
   const cosVal = Math.cos(angleRad);
   const sinVal = Math.sin(angleRad);
 
-  const arcRadius = 380;
-  const xOffset = sinVal * arcRadius;
-  const yOffset = (1 - Math.abs(cosVal)) * 60;
-  const scale = 0.52 + 0.48 * Math.abs(cosVal);
-  const opacity = 0.25 + 0.75 * Math.abs(cosVal);
-  const zIdx = Math.round(10 + cosVal * 9);
-  const rotY = angleDeg * 0.3;
-  const isHidden = Math.abs(angleDeg) > 105;
+  // Full-width ellipse for centered vertical layout
+  const cx = 250;
+  const cy = 260;
+  const a = 240;
+  const b = 210;
+
+  const x = cx + a * cosVal;
+  const y = cy + b * sinVal;
+
+  const dist = Math.min(absAngle / FAN_HALF, 1);
+  const scale = 1.0 - 0.48 * dist * dist;
+  const opacity = 1.0 - 0.6 * dist * dist;
+  const tilt = sinVal * 12 * (1 - dist * 0.6);
+  const zIdx = Math.round(18 - 16 * dist);
 
   return {
-    transform: `translateX(${xOffset}rpx) translateY(${yOffset}rpx) scale(${scale}) rotateY(${rotY}deg)`,
-    opacity: isHidden ? 0 : opacity,
-    zIndex: isHidden ? 0 : zIdx,
-    pointerEvents: isHidden ? 'none' : 'auto',
-    transition: isDragging.value ? 'none' : 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.35s ease-out'
+    left: x + 'rpx',
+    top: y + 'rpx',
+    transform: `translate(-50%, -50%) scale(${scale}) rotateZ(${tilt}deg)`,
+    opacity: opacity,
+    zIndex: zIdx,
+    transition: isDragging.value
+      ? 'none'
+      : 'left 0.55s cubic-bezier(0.25, 0.1, 0.25, 1), top 0.55s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.55s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.35s ease-out'
   };
 }
 
-function isCenter(i) {
-  return Math.abs(i - centerIndex.value - dragOffset.value) < 0.6;
-}
+// ── Touch ──
 
 function onTouchStart(e) {
   touchStartX = e.touches[0].clientX;
-  touchStartCenter = centerIndex.value;
   isDragging.value = true;
   dragOffset.value = 0;
 }
@@ -148,28 +135,24 @@ function onTouchStart(e) {
 function onTouchMove(e) {
   if (!isDragging.value) return;
   const dx = e.touches[0].clientX - touchStartX;
-  dragOffset.value = -(dx / 80);
+  dragOffset.value = dx / 60;
 }
 
 function onTouchEnd() {
   isDragging.value = false;
+  if (TOTAL.value === 0) return;
   const total = centerIndex.value + dragOffset.value;
   centerIndex.value = Math.round(total);
-  if (centerIndex.value < 0) centerIndex.value = TOTAL.value - 1;
-  if (centerIndex.value >= TOTAL.value) centerIndex.value = 0;
+  centerIndex.value = ((centerIndex.value % TOTAL.value) + TOTAL.value) % TOTAL.value;
   dragOffset.value = 0;
 }
 
-function snapTo(i) {
-  centerIndex.value = i;
-  dragOffset.value = 0;
-}
+// ── Tap ──
 
-function handleTap(z, i) {
-  if (!isCenter(i)) {
-    snapTo(i);
-    return;
-  }
+function onCardTap(e) {
+  const i = e.currentTarget.dataset.index;
+  if (i === undefined || !props.zodiacs[i]) return;
+  const z = props.zodiacs[i];
   if (props.selectMode) {
     if (firstPickIdx.value === null) {
       firstPickIdx.value = i;
@@ -192,188 +175,220 @@ watch(() => props.selectMode, (v) => {
 
 <style lang="scss" scoped>
 .carousel {
-  position: relative; z-index: 2;
-  padding-top: 20rpx; padding-bottom: 16rpx;
+  width: 750rpx;
+  max-width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .carousel-track {
-  position: relative; height: 480rpx;
-  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  width: 750rpx;
+  max-width: 100%;
+  height: 580rpx;
   overflow: hidden;
 }
 
+/* ── Card base ── */
 .carousel-card {
   position: absolute;
-  width: 160rpx; min-height: 240rpx;
-  display: flex; flex-direction: column; align-items: center;
-  padding: 28rpx 16rpx 24rpx;
-  will-change: transform, opacity;
+  top: 0;
+  left: 0;
+  width: 130rpx;
+  min-height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18rpx 6rpx 14rpx;
+  border-radius: 20rpx;
   cursor: pointer;
   overflow: hidden;
+  background: linear-gradient(160deg,
+    rgba(75, 40, 120, 0.48) 0%,
+    rgba(45, 20, 80, 0.52) 50%,
+    rgba(60, 30, 100, 0.44) 100%
+  );
+  border: 1.2rpx solid rgba(180, 150, 220, 0.28);
+  box-shadow:
+    0 0 8rpx rgba(160, 130, 210, 0.12),
+    0 4rpx 20rpx rgba(0, 0, 0, 0.35);
 }
 
-/* Card star pattern */
-.card-stars {
-  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+.carousel-card.is-hidden {
+  display: none;
 }
-.card-star-dot {
+
+/* Inner glass surface */
+.card-glass-surface {
   position: absolute;
-  width: 3rpx; height: 3rpx;
-  background: #FFF; border-radius: 50%;
-  animation: card-star-twinkle 2.5s ease-in-out infinite alternate;
-}
-
-/* Element color variants */
-.carousel-card.card--fire {
-  border-color: rgba(196, 77, 142, 0.35);
-  .card-glow-ring {
-    background: linear-gradient(135deg,
-      rgba(196, 77, 142, 0.2) 0%,
-      rgba(123, 47, 190, 0.15) 50%,
-      rgba(196, 77, 142, 0.1) 100%
-    );
-  }
-}
-.carousel-card.card--water {
-  border-color: rgba(59, 95, 217, 0.35);
-  .card-glow-ring {
-    background: linear-gradient(135deg,
-      rgba(46, 196, 182, 0.2) 0%,
-      rgba(59, 95, 217, 0.15) 50%,
-      rgba(46, 196, 182, 0.1) 100%
-    );
-  }
-}
-
-/* Center card */
-.carousel-card.is-center {
-  width: 200rpx;
-  border-color: rgba(212, 165, 116, 0.5) !important;
-  box-shadow:
-    0 0 2rpx rgba(255,255,255,0.3),
-    0 0 30rpx rgba(212, 165, 116, 0.2),
-    0 8rpx 40rpx rgba(0,0,0,0.4) !important;
-  .card-glow-ring { opacity: 1; }
-}
-
-.carousel-card.is-center.card--fire {
-  border-color: rgba(255, 180, 200, 0.55) !important;
-  box-shadow:
-    0 0 2rpx rgba(255,255,255,0.4),
-    0 0 30rpx rgba(196, 77, 142, 0.3),
-    0 0 50rpx rgba(123, 47, 190, 0.2),
-    0 8rpx 40rpx rgba(0,0,0,0.4) !important;
-}
-
-.carousel-card.is-center.card--water {
-  border-color: rgba(150, 210, 255, 0.55) !important;
-  box-shadow:
-    0 0 2rpx rgba(255,255,255,0.4),
-    0 0 30rpx rgba(59, 95, 217, 0.3),
-    0 0 50rpx rgba(46, 196, 182, 0.2),
-    0 8rpx 40rpx rgba(0,0,0,0.4) !important;
-}
-
-.carousel-card.is-selected {
-  border-color: rgba(212, 165, 116, 0.8) !important;
-  box-shadow:
-    0 0 4rpx rgba(255,255,255,0.4),
-    0 0 40rpx rgba(212, 165, 116, 0.45),
-    0 0 70rpx rgba(212, 165, 116, 0.15),
-    0 8rpx 40rpx rgba(0,0,0,0.4) !important;
-}
-
-.carousel-card.is-dimming { opacity: 0.2 !important; }
-
-.card-glow-ring {
-  position: absolute; inset: 4rpx;
-  border-radius: 20rpx; opacity: 0.4;
-  pointer-events: none; z-index: 0;
-  transition: opacity 0.3s;
-}
-
-.card-highlight {
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 70%;
-  border-radius: 24rpx 24rpx 50% 50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
   background: linear-gradient(180deg,
-    rgba(255,255,255,0.08) 0%,
-    rgba(255,255,255,0.03) 40%,
+    rgba(255, 255, 255, 0.04) 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  border-radius: 22rpx;
+}
+
+/* Top highlight line */
+.card-top-highlight {
+  position: absolute;
+  top: 1rpx;
+  left: 14rpx;
+  right: 14rpx;
+  height: 1rpx;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 30%,
+    rgba(255, 255, 255, 0.08) 70%,
     transparent 100%
   );
-  pointer-events: none; z-index: 2;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 1rpx;
 }
 
-.card-emoji { font-size: 56rpx; margin-bottom: 8rpx; position: relative; z-index: 1; }
-.is-center .card-emoji { font-size: 68rpx; }
+/* Cool theme */
+.card--cool {
+  border-color: rgba(150, 160, 225, 0.32);
+  background: linear-gradient(160deg,
+    rgba(35, 25, 90, 0.5) 0%,
+    rgba(25, 18, 70, 0.54) 50%,
+    rgba(40, 28, 85, 0.46) 100%
+  );
+}
+
+/* Warm theme */
+.card--warm {
+  border-color: rgba(215, 145, 195, 0.32);
+  background: linear-gradient(160deg,
+    rgba(65, 25, 80, 0.5) 0%,
+    rgba(45, 18, 60, 0.54) 50%,
+    rgba(55, 22, 72, 0.46) 100%
+  );
+}
+
+/* Glow ring */
+.card-glow-ring {
+  position: absolute;
+  top: 2rpx;
+  right: 2rpx;
+  bottom: 2rpx;
+  left: 2rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(200, 180, 230, 0.08);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Center card ── */
+.carousel-card.is-center {
+  width: 160rpx;
+  min-height: 210rpx;
+  border-color: rgba(220, 195, 240, 0.55);
+  background: linear-gradient(160deg,
+    rgba(90, 50, 140, 0.55) 0%,
+    rgba(55, 25, 95, 0.58) 50%,
+    rgba(70, 38, 115, 0.5) 100%
+  );
+  box-shadow:
+    0 0 3rpx rgba(255, 255, 255, 0.35),
+    0 0 24rpx rgba(170, 140, 215, 0.30),
+    0 0 48rpx rgba(140, 110, 200, 0.14),
+    0 6rpx 32rpx rgba(0, 0, 0, 0.42);
+}
+
+.carousel-card.is-center .card-glow-ring {
+  border-color: rgba(220, 200, 240, 0.18);
+}
+
+.carousel-card.is-center .card-top-highlight {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 25%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 100%
+  );
+}
+
+.carousel-card.is-center.card--cool {
+  border-color: rgba(180, 200, 255, 0.55);
+  box-shadow:
+    0 0 4rpx rgba(255, 255, 255, 0.4),
+    0 0 28rpx rgba(110, 150, 225, 0.32),
+    0 0 50rpx rgba(90, 120, 210, 0.14),
+    0 6rpx 32rpx rgba(0, 0, 0, 0.42);
+}
+
+.carousel-card.is-center.card--warm {
+  border-color: rgba(240, 180, 215, 0.55);
+  box-shadow:
+    0 0 4rpx rgba(255, 255, 255, 0.4),
+    0 0 28rpx rgba(210, 130, 180, 0.32),
+    0 0 50rpx rgba(190, 110, 160, 0.14),
+    0 6rpx 32rpx rgba(0, 0, 0, 0.42);
+}
+
+/* ── Selection states ── */
+.carousel-card.is-selected {
+  border-color: rgba(232, 213, 176, 0.75) !important;
+  box-shadow:
+    0 0 4rpx rgba(255, 255, 255, 0.45),
+    0 0 32rpx rgba(232, 213, 176, 0.4),
+    0 0 55rpx rgba(212, 165, 116, 0.14),
+    0 6rpx 30rpx rgba(0, 0, 0, 0.4) !important;
+}
+
+.carousel-card.is-dimming {
+  opacity: 0.22 !important;
+}
+
+/* ── Content ── */
+.card-emoji {
+  font-size: 52rpx;
+  margin-bottom: 6rpx;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 12rpx rgba(255, 255, 255, 0.22);
+}
+
+.is-center .card-emoji {
+  font-size: 64rpx;
+  text-shadow: 0 0 18rpx rgba(255, 255, 255, 0.35);
+}
 
 .card-name {
-  font-size: 22rpx; color: #EEE; font-weight: bold;
-  position: relative; z-index: 1; margin-bottom: 4rpx;
+  font-size: 20rpx;
+  color: #DDD;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.4);
 }
+
 .is-center .card-name {
-  font-size: 26rpx;
-  background: linear-gradient(180deg, #FFE0C0, #F0C99A, #D4A574);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  font-size: 24rpx;
+  background: linear-gradient(180deg, #FFE8D0, #E0D0B8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.card-en { font-size: 16rpx; color: #888; position: relative; z-index: 1; }
-.is-center .card-en { font-size: 18rpx; color: #AAA; }
-
-.card-element {
-  font-size: 18rpx; color: #C0B0D8; margin-top: 6rpx;
-  position: relative; z-index: 1;
-  background: rgba(139, 125, 186, 0.15);
-  padding: 2rpx 16rpx; border-radius: 16rpx;
-}
-
+/* ── Selected badge ── */
 .selected-badge {
-  position: absolute; top: 10rpx; right: 10rpx;
-  background: linear-gradient(135deg, #D4A574, #F0C99A);
-  border-radius: 16rpx; padding: 4rpx 14rpx;
-  font-size: 18rpx; color: #1a1a2e; font-weight: bold; z-index: 5;
-}
-
-/* Dots */
-.carousel-dots {
-  display: flex; justify-content: center; gap: 12rpx;
-  padding: 24rpx 0 8rpx;
-}
-.dot {
-  width: 10rpx; height: 10rpx; border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  transition: all 0.3s; cursor: pointer;
-}
-.dot.active {
-  background: #D4A574;
-  box-shadow: 0 0 10rpx rgba(212,165,116,0.5);
-  width: 24rpx; border-radius: 10rpx;
-}
-
-/* Mode toggle */
-.carousel-tools {
-  display: flex; justify-content: center; padding: 8rpx 0 16rpx;
-}
-.mode-toggle {
-  display: flex; align-items: center; gap: 8rpx;
-  padding: 16rpx 36rpx; border-radius: 40rpx;
-  background: rgba(255,255,255,0.04);
-  border: 1rpx solid rgba(255,255,255,0.1);
-  transition: all 0.2s; cursor: pointer;
-}
-.mode-toggle:active {
-  background: rgba(212,165,116,0.12);
-  border-color: rgba(212,165,116,0.3);
-}
-.mode-toggle--active {
-  background: rgba(212,165,116,0.12);
-  border-color: rgba(212,165,116,0.35);
-}
-.toggle-icon { font-size: 32rpx; }
-.toggle-text { font-size: 24rpx; color: #CCC; }
-
-@keyframes card-star-twinkle {
-  0% { opacity: 0.1; }
-  100% { opacity: 0.5; }
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+  background: linear-gradient(135deg, #E8D5B0, #C8A882);
+  border-radius: 14rpx;
+  padding: 2rpx 12rpx;
+  font-size: 16rpx;
+  color: #1a1a2e;
+  font-weight: bold;
+  z-index: 5;
 }
 </style>

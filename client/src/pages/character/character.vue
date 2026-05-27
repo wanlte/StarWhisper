@@ -62,10 +62,11 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
+import { onShow } from '@dcloudio/uni-app';
 import StarryBackground from '@/components/StarryBackground.vue';
 import LoadingWrapper from '@/components/LoadingWrapper.vue';
 import { getZodiacList } from '@/api/zodiac';
-import { matchCharacter } from '@/api/character';
+import { matchCharacter, getQuestions } from '@/api/character';
 
 const step = ref(1);
 const selectedZodiac = ref('');
@@ -80,69 +81,21 @@ onMounted(async () => {
   try {
     zodiacList.value = await getZodiacList();
   } catch (e) {}
-  // Load quiz questions from API or local
-  questions.value = [
-    { text: '周末你最想怎么过？', options: [
-      { key: 'A', text: '户外冒险，去没去过的地方' },
-      { key: 'B', text: '安静看本书或研究感兴趣的东西' },
-      { key: 'C', text: '约朋友聚会或参加活动' },
-      { key: 'D', text: '在家舒服地待着，享受独处时光' }
-    ]},
-    { text: '遇到困难你通常会？', options: [
-      { key: 'A', text: '直接冲，干就完了' },
-      { key: 'B', text: '冷静分析各种可能的方案' },
-      { key: 'C', text: '找朋友或同事商量' },
-      { key: 'D', text: '等等看，时机到了自然能解决' }
-    ]},
-    { text: '你更喜欢哪种颜色？', options: [
-      { key: 'A', text: '热烈的红色或橙色' },
-      { key: 'B', text: '深邃的蓝色或紫色' },
-      { key: 'C', text: '温暖的黄色或粉色' },
-      { key: 'D', text: '沉稳的绿色或灰色' }
-    ]},
-    { text: '哪种描述最像你？', options: [
-      { key: 'A', text: '行动派——想到就做' },
-      { key: 'B', text: '思考者——喜欢分析和深入理解' },
-      { key: 'C', text: '社交达人——和人相处让我充电' },
-      { key: 'D', text: '倾听者——安静陪伴也是一种力量' }
-    ]},
-    { text: '你最看重什么？', options: [
-      { key: 'A', text: '自由——不被束缚做想做的事' },
-      { key: 'B', text: '成就——实现目标获得认可' },
-      { key: 'C', text: '关系——和家人朋友的紧密连接' },
-      { key: 'D', text: '安全——稳定的生活和内心安宁' }
-    ]},
-    { text: '你理想中的一天？', options: [
-      { key: 'A', text: '充满刺激和惊喜' },
-      { key: 'B', text: '学到新东西，有收获感' },
-      { key: 'C', text: '被朋友需要，和大家在一起' },
-      { key: 'D', text: '平静舒适，没有压力' }
-    ]},
-    { text: '面对刚认识的人，你通常会？', options: [
-      { key: 'A', text: '主动介绍自己，打开话匣子' },
-      { key: 'B', text: '先观察对方，判断该怎么沟通' },
-      { key: 'C', text: '找共同话题，迅速拉近距离' },
-      { key: 'D', text: '微笑回应，保持舒适的距离' }
-    ]},
-    { text: '哪种工作环境最适合你？', options: [
-      { key: 'A', text: '快节奏、结果导向，每天不一样' },
-      { key: 'B', text: '安静独立的空间，深度钻研' },
-      { key: 'C', text: '团队紧密协作、氛围活跃' },
-      { key: 'D', text: '稳定有序、压力可控的节奏' }
-    ]},
-    { text: '面对重要决定时，你更相信？', options: [
-      { key: 'A', text: '直觉——第一感觉往往是对的' },
-      { key: 'B', text: '数据——充分分析和推演再决定' },
-      { key: 'C', text: '朋友——听听身边人的看法' },
-      { key: 'D', text: '时间——让子弹飞一会儿' }
-    ]},
-    { text: '哪种情况会让你最不安？', options: [
-      { key: 'A', text: '被限制自由，不能随心所欲' },
-      { key: 'B', text: '在不了解的领域被迫做决定' },
-      { key: 'C', text: '长时间没有社交和互动' },
-      { key: 'D', text: '计划被打乱，充满不确定性' }
-    ]}
-  ];
+  // Fetch 10 random questions from cloud function
+  try {
+    questions.value = await getQuestions();
+    answers.value = new Array(questions.value.length).fill(null);
+  } catch (e) {
+    // Fallback to empty, user will see error
+  }
+});
+
+onShow(() => {
+  if (step.value === 3) {
+    step.value = 1;
+    currentQ.value = 0;
+    answers.value = [];
+  }
 });
 
 function startQuiz() {
@@ -157,7 +110,11 @@ function selectOption(key) {
 async function submitQuiz() {
   step.value = 3;
   try {
-    const result = await matchCharacter(selectedZodiac.value, answers.value);
+    const answerObjs = answers.value.map((key, i) => ({
+      questionId: questions.value[i].id,
+      key
+    }));
+    const result = await matchCharacter(selectedZodiac.value, answerObjs);
     const data = encodeURIComponent(JSON.stringify(result));
     uni.navigateTo({ url: '/pages/result/result?data=' + data });
   } catch (e) {

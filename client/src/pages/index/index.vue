@@ -4,49 +4,61 @@
 
     <!-- Header -->
     <view class="header content-layer">
-      <text class="header-icon">🔮</text>
-      <text class="header-title glow-text">星语小馆</text>
-      <text class="header-sub">探索你的星座故事</text>
+      <view class="header-star header-star--top">
+        <view class="hs-h" />
+        <view class="hs-v" />
+      </view>
+      <text class="header-title">星座匹配·塔罗占卜</text>
+      <view class="header-star header-star--bottom">
+        <view class="hs-h" />
+        <view class="hs-v" />
+      </view>
     </view>
 
-    <!-- Constellation Carousel -->
-    <LoadingWrapper :loading="loading" text="星辰正在排列...">
-      <view class="hero-section content-layer">
-        <text class="section-hint">点击中央卡片查看详情</text>
+    <!-- Constellation carousel — main centerpiece -->
+    <view class="carousel-section content-layer">
+      <LoadingWrapper :loading="loading" text="星辰正在排列...">
         <ConstellationCarousel
           :zodiacs="zodiacList"
           :selectMode="selectMode"
           @select="goDetail"
           @select-first="onSelectFirst"
           @select-second="onSelectSecond"
-          @toggle-select-mode="toggleSelectMode"
         />
-      </view>
-    </LoadingWrapper>
+      </LoadingWrapper>
+    </view>
 
-    <!-- Tarot Entry Module -->
-    <view class="secondary-section content-layer">
+    <!-- Pairing button — below carousel -->
+    <view class="pairing-row content-layer">
+      <view
+        class="pairing-tag"
+        :class="{ 'pairing-tag--active': selectMode }"
+        @click="toggleSelectMode"
+      >
+        <text class="pairing-tag-text">{{ selectMode ? '取消配对' : '双生配对' }}</text>
+      </view>
+    </view>
+
+    <!-- Tarot panel — compact, above action strip -->
+    <view class="tarot-row content-layer">
       <TarotEntry @draw="onTarotDraw" />
     </view>
 
-    <!-- Action Strip -->
+    <!-- Action strip -->
     <view class="action-strip content-layer">
-      <view class="action-item glass-card-interactive" @click="goMatch">
-        <text class="action-emoji">💑</text>
+      <view class="action-item" @click="goMatch">
+        <text class="action-icon">💑</text>
         <text class="action-label">星座配对</text>
       </view>
-      <view class="action-item glass-card-interactive" @click="goCharacter">
-        <text class="action-emoji">🎭</text>
+      <view class="action-item" @click="goCharacter">
+        <text class="action-icon">🎭</text>
         <text class="action-label">角色匹配</text>
       </view>
-      <view class="action-item glass-card-interactive" @click="goMypage">
-        <text class="action-emoji">👤</text>
+      <view class="action-item" @click="goMypage">
+        <text class="action-icon">👤</text>
         <text class="action-label">个人中心</text>
       </view>
     </view>
-
-    <!-- Disclaimer -->
-    <text class="disclaimer content-layer">仅供娱乐 · 不涉及迷信内容</text>
   </view>
 </template>
 
@@ -115,83 +127,142 @@ const goMypage = () => {
 
 <style lang="scss" scoped>
 .page-index {
-  padding-bottom: 120rpx + env(safe-area-inset-bottom);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Header */
+/* ── Header ── */
 .header {
-  padding: 100rpx 40rpx 32rpx;
-  text-align: center;
-}
-.header-icon {
-  font-size: 48rpx;
-  display: block;
-  margin-bottom: 8rpx;
-  animation: floatY 4s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+  padding: 60rpx 32rpx 10rpx;
+  flex-shrink: 0;
 }
 .header-title {
-  display: block;
-  font-size: 56rpx;
+  font-size: 34rpx;
   font-weight: bold;
-  background: linear-gradient(180deg, #F0C99A 0%, #D4A574 40%, #B8865A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 8rpx;
+  color: #FFFFFF;
+  text-shadow:
+    0 0 14rpx rgba(255, 255, 255, 0.35),
+    0 0 30rpx rgba(220, 200, 255, 0.2),
+    0 0 55rpx rgba(180, 160, 230, 0.1);
+  letter-spacing: 3rpx;
 }
-.header-sub {
-  display: block;
-  font-size: 26rpx;
-  color: #8888AA;
+.header-star {
+  position: relative;
+  width: 16rpx; height: 16rpx;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hs-h, .hs-v {
+  position: absolute;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.7) 30%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.7) 70%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 3rpx rgba(255, 255, 255, 0.6),
+    0 0 7rpx rgba(220, 200, 255, 0.3);
+  border-radius: 1rpx;
+}
+.hs-h { width: 20rpx; height: 1.5rpx; }
+.hs-v { width: 1.5rpx; height: 20rpx; }
+
+/* ── Carousel section — main visual centerpiece ── */
+.carousel-section {
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 600rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Hero */
-.hero-section {
-  padding: 0 0 16rpx;
+/* ── Pairing button ── */
+.pairing-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4rpx 32rpx 6rpx;
+  flex-shrink: 0;
 }
-.section-hint {
-  display: block;
-  text-align: center;
+.pairing-tag {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 32rpx;
+  border-radius: 28rpx;
+  background: rgba(120, 70, 160, 0.25);
+  border: 1rpx solid rgba(170, 130, 210, 0.25);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.pairing-tag:active {
+  background: rgba(160, 110, 210, 0.3);
+  border-color: rgba(190, 150, 225, 0.4);
+}
+.pairing-tag--active {
+  background: rgba(200, 140, 180, 0.25);
+  border-color: rgba(210, 150, 190, 0.4);
+}
+.pairing-tag-text {
   font-size: 22rpx;
-  color: #666688;
-  margin-bottom: 8rpx;
+  color: #D0C0E8;
+  letter-spacing: 1rpx;
 }
 
-/* Action Strip */
+/* ── Tarot row — compact, near bottom ── */
+.tarot-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 6rpx 32rpx 8rpx;
+  flex-shrink: 0;
+}
+
+/* ── Action strip ── */
 .action-strip {
   display: flex;
   justify-content: center;
-  gap: 20rpx;
-  padding: 24rpx 32rpx;
+  gap: 12rpx;
+  padding: 6rpx 32rpx 14rpx;
+  flex-shrink: 0;
 }
 .action-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8rpx;
-  padding: 22rpx 32rpx;
-  min-width: 160rpx;
-  border-radius: 20rpx;
+  gap: 2rpx;
+  padding: 10rpx 16rpx;
+  min-width: 110rpx;
+  border-radius: 16rpx;
+  background: rgba(40, 20, 70, 0.45);
+  border: 1rpx solid rgba(180, 160, 220, 0.15);
   cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    inset 0 1rpx 0 rgba(255, 255, 255, 0.04),
+    0 2rpx 12rpx rgba(0, 0, 0, 0.2);
 }
-.action-emoji {
-  font-size: 40rpx;
+.action-item:active {
+  background: rgba(100, 60, 150, 0.45);
+  border-color: rgba(200, 170, 230, 0.3);
+  transform: scale(0.96);
 }
+.action-icon { font-size: 28rpx; }
 .action-label {
-  font-size: 22rpx;
-  color: #BBB;
-}
-
-/* Disclaimer */
-.disclaimer {
-  display: block;
-  text-align: center;
-  font-size: 20rpx;
-  color: #555;
-  padding: 24rpx 0 32rpx;
-}
-
-@keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10rpx); }
+  font-size: 18rpx;
+  color: #C0B0D8;
 }
 </style>

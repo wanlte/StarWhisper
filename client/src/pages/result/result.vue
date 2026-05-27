@@ -6,7 +6,9 @@
       <template v-if="character">
         <!-- Character Reveal -->
         <view class="reveal content-layer fade-in">
-          <text class="reveal-emoji">{{ character.emoji }}</text>
+          <view class="portrait-wrap">
+            <CharacterPortrait :character="character" />
+          </view>
           <text class="reveal-name glow-text">{{ character.name }}</text>
           <text class="reveal-tagline">「{{ character.tagline }}」</text>
         </view>
@@ -50,6 +52,7 @@ import { ref, onMounted } from 'vue';
 import StarryBackground from '@/components/StarryBackground.vue';
 import ParticleEffect from '@/components/ParticleEffect.vue';
 import LoadingWrapper from '@/components/LoadingWrapper.vue';
+import CharacterPortrait from '@/components/CharacterPortrait.vue';
 import { addHistory } from '@/utils/storage';
 
 const character = ref(null);
@@ -74,7 +77,7 @@ onMounted(() => {
 });
 
 const retry = () => {
-  uni.navigateBack();
+  uni.switchTab({ url: '/pages/character/character' });
 };
 
 const share = () => {
@@ -92,8 +95,11 @@ const share = () => {
 .page-result {
   padding: 0 32rpx 120rpx;
 }
-.reveal { text-align: center; padding: 80rpx 0 40rpx; }
-.reveal-emoji { font-size: 120rpx; display: block; margin-bottom: 20rpx; animation: floatY 4s ease-in-out infinite; }
+.reveal { text-align: center; padding: 60rpx 0 40rpx; }
+.portrait-wrap {
+  display: flex; justify-content: center; margin-bottom: 24rpx;
+  animation: floatY 4s ease-in-out infinite;
+}
 .reveal-name {
   font-size: 48rpx; font-weight: bold;
   background: linear-gradient(180deg, #F0C99A, #D4A574, #B8865A);

@@ -318,5 +318,165 @@
     },
     "visualTag": "十指是银针、绣出的图案悬浮空中、指尖缠绕彩色记忆丝线",
     "visualPrompt": "memory embroiderer, fingers tipped with silver needles, embroidered memory tapestries floating in air, colored threads of recollection trailing from fingertips, textile surrealism"
+  },
+  {
+    "id": 21,
+    "name": "时钟心脏",
+    "emoji": "⏱️",
+    "concept": "心脏是一个精密的老式座钟，滴答声是你的心跳。发条旋钮在后背心，每转一圈就多活一天，但指针永远指向同一分钟",
+    "tagline": "我困在了你最美好的那一分钟里",
+    "zodiacAffinity": ["摩羯座", "处女座", "金牛座"],
+    "attributes": { "adventure": 0.1, "thought": 0.8, "social": 0.3, "rest": 0.7 },
+    "personality": {
+      "resonance": "你是一个时间的收藏家——喜欢把美好瞬间反复回味，把珍贵的记忆珍藏心底。你的专注力很强，一旦沉浸在一件事里就会忘了时间。",
+      "shadow": "太执着于某个过去的瞬间，偶尔会错过眼前的风景。",
+      "advice": "不是所有指针都要停在最美好的那一分钟。勇敢地上紧发条，下一个美好时刻正在等你。"
+    },
+    "visualTag": "胸腔里可见座钟心脏、后背发条旋钮、指针停留在特殊时刻",
+    "visualPrompt": "clock-heart human, antique mantel clock beating in chest cavity, winding key protruding from back, clock hands frozen at a significant moment, mechanical anatomy surrealism"
+  },
+  {
+    "id": 22,
+    "name": "雾隐客",
+    "emoji": "🌫️",
+    "concept": "身体由不散的白雾构成，只有情绪稳定时才勉强凝聚成人类的轮廓。一生气就扩散成整间房的雾气，别人吸入后会短暂拥有ta的记忆",
+    "tagline": "刚才的雾气里……你感觉到了我吗",
+    "zodiacAffinity": ["双鱼座", "巨蟹座", "天秤座"],
+    "attributes": { "adventure": 0.3, "thought": 0.7, "social": 0.4, "rest": 0.6 },
+    "personality": {
+      "resonance": "你是一个模糊边界的大师——不喜欢标签、不习惯被定义。你能理解所有人的立场，因为你的自我足够流动和包容。",
+      "shadow": "太分散的存在感让人有时觉得你不真实，连你自己偶尔都想问\"我到底是谁\"。",
+      "advice": "不需要为了别人的\"看得清\"而凝固成你不喜欢的样子。雾气本身就可以是一种完整的形态。"
+    },
+    "visualTag": "白雾构成的人形、情绪波动时轮廓模糊扩散、雾中有记忆碎片闪回",
+    "visualPrompt": "mist hermit, humanoid form made of dense white fog, body blurring and dispersing with emotion, memory fragments shimmering inside the mist, ethereal vagueness surrealism"
+  },
+  {
+    "id": 23,
+    "name": "镜骨人",
+    "emoji": "🦴",
+    "concept": "所有骨骼都是镜子——照X光只能看到医生自己的倒影。每根骨头反映的是观察者最真实的自我，所以大多数人都不敢直视ta",
+    "tagline": "你在我骨头里看到了谁？那就是真正的你",
+    "zodiacAffinity": ["天蝎座", "水瓶座", "处女座"],
+    "attributes": { "adventure": 0.2, "thought": 0.9, "social": 0.3, "rest": 0.5 },
+    "personality": {
+      "resonance": "你像一面诚实的镜子——别人在你面前会不自觉地卸下伪装，暴露出真实的样子。你有一种让人\"做自己\"的魔力。",
+      "shadow": "看得太透的人容易被恐惧——有些人还没准备好面对真实的自己。",
+      "advice": "你的洞察力是一份珍贵的礼物。温柔地使用它——不是所有人都准备好照镜子。但你不需要为了让人舒服而磨砂自己。"
+    },
+    "visualTag": "透明皮肉下可见镜子骨骼、每根骨头反射观察者面容、关节处镜面拼接",
+    "visualPrompt": "mirror-bone entity, transparent flesh revealing skeleton made of mirrors, each bone reflecting the viewer's true face, jointed mirror fragments, reflective anatomy surrealism"
+  },
+  {
+    "id": 24,
+    "name": "书页肺",
+    "emoji": "📖",
+    "concept": "肺里装满了不停翻动的书页，每吸一口气就翻过一页故事，每呼一口气就念出一段古老的文字。说话时嘴唇间飘出被遗忘的语言字母",
+    "tagline": "我的每一口呼吸都在重写历史",
+    "zodiacAffinity": ["双子座", "射手座", "双鱼座"],
+    "attributes": { "adventure": 0.5, "thought": 0.9, "social": 0.6, "rest": 0.1 },
+    "personality": {
+      "resonance": "你是一个知识的永动体——阅读、思考、输出、再阅读。你的人生靠表达来呼吸，分享观点对你来说和吃饭喝水一样自然。",
+      "shadow": "输出太快有时候会\"缺氧\"——还没来得及消化就急着表达，偶尔言不及义。",
+      "advice": "你有无限的创造力和知识储备。偶尔深度呼吸，让书页在肺里停一停，积淀后的表达会更有力量。"
+    },
+    "visualTag": "胸腔透明可见翻动的书页肺叶、呼气时字母飘出、文字在气管里流动",
+    "visualPrompt": "page-lung scholar, transparent chest showing lungs made of flipping book pages, exhaled letters drifting from lips, text flowing through windpipe, bibliophile anatomy surrealism"
+  },
+  {
+    "id": 25,
+    "name": "根脉行者",
+    "emoji": "🌱",
+    "concept": "脚底连接着无数细根，每走一步根就扎进地面汲取记忆和故事。走过的地方会开出奇异的花，花蕊里传出那个地方过去的回声",
+    "tagline": "每一步都在和大地交换心事",
+    "zodiacAffinity": ["金牛座", "巨蟹座", "摩羯座"],
+    "attributes": { "adventure": 0.5, "thought": 0.4, "social": 0.6, "rest": 0.7 },
+    "personality": {
+      "resonance": "你是大地型的思考者——在实践中生长智慧，在行走中积累洞察。你不是那种关在屋里空想的人，你的灵感来自触地的每一步。",
+      "shadow": "根扎得太深偶尔会害怕拔起来去新的地方。",
+      "advice": "你的根让你稳健，但别忘了——最美的花开在最远的路上。带着你的根，放心去走。"
+    },
+    "visualTag": "脚底无数细根深入地面、身后留一路奇异花朵、根须间流淌着收集的记忆",
+    "visualPrompt": "root-walker, soles connected to countless thin roots burrowing into earth, trail of blooming strange flowers behind, memories flowing through root tendrils, grounded wanderer surrealism"
+  },
+  {
+    "id": 26,
+    "name": "齿轮瞳孔",
+    "emoji": "⚙️",
+    "concept": "眼睛里是无数精密咬合的微型齿轮，转动时能\"看穿\"任何系统的运行逻辑——从机械钟表到社会规则到人心算计",
+    "tagline": "世界是一台巨大的机器……而我看到了每一颗螺丝",
+    "zodiacAffinity": ["处女座", "摩羯座", "水瓶座"],
+    "attributes": { "adventure": 0.2, "thought": 1.0, "social": 0.2, "rest": 0.3 },
+    "personality": {
+      "resonance": "你的大脑是一个精密的解析引擎——能看到复杂系统背后的简单规则，在混沌中找到秩序。你是人群里的\"逻辑锚点\"。",
+      "shadow": "过度依赖逻辑分析，偶尔会忽略\"不合理但真实\"的人类情感。",
+      "advice": "你的理性是超能力。但偶尔让齿轮慢下来，用\"心\"而不是\"眼光\"去感受——有些东西不需要被\"看穿\"才值得存在。"
+    },
+    "visualTag": "瞳孔中可见咬合的微型齿轮、虹膜是精密机械环、眼光中有计算的光流",
+    "visualPrompt": "gear-pupil analyst, eyes containing interlocking micro-gears in irises, mechanical precision gaze, streams of analytical light from pupils, clockwork vision surrealism"
+  },
+  {
+    "id": 27,
+    "name": "虚空胃",
+    "emoji": "🕳️",
+    "concept": "肚子里是一个微型黑洞，能吃下任何东西——食物、坏情绪、别人的秘密、甚至一整个糟糕的下午。消化后排出温暖的星光",
+    "tagline": "把你今天的不开心喂给我……我帮你消化掉",
+    "zodiacAffinity": ["天蝎座", "巨蟹座", "双鱼座"],
+    "attributes": { "adventure": 0.3, "thought": 0.6, "social": 0.5, "rest": 0.6 },
+    "personality": {
+      "resonance": "你是朋友圈里的\"情感垃圾桶执行官\"——不是贬义，而是你天生有一种把负面情绪转化为温暖的能力。任何人都可以在你面前卸下重担。",
+      "shadow": "吸收太多他人的\"暗物质\"，偶尔忘了排放——黑洞也有饱和的时候。",
+      "advice": "你的包容力是宇宙级的。但记得给自己设一个\"事件视界\"——不是所有黑洞都需要吞下一切。偶尔关掉引力，只为自己呼吸。"
+    },
+    "visualTag": "腹部是一个微型黑洞、可见物质螺旋吸入、排出的温暖星光盘旋上升",
+    "visualPrompt": "void-stomach, miniature black hole in abdomen, visible accretion disk of consumed matter, warm starlight particles rising from event horizon, cosmic digestion surrealism"
+  },
+  {
+    "id": 28,
+    "name": "默片脸",
+    "emoji": "🎞️",
+    "concept": "脸上不显示表情，而是在脸前投射黑白默片的字卡——\"震惊\"\"感动\"\"尴尬\"。情绪变化时胶片快速切换，发出老式放映机的咔哒声",
+    "tagline": "我的表情需要手动换帧……等一下，还没转到\"高兴\"那格",
+    "zodiacAffinity": ["天秤座", "水瓶座", "双子座"],
+    "attributes": { "adventure": 0.4, "thought": 0.7, "social": 0.5, "rest": 0.4 },
+    "personality": {
+      "resonance": "你的情绪表达方式独特而有仪式感——不随便流露情感，但每一次表达都精准到像一幅艺术品。别人的表情是水彩，你的是木版画。",
+      "shadow": "有时候字幕卡切换太慢，别人会误读你的沉默为冷漠。",
+      "advice": "不需要和世界共用同一套\"表情包\"。你的节奏就是你的风格——懂的人会等你放映完。"
+    },
+    "visualTag": "面前投射默片字幕卡、切换时发出放映机咔哒声、面部始终保持平静",
+    "visualPrompt": "silent-film face, vintage title cards projected in front of expressionless face, film reel clicking sounds with each emotion change, monochrome cinema surrealism"
+  },
+  {
+    "id": 29,
+    "name": "弦音手",
+    "emoji": "🎻",
+    "concept": "每根手指是一根琴弦，拇指是大提琴的低沉，食指是小提琴的悠扬，中指是竖琴的空灵，无名指是吉他，小指是风铃。触摸任何物体都会发出对应的和弦",
+    "tagline": "世界在我指尖是一首交响乐",
+    "zodiacAffinity": ["双鱼座", "狮子座", "天秤座"],
+    "attributes": { "adventure": 0.6, "thought": 0.4, "social": 0.7, "rest": 0.3 },
+    "personality": {
+      "resonance": "你天生是一个\"通感者\"——能把触觉转化为情感、把视觉转化为旋律、把生活经验转化为一首完整的诗。你的艺术感遍布全身。",
+      "shadow": "过于本能和感性，偶尔让理性的人觉得\"太飘\"而难以信任。",
+      "advice": "你的感性是你触碰世界的独特方式。不需要把和弦分解成音符给每个人解释——相信你指尖的直觉，它会指引你。"
+    },
+    "visualTag": "五根手指是不同的琴弦材质、触摸物体时有音符波纹扩散、掌心的弧度像音箱",
+    "visualPrompt": "string-fingers musician, each finger made of a different instrument's string, musical note ripples emanating from touch, palm curved like a soundbox, synesthetic hand surrealism"
+  },
+  {
+    "id": 30,
+    "name": "灯塔眼",
+    "emoji": "🏮",
+    "concept": "双眼是两座微型灯塔，左眼射出暖黄的光为他人照亮前路，右眼射出冷蓝的光只能照亮自己内里的深渊。需要定期补充\"希望\"作为灯油",
+    "tagline": "照亮你很容易……照亮自己比较难",
+    "zodiacAffinity": ["狮子座", "射手座", "白羊座"],
+    "attributes": { "adventure": 0.7, "thought": 0.4, "social": 0.8, "rest": 0.2 },
+    "personality": {
+      "resonance": "你是天生的引路人——朋友迷路时第一个想到你，团队低迷时你自然成为精神支柱。你像灯塔一样稳定而温暖，给人方向感。",
+      "shadow": "一直在给别人照明，偶尔忘了自己的航道上也有暗礁。",
+      "advice": "你是最亮的光源——但灯塔也需要维护。给自己像给别人一样的耐心和温柔，你的光才能照得更久更远。"
+    },
+    "visualTag": "双眼化为灯塔、左眼暖黄光束右眼冷蓝探照光、以他人希望为燃料",
+    "visualPrompt": "lighthouse eyes, left eye emitting warm amber beacon beam guiding others, right eye projecting cold blue light into own inner depths, hope-fueled lantern gaze surrealism"
   }
 ]

@@ -126,8 +126,15 @@ page {
 // 全局页面背景
 .page-bg {
   min-height: 100vh;
-  background: linear-gradient(180deg, $bg-deep 0%, $bg-dark 30%, $nebula-deep 60%, $bg-mid 100%);
+  background: linear-gradient(180deg,
+    #0B0B2E 0%,
+    #111644 25%,
+    #211652 50%,
+    #3D1E5C 75%,
+    #2A1845 100%
+  );
   position: relative;
+  overflow: hidden;
 }
 
 // 内容层级
