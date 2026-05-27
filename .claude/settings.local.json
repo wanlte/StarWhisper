@@ -42,7 +42,13 @@
       "mcp__playwright__browser_wait_for",
       "Bash(pkill -f \"node index.js\")",
       "Bash(pkill -f \"uni -p h5\")",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(python *)",
+      "mcp__playwright__browser_resize",
+      "Bash(npx uni *)",
+      "Bash(xxd)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080)"
     ]
   },
   "hooks": {

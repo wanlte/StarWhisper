@@ -1,0 +1,30 @@
+- generic [ref=e3]:
+  - generic [ref=e7]:
+    - generic [ref=e12]: 星座匹配·塔罗占卜
+    - generic [ref=e16]:
+      - generic [ref=e19]: 星辰正在排列...
+      - generic [ref=e21]:
+        - generic [ref=e23]: 塔罗牌占卜
+        - generic [ref=e32]: 塔罗牌
+        - generic [ref=e35] [cursor=pointer]: 占卜
+    - generic [ref=e36]:
+      - generic [ref=e37] [cursor=pointer]:
+        - generic [ref=e38]: 💑
+        - generic [ref=e39]: 星座配对
+      - generic [ref=e40] [cursor=pointer]:
+        - generic [ref=e41]: 🎭
+        - generic [ref=e42]: 角色匹配
+      - generic [ref=e43] [cursor=pointer]:
+        - generic [ref=e44]: 👤
+        - generic [ref=e45]: 个人中心
+    - generic [ref=e46]: 仅供娱乐 · 不涉及迷信内容
+  - generic [ref=e48]:
+    - generic [ref=e51] [cursor=pointer]:
+      - img [ref=e53]
+      - generic [ref=e54]: 星座
+    - generic [ref=e56] [cursor=pointer]:
+      - img [ref=e58]
+      - generic [ref=e59]: 角色匹配
+    - generic [ref=e61] [cursor=pointer]:
+      - img [ref=e63]
+      - generic [ref=e64]: 我的
