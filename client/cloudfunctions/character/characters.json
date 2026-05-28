@@ -3,480 +3,750 @@
     "id": 1,
     "name": "无面说书人",
     "emoji": "📜",
-    "concept": "无脸怪人，整张脸是会自动翻页的老旧羊皮纸，没有五官，脸上铺满手写古风文字，文字缓缓从皮肤毛孔渗出，头发是流动的墨汁形态，身穿宽松复古长袍，神态慵懒佛系",
+    "concept": "脸是一张不断翻页的羊皮纸，五官被文字取代，每眨一次眼就换一个故事",
     "tagline": "你的故事，写在我脸上",
-    "zodiacAffinity": ["双子座", "天秤座", "水瓶座"],
-    "attributes": { "adventure": 0.3, "thought": 0.9, "social": 0.7, "rest": 0.2 },
+    "zodiacAffinity": [
+      "双子座",
+      "天秤座",
+      "水瓶座"
+    ],
+    "attributes": {
+      "adventure": 0.3,
+      "thought": 0.9,
+      "social": 0.7,
+      "rest": 0.2
+    },
     "personality": {
       "resonance": "你骨子里是一个内容的编织者。善于表达、思维敏捷、对新鲜事物充满好奇心——这些都是无面说书人的核心特质。你能把生活中的细节变成故事，把平凡的瞬间说出花来。",
       "shadow": "偶尔害怕自己的故事不够精彩，害怕被人看穿表面下的空白。",
       "advice": "你天生就是内容的创造者。不需要刻意追求精彩——你的存在本身就是最有意思的故事。"
     },
-    "visualTag": "羊皮纸脸、无五官、墨汁头发、复古长袍、文字渗出",
-    "visualPrompt": "可爱搞怪奇幻拟人，无脸怪人，整张脸部是会自动翻页的老旧羊皮纸质感，没有五官，脸上铺满手写古风文字，文字缓缓从皮肤毛孔渗出，头发是流动的墨汁形态，身穿宽松复古长袍，神态慵懒佛系，神秘又沙雕，治愈怪诞画风。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "羊皮纸脸皮翻卷、文字从毛孔渗出、墨迹头发",
+    "visualPrompt": "faceless scribe, parchment skin peeling into pages, text crawling out of pores, ink-bleeding hair, surreal dark fantasy"
   },
   {
     "id": 2,
     "name": "逆时症患者",
     "emoji": "⏳",
-    "concept": "身体半透明，能清晰看见内脏、血液、心脏全部逆向流动，心脏反向跳动，皮肤通透白净，脸上长着反向生长的搞笑皱纹，整个人时间倒流感，呆萌猎奇",
+    "concept": "全身皮肤呈半透明，能看到内脏在倒放——血液倒流、心脏先舒张再收缩",
     "tagline": "我昨天已经见过了明天的你",
-    "zodiacAffinity": ["摩羯座", "处女座", "金牛座"],
-    "attributes": { "adventure": 0.2, "thought": 0.8, "social": 0.1, "rest": 0.7 },
+    "zodiacAffinity": [
+      "摩羯座",
+      "处女座",
+      "金牛座"
+    ],
+    "attributes": {
+      "adventure": 0.2,
+      "thought": 0.8,
+      "social": 0.1,
+      "rest": 0.7
+    },
     "personality": {
       "resonance": "你像一个时间的观察者——习惯于在行动之前反复思考，把每个可能性都推演一遍。这种深思熟虑不是犹豫，而是对规律的敬畏和掌控。",
       "shadow": "太执着于分析过去和规划未来，有时会忘记活在当下。",
       "advice": "你的沉稳和理性是你的核心力量。偶尔也允许自己\"不按计划\"一次——当下的即兴可能比预设的剧本更精彩。"
     },
-    "visualTag": "半透明身体、逆向流动内脏、反向心脏、反向皱纹、时间倒流感",
-    "visualPrompt": "可爱搞怪奇幻拟人，身体半透明，能清晰看见内脏、血液、心脏全部逆向流动，心脏反向跳动，皮肤通透白净，脸上长着反向生长的搞笑皱纹，性格呆呆的，整个人时间倒流感，呆萌猎奇，温柔搞笑。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "半透明皮肤、可见逆向流动的内脏、反向衰老皱纹",
+    "visualPrompt": "reverse-time patient, translucent skin showing organs moving backwards, veins flowing in reverse, chrono-dysmorphia body horror lite"
   },
   {
     "id": 3,
     "name": "颅骨电视机",
     "emoji": "📺",
-    "concept": "脑袋是复古CRT老式电视机，屏幕全是雪花噪点，偶尔闪过可爱的碎片画面，脖子后面伸出细细的金属天线，胸腔里有转动的老式磁带，身体是正常可爱人形，电视头沙雕又可爱",
+    "concept": "脑袋是一台 CRT 老电视，雪花屏中偶尔闪过别人的记忆片段，脖子后面有天线",
     "tagline": "嘘…我刚刚收到了你的梦境信号",
-    "zodiacAffinity": ["水瓶座", "双鱼座", "天蝎座"],
-    "attributes": { "adventure": 0.4, "thought": 0.8, "social": 0.3, "rest": 0.5 },
+    "zodiacAffinity": [
+      "水瓶座",
+      "双鱼座",
+      "天蝎座"
+    ],
+    "attributes": {
+      "adventure": 0.4,
+      "thought": 0.8,
+      "social": 0.3,
+      "rest": 0.5
+    },
     "personality": {
       "resonance": "你有一个超频运转的大脑——接收着比别人更多的信息和信号。有时候你会在半夜突然想到一个绝妙的点子，或者莫名其妙地预感到什么。",
       "shadow": "信息太多太杂，有时候分不清哪些是重要的，哪些只是\"雪花噪点\"。",
       "advice": "你的直觉是你的天赋。学会在雪花中捕捉有意义的画面，忽略那些无关的背景噪音。"
     },
-    "visualTag": "CRT电视头、雪花屏脸、金属天线、胸腔磁带、复古猎奇",
-    "visualPrompt": "可爱搞怪奇幻拟人，脑袋是复古CRT老式电视机，屏幕全是雪花噪点，偶尔闪过可爱的碎片画面，脖子后面伸出细细的金属天线，胸腔里有转动的老式磁带，身体是正常可爱人形，电视头沙雕又可爱，复古猎奇风。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "CRT电视头、雪花屏脸、天线脊椎、胸腔里磁带转",
+    "visualPrompt": "TV-head humanoid, CRT skull with static screen face, antenna spine protruding from neck, VHS ribs, analog horror aesthetic"
   },
   {
     "id": 4,
     "name": "肥皂泡内脏人",
     "emoji": "🫧",
-    "concept": "胸腹是超大透明彩虹肥皂泡，心脏肺腑漂浮在泡泡里面，泡泡轻轻晃动，自带七彩柔光，情绪激动时泡泡轻微破裂又重组，人物软萌温柔，脆弱又搞笑",
-    "tagline": "别靠太近，我怕你会戳破我的小心脏",
-    "zodiacAffinity": ["巨蟹座", "双鱼座", "金牛座"],
-    "attributes": { "adventure": 0.1, "thought": 0.5, "social": 0.6, "rest": 0.8 },
+    "concept": "胸腔和腹腔是透明的泡泡，心肝肺漂浮其中，情绪激动时会\"啵\"地破裂再重组",
+    "tagline": "别靠太近，我怕你会戳破我的泡泡",
+    "zodiacAffinity": [
+      "巨蟹座",
+      "双鱼座",
+      "金牛座"
+    ],
+    "attributes": {
+      "adventure": 0.1,
+      "thought": 0.5,
+      "social": 0.6,
+      "rest": 0.8
+    },
     "personality": {
       "resonance": "你像水晶一样透明而脆弱——但不是软弱，而是敢于在复杂的世界里保持纯真。你的感情丰富且外露，开心就是开心，难过就是难过。",
       "shadow": "太容易被他人的情绪影响，像个情绪海绵，吸收太多会\"炸\"掉。",
       "advice": "你的敏感是一种天赋。保护好自己的泡泡，但也信任那些不会戳破它的人。"
     },
-    "visualTag": "透明彩虹泡泡胸腹、漂浮心肺、七彩柔光、破裂重组",
-    "visualPrompt": "可爱搞怪奇幻拟人，胸腹是超大透明彩虹肥皂泡，心脏肺腑漂浮在泡泡里面，泡泡轻轻晃动，自带七彩柔光，情绪激动时泡泡轻微破裂又重组，人物软萌温柔，脆弱又搞笑，治愈感极强。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "透明泡泡胸腔、漂浮心肝肺、肥皂泡彩虹折射",
+    "visualPrompt": "bubble organ human, transparent soap-bubble chest cavity, floating heart and lungs inside, iridescent membrane, delicate and fragile body"
   },
   {
     "id": 5,
     "name": "千眼档案员",
     "emoji": "👁️",
-    "concept": "全身皮肤长满大小均匀、不停眨巴的可爱眼睛，每只眼睑上都有小小的编号标签，十根手指末端都是小圆眼睛，身穿档案员宽松制服，密集但可爱不恐怖，认真又呆萌的搜集官形象",
+    "concept": "全身长满眨动的眼睛，每一只都记录了别人的一个秘密，眼睑翻开是标签编号",
     "tagline": "第9473号秘密：你昨晚睡前刷了2小时手机",
-    "zodiacAffinity": ["处女座", "摩羯座", "天蝎座"],
-    "attributes": { "adventure": 0.2, "thought": 0.9, "social": 0.1, "rest": 0.5 },
+    "zodiacAffinity": [
+      "处女座",
+      "摩羯座",
+      "天蝎座"
+    ],
+    "attributes": {
+      "adventure": 0.2,
+      "thought": 0.9,
+      "social": 0.1,
+      "rest": 0.5
+    },
     "personality": {
       "resonance": "你是一个细节的收集者。别人注意不到的微小变化、言谈间的漏洞、朋友圈的暗语——都逃不过你的\"扫描\"。",
       "shadow": "知道的太多有时候是一种负担，尤其是当别人其实并不想被看透。",
       "advice": "你的观察力是超能力。不需要炫耀它——在最关键的时刻，你的一个冷静判断就足以改变局面。"
     },
-    "visualTag": "全身可爱眼睛、眼睑编号标签、手指末端眼球、档案员制服",
-    "visualPrompt": "可爱搞怪奇幻拟人，全身皮肤长满大小均匀、不停眨巴的可爱眼睛，每只眼睑上都有小小的编号标签，十根手指末端都是小圆眼睛，身穿档案员宽松制服，密集但可爱不恐怖，认真又呆萌的搜集官形象。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "全身覆盖眨动的眼睛、眼睑有编号标牌、手指末端也是眼球",
+    "visualPrompt": "thousand-eye archivist, body covered in blinking eyes, numbered tags on eyelids, eyeball-tipped fingers, bureaucratic body horror"
   },
   {
     "id": 6,
     "name": "解线人偶",
     "emoji": "🧵",
-    "concept": "布偶人形，全身关节全部用彩色粗毛线缝合，身体缝隙偶尔露出白色棉花，周身飘散断开的彩色长线，每一根断线都代表一次选择，人偶软萌松弛，自带委屈又搞笑的气质",
+    "concept": "关节由彩色丝线缝合，每做一次选择就断一根线，线尽之时会变成一堆布料和棉花",
     "tagline": "今天的选择……啊，又断了一根",
-    "zodiacAffinity": ["天秤座", "双子座", "射手座"],
-    "attributes": { "adventure": 0.6, "thought": 0.5, "social": 0.5, "rest": 0.3 },
+    "zodiacAffinity": [
+      "天秤座",
+      "双子座",
+      "射手座"
+    ],
+    "attributes": {
+      "adventure": 0.6,
+      "thought": 0.5,
+      "social": 0.5,
+      "rest": 0.3
+    },
     "personality": {
       "resonance": "你站在选择的十字路口，每个方向都有迷人的风景。选择困难不是因为你不够坚定，而是你太懂得欣赏每个选项的美好。",
       "shadow": "怕选了A就错过B的精彩，所以有时宁愿停在原地。",
       "advice": "记住：线不是为了束缚你，而是标记你的轨迹。每断一根线就留下一个故事。"
     },
-    "visualTag": "布偶人形、彩色毛线关节缝合、棉花外露、断线飘散",
-    "visualPrompt": "可爱搞怪奇幻拟人，布偶人形，全身关节全部用彩色粗毛线缝合，身体缝隙偶尔露出白色棉花，周身飘散断开的彩色长线，每一根断线都代表一次选择，人偶软萌松弛，自带委屈又搞笑的气质。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "关节处彩色丝线缝合、断线飘散、布料和棉花外露",
+    "visualPrompt": "unraveling marionette, joints stitched with colored threads, loose threads floating around, cotton stuffing spilling from seams, fabric skin patches"
   },
   {
     "id": 7,
     "name": "反向生长者",
     "emoji": "🤲",
-    "concept": "身体极致不对称，右手超级嫩、像婴儿小手，白皙细腻；左手干枯褶皱、像老树树皮，一嫩一老反差巨大，身体正常可爱，表情淡定呆萌，反差搞怪、趣味极强",
+    "concept": "右手永远在变小变嫩，左手永远在变老变皱。左手握着的东西会加速腐朽，右手碰过的会回到最新状态",
     "tagline": "用左手告别，用右手重逢",
-    "zodiacAffinity": ["射手座", "白羊座", "狮子座"],
-    "attributes": { "adventure": 0.9, "thought": 0.3, "social": 0.5, "rest": 0.1 },
+    "zodiacAffinity": [
+      "射手座",
+      "白羊座",
+      "狮子座"
+    ],
+    "attributes": {
+      "adventure": 0.9,
+      "thought": 0.3,
+      "social": 0.5,
+      "rest": 0.1
+    },
     "personality": {
       "resonance": "你身上同时住着一个孩子和一个智者——既有冲劲和好奇，又有超越年龄的洞察。你能在冒险中保持清醒，在冲动中带着思考。",
       "shadow": "偶尔会觉得自己的\"少年气\"不成熟，或者觉得自己的\"老成\"太无趣。",
       "advice": "左手和右手的反差是你最大的魅力。别试图变成\"统一\"的人——不一致才是完整的你。"
     },
-    "visualTag": "右手婴儿嫩手、左手枯皱树皮、极致不对称、反差搞怪",
-    "visualPrompt": "可爱搞怪奇幻拟人，身体极致不对称，右手超级嫩、像婴儿小手，白皙细腻；左手干枯褶皱、像老树树皮，一嫩一老反差巨大，身体正常可爱，表情淡定呆萌，反差搞怪、趣味极强。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "右手婴儿般嫩滑、左手枯皱如树皮、不对称撕裂感",
+    "visualPrompt": "asymmetric aging being, right hand baby-smooth and tiny, left hand ancient and wrinkled bark-like, temporal dissonance, split-body surrealism"
   },
   {
     "id": 8,
     "name": "回声收集者",
     "emoji": "🫧",
-    "concept": "安静温柔人形，不说话，嘴巴不断吐出发光透明小气泡，每个气泡里包裹着旧文字和模糊的小小人脸残影，气泡悬浮周身，收集世间被遗忘的话语，安静治愈又沙雕猎奇",
+    "concept": "嘴里吐出的不是声音是发光气泡，泡里包裹着别人说过但被遗忘的话。靠听别人的沉默活着",
     "tagline": "你三年前说的那句再见……还在这里",
-    "zodiacAffinity": ["天蝎座", "摩羯座", "巨蟹座"],
-    "attributes": { "adventure": 0.1, "thought": 0.7, "social": 0.2, "rest": 0.9 },
+    "zodiacAffinity": [
+      "天蝎座",
+      "摩羯座",
+      "巨蟹座"
+    ],
+    "attributes": {
+      "adventure": 0.1,
+      "thought": 0.7,
+      "social": 0.2,
+      "rest": 0.9
+    },
     "personality": {
       "resonance": "你是沉默的守护者——记住了别人忘了的事，收藏了别人遗落的情感。你不需要社交来获取能量，在安静中反而比在人群中更自在。",
       "shadow": "太在意外界的声音，有时会忽略自己内心的\"回声\"。",
       "advice": "你收集的那些被遗忘的声音是珍贵的，但别让别人的回声淹没了自己的心声。"
     },
-    "visualTag": "口中吐出光泡、泡内包裹文字和人脸残影、安静温柔、气泡悬浮",
-    "visualPrompt": "可爱搞怪奇幻拟人，安静温柔人形，不说话，嘴巴不断吐出发光透明小气泡，每个气泡里包裹着旧文字和模糊的小小人脸残影，气泡悬浮周身，收集世间被遗忘的话语，安静治愈又沙雕猎奇。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "嘴中吐出光泡包裹的文字、泡中可见模糊人脸的残影",
+    "visualPrompt": "echo collector, luminous bubbles emerging from mouth containing forgotten words, faint faces trapped in bubbles, silent surreal creature"
   },
   {
     "id": 9,
     "name": "镜中人",
     "emoji": "🪞",
-    "concept": "身体是通透液态水银质感，人形朦胧柔和，旁边悬浮一面小镜子，镜子里的倒影性格、表情、动作都和本人不一样，经常自我对峙，分裂又可爱，高冷又搞笑",
+    "concept": "身体是液态水银，只在镜面中才有实体。和镜子里的自己不是同一个人，经常对着镜子吵架",
     "tagline": "镜子里那位今天心情不太好",
-    "zodiacAffinity": ["双鱼座", "天秤座", "水瓶座"],
-    "attributes": { "adventure": 0.3, "thought": 0.8, "social": 0.6, "rest": 0.4 },
+    "zodiacAffinity": [
+      "双鱼座",
+      "天秤座",
+      "水瓶座"
+    ],
+    "attributes": {
+      "adventure": 0.3,
+      "thought": 0.8,
+      "social": 0.6,
+      "rest": 0.4
+    },
     "personality": {
       "resonance": "你的内心有丰富的对立面——理想主义与现实主义、理性与感性、外向与内向。你不只是\"一个人\"，而是一整个宇宙。",
       "shadow": "内心戏太丰富，偶尔会陷入自我拉扯，不知道哪个才是\"真实的自己\"。",
       "advice": "镜子里那个人不是敌人，是你最忠实的朋友。学会和自己握手言和，你的所有面向都值得被接纳。"
     },
-    "visualTag": "液态水银身体、悬浮镜子、倒影性格独立、自我对峙",
-    "visualPrompt": "可爱搞怪奇幻拟人，身体是通透液态水银质感，人形朦胧柔和，旁边悬浮一面小镜子，镜子里的倒影性格、表情、动作都和本人不一样，经常自我对峙，分裂又可爱，高冷又搞笑。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "液态水银身体、只有镜面反射才可见、分裂的两个自我",
+    "visualPrompt": "mirror-bound entity, liquid mercury body only visible in reflections, arguing with own reflection that moves independently, chrome surrealism"
   },
   {
     "id": 10,
     "name": "情绪变色龙",
     "emoji": "🦎",
-    "concept": "可爱人形，皮肤会实时变换花纹，开心时全身铺满彩色可爱蝴蝶斑点，生气时长出岩浆裂纹纹路，难过时浮现雨天水渍纹理，情绪写满全身，活泼灵动、超级可爱搞怪",
+    "concept": "皮肤随情绪瞬间变花纹——愤怒是岩浆裂纹、快乐是蝴蝶斑点、悲伤是雨天水渍",
     "tagline": "别装了，你的颜色骗不了我",
-    "zodiacAffinity": ["狮子座", "白羊座", "巨蟹座"],
-    "attributes": { "adventure": 0.5, "thought": 0.3, "social": 0.8, "rest": 0.4 },
+    "zodiacAffinity": [
+      "狮子座",
+      "白羊座",
+      "巨蟹座"
+    ],
+    "attributes": {
+      "adventure": 0.5,
+      "thought": 0.3,
+      "social": 0.8,
+      "rest": 0.4
+    },
     "personality": {
       "resonance": "你的情感像一幅流动的画——喜怒哀乐都写在脸上，藏不住也无需藏。这种直接和真诚让你在人群中闪闪发光。",
       "shadow": "过于外显的情绪偶尔会让自己觉得\"太过了\"，担心别人觉得麻烦。",
       "advice": "不必掩饰你的色彩。在这个习惯伪装的世界里，一个真诚流露的人反而是最珍贵的宝物。"
     },
-    "visualTag": "皮肤实时变色、蝴蝶斑点、岩浆裂纹、雨天水渍、情绪可视化",
-    "visualPrompt": "可爱搞怪奇幻拟人，可爱人形，皮肤会实时变换花纹，开心时全身铺满彩色可爱蝴蝶斑点，生气时长出岩浆裂纹纹路，难过时浮现雨天水渍纹理，情绪写满全身，活泼灵动、超级可爱搞怪。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "皮肤实时变幻花纹——岩浆裂纹/蝴蝶斑点/雨天水渍",
+    "visualPrompt": "emotion chameleon, skin shifting patterns in real-time, lava-crack angry mode, butterfly-speckled happy mode, rain-streak sad mode, living mood ring"
   },
   {
     "id": 11,
     "name": "半蚀者",
     "emoji": "🌓",
-    "concept": "身体从正中线完美对半分割，左半身是明亮白昼、阳光暖色、日出光影，右半身是深夜星空、深蓝宇宙、星光闪烁，左眼日出、右眼星河，一半早安一半晚安，极致对称反差美",
+    "concept": "身体从中线对半劈开——左半身永远在白昼，右半身永远在黑夜。左眼日出、右眼星空",
     "tagline": "我左半边在早安，右半边在晚安",
-    "zodiacAffinity": ["金牛座", "处女座", "射手座"],
-    "attributes": { "adventure": 0.4, "thought": 0.6, "social": 0.3, "rest": 0.5 },
+    "zodiacAffinity": [
+      "金牛座",
+      "处女座",
+      "射手座"
+    ],
+    "attributes": {
+      "adventure": 0.4,
+      "thought": 0.6,
+      "social": 0.3,
+      "rest": 0.5
+    },
     "personality": {
       "resonance": "你身上存在着天然的平衡——务实与浪漫、严谨与松弛、安静与热情的共存。不需要刻意调和，它们在你的身上已经和平共处。",
       "shadow": "偶尔分不清自己到底是\"阳光模式\"还是\"暗夜模式\"，其实两个都是你。",
       "advice": "你的矛盾是你最有趣的部分。不需要选边，同时拥有白天和黑夜的生命最完整。"
     },
-    "visualTag": "身体对半分割、左昼右夜、日出左眼、星空右眼、极致对称",
-    "visualPrompt": "可爱搞怪奇幻拟人，身体从正中线完美对半分割，左半身是明亮白昼、阳光暖色、日出光影，右半身是深夜星空、深蓝宇宙、星光闪烁，左眼日出、右眼星河，一半早安一半晚安，极致对称反差美。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "身体中线精准分割、左半昼右半夜、日出左眼星空右眼",
+    "visualPrompt": "half-eclipse being, body split perfectly down middle, left side permanent daylight with sunrise eye, right side eternal night with starfield eye, cosmic dichotomy"
   },
   {
     "id": 12,
     "name": "记忆蚊",
     "emoji": "🦟",
-    "concept": "半人高呆萌蚊子拟人，长细蚊嘴，轻轻贴在太阳穴吸食坏记忆，身形纤细可爱，不恐怖，周身飘散金色治愈微光粉尘，专门吸走尴尬和难过，沙雕暖心小怪物",
+    "concept": "本体是一只半人高的蚊子，用长吻刺入太阳穴吸食不愉快的记忆，消化后排出金色微光。最怕电蚊拍",
     "tagline": "那个让你尴尬的瞬间……吸溜，味道不错",
-    "zodiacAffinity": ["巨蟹座", "天蝎座", "双鱼座"],
-    "attributes": { "adventure": 0.2, "thought": 0.4, "social": 0.7, "rest": 0.7 },
+    "zodiacAffinity": [
+      "巨蟹座",
+      "天蝎座",
+      "双鱼座"
+    ],
+    "attributes": {
+      "adventure": 0.2,
+      "thought": 0.4,
+      "social": 0.7,
+      "rest": 0.7
+    },
     "personality": {
       "resonance": "你有神奇的治愈能力——把朋友们的烦心事变成有趣的吐槽，把尴尬回忆煮成茶余饭后的笑话。你是朋友群里的\"心理暖宝宝\"。",
       "shadow": "帮别人处理了太多情绪垃圾，却忘了给自己也清理一下。",
       "advice": "你的共情力是你最大的天赋。记得给自己也留一杯\"金色微光\"——你也值得被治愈。"
     },
-    "visualTag": "半人高蚊子拟人、细长蚊嘴、吸食坏记忆、金色治愈粉尘",
-    "visualPrompt": "可爱搞怪奇幻拟人，半人高呆萌蚊子拟人，长细蚊嘴，轻轻贴在太阳穴吸食坏记忆，身形纤细可爱，不恐怖，周身飘散金色治愈微光粉尘，专门吸走尴尬和难过，沙雕暖心小怪物。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "半人高巨蚊、长吻刺入太阳穴、消化后排出金色微光粉尘",
+    "visualPrompt": "memory mosquito, human-sized mosquito creature, proboscis entering temples to extract memories, glowing golden dust excrement, unsettling but oddly helpful, dark whimsical"
   },
   {
     "id": 13,
     "name": "星尘肺",
     "emoji": "🌌",
-    "concept": "胸腔通透，肺部是旋转的迷你星云银河，每一次呼吸都会吐出小小的迷你星座，体内星光忽明忽暗，情绪越波动星光越闪烁，整个人温柔梦幻、自带宇宙浪漫搞笑感",
+    "concept": "呼吸时呼出微型星座，肺部是透明星云。情绪波动时体内星光会忽明忽暗，像一座活着的宇宙",
     "tagline": "每次呼吸，我都在创造一个新的银河",
-    "zodiacAffinity": ["水瓶座", "双鱼座", "射手座"],
-    "attributes": { "adventure": 0.7, "thought": 0.8, "social": 0.4, "rest": 0.1 },
+    "zodiacAffinity": [
+      "水瓶座",
+      "双鱼座",
+      "射手座"
+    ],
+    "attributes": {
+      "adventure": 0.7,
+      "thought": 0.8,
+      "social": 0.4,
+      "rest": 0.1
+    },
     "personality": {
       "resonance": "你是一个造梦者——脑子里永远在诞生新的想法、新的计划、新的世界观。别人看到的是眼前，你看到的是星辰大海。",
       "shadow": "有时候太沉浸在自己的宇宙里，忘了地面上的柴米油盐和身边的人。",
       "advice": "你的想象力是无限的宇宙。偶尔也需要着陆，找一个人分享你呼出的星光——那份美丽值得被看见。"
     },
-    "visualTag": "透明星云肺、呼吸吐出迷你星座、体内星光闪烁、宇宙浪漫",
-    "visualPrompt": "可爱搞怪奇幻拟人，胸腔通透，肺部是旋转的迷你星云银河，每一次呼吸都会吐出小小的迷你星座，体内星光忽明忽暗，情绪越波动星光越闪烁，整个人温柔梦幻、自带宇宙浪漫搞笑感。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "呼吸时呼出微型星座、肺部透明星云、体内星光闪烁",
+    "visualPrompt": "star-dust lung, miniature constellations exhaled with every breath, transparent nebula lungs, internal galaxy pulsing with emotions, cosmic anatomy surrealism"
   },
   {
     "id": 14,
     "name": "皮肤抄写员",
     "emoji": "📝",
-    "concept": "全身皮肤布满温柔的古风手写文字，墨迹顺着血管缓缓流动，睡着后文字会自动重新排列，整个人像一本每天重写的活书本，文静、文艺、怪诞又可爱",
+    "concept": "每寸皮肤都写满了无人能懂的文字，睡着时文字会自行擦掉旧章重新排列成新的篇章，醒来时故事已截然不同",
     "tagline": "今早醒来……我已经不是昨天那个人了",
-    "zodiacAffinity": ["处女座", "双子座", "摩羯座"],
-    "attributes": { "adventure": 0.3, "thought": 0.9, "social": 0.2, "rest": 0.6 },
+    "zodiacAffinity": [
+      "处女座",
+      "双子座",
+      "摩羯座"
+    ],
+    "attributes": {
+      "adventure": 0.3,
+      "thought": 0.9,
+      "social": 0.2,
+      "rest": 0.6
+    },
     "personality": {
       "resonance": "你每天都在自我迭代——今天的观点会推翻昨天的看法，新的体验会刷新旧的认知。你不是善变，而是在进化。",
       "shadow": "偶尔不确定自己到底是谁，因为\"版本更新\"太快。",
       "advice": "你是一本每天都在重写的书——这不是bug，是feature。拥抱变化，但保留几行属于自己的核心代码。"
     },
-    "visualTag": "全身皮肤写满古风文字、墨迹血管流动、睡眠重排文字、活书本",
-    "visualPrompt": "可爱搞怪奇幻拟人，全身皮肤布满温柔的古风手写文字，墨迹顺着血管缓缓流动，睡着后文字会自动重新排列，整个人像一本每天重写的活书本，文静、文艺、怪诞又可爱。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "全身皮肤写满文字、睡眠时文字自动重排、墨迹在血管中流动",
+    "visualPrompt": "skin scribe, body covered in ever-changing tattooed text, words rearrange during sleep, ink flowing through veins, living manuscript, dark academic surrealism"
   },
   {
     "id": 15,
     "name": "万镜裂片",
     "emoji": "💠",
-    "concept": "身体由无数细碎小镜面拼接而成，每一片镜子都倒映出不同性格表情的自己，有的温柔、有的调皮、有的emo，镜面缝隙飘银色光尘，破碎又治愈，高级沙雕猎奇",
+    "concept": "身体由无数碎镜片拼接而成，每片映出不同的可能自我——勇敢的你、怯懦的你、疯狂的你、温柔的你",
     "tagline": "你看到的只是我的其中一面",
-    "zodiacAffinity": ["天秤座", "双鱼座", "巨蟹座"],
-    "attributes": { "adventure": 0.4, "thought": 0.6, "social": 0.7, "rest": 0.3 },
+    "zodiacAffinity": [
+      "天秤座",
+      "双鱼座",
+      "巨蟹座"
+    ],
+    "attributes": {
+      "adventure": 0.4,
+      "thought": 0.6,
+      "social": 0.7,
+      "rest": 0.3
+    },
     "personality": {
       "resonance": "你的多重面向让人着迷——在A朋友面前是开心果，在B朋友面前是知心姐姐/哥哥，独处时又完全是另一个人。",
       "shadow": "偶尔觉得碎片之间互相矛盾，担心别人发现\"不统一\"的自己。",
       "advice": "你不需要缩小到只剩一面。所有碎片拼在一起才是完整的你——而完整本身就足够迷人。"
     },
-    "visualTag": "碎镜片拼接身体、每片倒映不同自我、银色光尘、破碎治愈",
-    "visualPrompt": "可爱搞怪奇幻拟人，身体由无数细碎小镜面拼接而成，每一片镜子都倒映出不同性格表情的自己，有的温柔、有的调皮、有的emo，镜面缝隙飘银色光尘，破碎又治愈，高级沙雕猎奇。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "碎镜片拼接身体、每片映出不同表情、镜面之间飘着银色光尘",
+    "visualPrompt": "mirror shard being, body made of countless mirror fragments, each shard reflecting a different personality facet, silver dust floating between shards, fractured identity surrealism"
   },
   {
     "id": 16,
     "name": "脑室租客",
     "emoji": "🧠",
-    "concept": "头部半透明，颅内清晰可见住着一个迷你小人，是自己的第二人格，小人在脑袋里乱动、偷看、偷偷说话，外表是正常温柔人形，脑里住室友，搞笑又神奇",
-    "tagline": "等一下……我脑里的室友有话要说",
-    "zodiacAffinity": ["双子座", "水瓶座", "白羊座"],
-    "attributes": { "adventure": 0.6, "thought": 0.7, "social": 0.6, "rest": 0.1 },
+    "concept": "头脑里住着另一个意识，它时常替你接话、半夜喂你灵感、偶尔偷吃你的记忆零食。它的建议往往出奇地准",
+    "tagline": "等一下……我房顶上的室友有话要说",
+    "zodiacAffinity": [
+      "双子座",
+      "水瓶座",
+      "白羊座"
+    ],
+    "attributes": {
+      "adventure": 0.6,
+      "thought": 0.7,
+      "social": 0.6,
+      "rest": 0.1
+    },
     "personality": {
       "resonance": "你的大脑里永远有两个声音在对话——一个说要理智，一个说要放飞；一个负责白日梦，一个负责把白日梦变成方案。",
       "shadow": "偶尔脑子里辩论太激烈会陷入\"分析瘫痪\"，决定不了就什么也不做。",
       "advice": "你脑中的室友不是干扰，是你最有趣的合作者。学会和它分工合作：一个发散，一个收敛。"
     },
-    "visualTag": "半透明头颅、颅内迷你小人、第二人格、脑内室友",
-    "visualPrompt": "可爱搞怪奇幻拟人，头部半透明，颅内清晰可见住着一个迷你小人，是自己的第二人格，小人在脑袋里乱动、偷看、偷偷说话，外表是正常温柔人形，脑里住室友，搞笑又神奇。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "半透明头颅可见另一个微型意识体、神经元间穿梭的光点、偶尔的\"脑内对话\"溢出口",
+    "visualPrompt": "brain tenant, translucent skull revealing a second miniature consciousness residing inside, synaptic light trails, two voices sharing one mouth, cerebral surrealism"
   },
   {
     "id": 17,
     "name": "蜡人",
     "emoji": "🕯️",
-    "concept": "全身是温柔暖色蜡烛材质，身体边缘缓缓融化流淌蜡泪，每滴蜡泪都带着微小发光记忆碎片，胸腔里有一根跳动的烛芯心脏，温柔治愈，慢慢遗忘伤痛，氛围感拉满",
+    "concept": "身体是一支缓慢燃烧的蜡烛，每流一滴蜡泪就失去一小段记忆，但永远不会为同一件事伤心两次",
     "tagline": "该忘的就让它熔掉吧",
-    "zodiacAffinity": ["天蝎座", "摩羯座", "金牛座"],
-    "attributes": { "adventure": 0.2, "thought": 0.5, "social": 0.4, "rest": 0.8 },
+    "zodiacAffinity": [
+      "天蝎座",
+      "摩羯座",
+      "金牛座"
+    ],
+    "attributes": {
+      "adventure": 0.2,
+      "thought": 0.5,
+      "social": 0.4,
+      "rest": 0.8
+    },
     "personality": {
       "resonance": "你有一种罕见的超能力——能从伤痛中站起来然后真的向前走。别人还在纠结昨天的事，你已经把目光放在明天。",
       "shadow": "偶尔忘记的不是该忘的，而是不该忘的——比如某些珍贵的人和瞬间。",
       "advice": "遗忘是恩赐也是代价。偶尔用一个本子记下那些不该熔掉的瞬间，给自己留一些可回味的甜蜜。"
     },
-    "visualTag": "蜡烛材质身体、融化蜡泪、发光记忆碎片、烛芯心脏",
-    "visualPrompt": "可爱搞怪奇幻拟人，全身是温柔暖色蜡烛材质，身体边缘缓缓融化流淌蜡泪，每滴蜡泪都带着微小发光记忆碎片，胸腔里有一根跳动的烛芯心脏，温柔治愈，慢慢遗忘伤痛，氛围感拉满。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "身体缓慢融化流淌、每滴蜡泪带着微光记忆碎片、烛芯心脏在胸腔中跳动",
+    "visualPrompt": "candle person, body slowly melting with every emotion, each wax tear carrying tiny memory fragments, wick heart glowing in translucent chest, melancholic warmth surrealism"
   },
   {
     "id": 18,
     "name": "珊瑚骨人",
     "emoji": "🪸",
-    "concept": "皮肤通透轻薄，皮下骨骼是彩色活体珊瑚，骨间游动发光共生海藻，颜色随情绪变化，指尖长出小小软萌海葵触须，像海底温柔小怪兽，梦幻治愈",
-    "tagline": "我的骨架是一座活着的花园",
-    "zodiacAffinity": ["巨蟹座", "金牛座", "双鱼座"],
-    "attributes": { "adventure": 0.2, "thought": 0.5, "social": 0.7, "rest": 0.7 },
+    "concept": "骨骼是活珊瑚构造，透过半透明的皮肤能看到色彩斑斓的共生藻在骨间游动，随情绪变换颜色",
+    "tagline": "我是一座活着的海底花园",
+    "zodiacAffinity": [
+      "巨蟹座",
+      "金牛座",
+      "双鱼座"
+    ],
+    "attributes": {
+      "adventure": 0.2,
+      "thought": 0.5,
+      "social": 0.7,
+      "rest": 0.7
+    },
     "personality": {
       "resonance": "你的温柔不是软弱——像珊瑚礁一样，表面柔软但能让一整片生态围绕你生长。朋友们在你的庇护下感到安全和被接纳。",
       "shadow": "给了别人太多养分，有时忘了自己的骨骼也需要滋养。",
       "advice": "你是海底花园的根基。记得给自己补充阳光和养分——你的花园需要你的健康来支撑。"
     },
-    "visualTag": "通透皮肤、彩色活体珊瑚骨骼、共生海藻、海葵指尖、梦幻治愈",
-    "visualPrompt": "可爱搞怪奇幻拟人，皮肤通透轻薄，皮下骨骼是彩色活体珊瑚，骨间游动发光共生海藻，颜色随情绪变化，指尖长出小小软萌海葵触须，像海底温柔小怪兽，梦幻治愈。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "半透明皮肤下可见活珊瑚骨骼、共生藻色彩随情绪变化、指尖生出海葵触须",
+    "visualPrompt": "coral skeleton human, living coral bones visible through translucent skin, symbiotic algae shifting colors with mood, anemone-like fingertips, bioluminescent reef anatomy"
   },
   {
     "id": 19,
     "name": "共振腔",
     "emoji": "〰️",
-    "concept": "人形站姿，胸腔是中空共鸣空腔，不说话也能散发情绪，周身扩散肉眼可见的柔和声波纹路，快乐时波纹轻盈，难过时波纹缓慢，无声表达情绪，高冷又可爱",
+    "concept": "胸腔是一个中空的共鸣腔，不说一句话却能传递纯粹的情绪——快乐的频率让人头皮发麻，悲伤的频率让人胸口发闷",
     "tagline": "沉默是我最大的音量",
-    "zodiacAffinity": ["天蝎座", "狮子座", "摩羯座"],
-    "attributes": { "adventure": 0.3, "thought": 0.6, "social": 0.6, "rest": 0.5 },
+    "zodiacAffinity": [
+      "天蝎座",
+      "狮子座",
+      "摩羯座"
+    ],
+    "attributes": {
+      "adventure": 0.3,
+      "thought": 0.6,
+      "social": 0.6,
+      "rest": 0.5
+    },
     "personality": {
       "resonance": "你不需要说很多话别人就能感受到你的情绪——你的存在本身就有一种气场。一个眼神、一个沉默，胜过千言万语。",
       "shadow": "偶尔想让别人感受到自己的情绪，却发现大多数人只听得见\"话\"，听不见\"频率\"。",
       "advice": "你拥有无声的感染力。不需要解释自己——对的人能听到你的频率。"
     },
-    "visualTag": "中空共鸣胸腔、可见声波纹路、情绪频率可视化、无声表达",
-    "visualPrompt": "可爱搞怪奇幻拟人，人形站姿，胸腔是中空共鸣空腔，不说话也能散发情绪，周身扩散肉眼可见的柔和声波纹路，快乐时波纹轻盈，难过时波纹缓慢，无声表达情绪，高冷又可爱。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "胸腔是中空的共鸣腔、情绪以可见的声波纹扩散、周围空气微微震动",
+    "visualPrompt": "resonance cavity, hollow chest acting as emotional amplifier, visible sound waves radiating pure feelings, air rippling with unspoken emotion, acoustic body surrealism"
   },
   {
     "id": 20,
     "name": "记忆刺绣师",
     "emoji": "🪡",
-    "concept": "十根手指变成纤细银绣针，指尖缠绕彩色记忆丝线，空中悬浮一幅幅精致的迷你刺绣画，专门把伤疤绣成花纹，气质温柔文艺，手艺治愈又神奇",
+    "concept": "十根手指是缝纫针，能把别人的记忆绣成一幅画。每完成一幅刺绣，那个人就能用全新的视角看待那段过往",
     "tagline": "把伤疤绣成花纹，是我的手艺",
-    "zodiacAffinity": ["处女座", "天秤座", "巨蟹座"],
-    "attributes": { "adventure": 0.3, "thought": 0.8, "social": 0.7, "rest": 0.5 },
+    "zodiacAffinity": [
+      "处女座",
+      "天秤座",
+      "巨蟹座"
+    ],
+    "attributes": {
+      "adventure": 0.3,
+      "thought": 0.8,
+      "social": 0.7,
+      "rest": 0.5
+    },
     "personality": {
       "resonance": "你是朋友圈里的\"意义制造机\"——善于从平淡日常中发现诗意，从艰难经历里提炼成长。你让别人看到了他们自己看不到的美。",
       "shadow": "忙着给别人的记忆\"绣花\"，却对自己过往里的一些刺痛视而不见。",
       "advice": "给别人绣花之前，先给自己最扎心的那段记忆绣上一朵花——你值得自己的手艺。"
     },
-    "visualTag": "银针手指、彩色记忆丝线、悬浮刺绣画、伤疤绣成花纹",
-    "visualPrompt": "可爱搞怪奇幻拟人，十根手指变成纤细银绣针，指尖缠绕彩色记忆丝线，空中悬浮一幅幅精致的迷你刺绣画，专门把伤疤绣成花纹，气质温柔文艺，手艺治愈又神奇。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "十指是银针、绣出的图案悬浮空中、指尖缠绕彩色记忆丝线",
+    "visualPrompt": "memory embroiderer, fingers tipped with silver needles, embroidered memory tapestries floating in air, colored threads of recollection trailing from fingertips, textile surrealism"
   },
   {
     "id": 21,
     "name": "时钟心脏",
     "emoji": "🕰️",
-    "concept": "胸腔透明，里面镶嵌一台复古精致老式座钟作为心脏，后背有圆形发条旋钮，时钟指针永远定格在最温柔的瞬间，整个人停留在美好回忆里，安静复古又呆萌",
+    "concept": "心脏是一个精密的老式座钟，滴答声是你的心跳。发条旋钮在后背心，每转一圈就多活一天，但指针永远指向同一分钟",
     "tagline": "我困在了你最美好的那一分钟里",
-    "zodiacAffinity": ["摩羯座", "处女座", "金牛座"],
-    "attributes": { "adventure": 0.1, "thought": 0.8, "social": 0.3, "rest": 0.7 },
+    "zodiacAffinity": [
+      "摩羯座",
+      "处女座",
+      "金牛座"
+    ],
+    "attributes": {
+      "adventure": 0.1,
+      "thought": 0.8,
+      "social": 0.3,
+      "rest": 0.7
+    },
     "personality": {
       "resonance": "你是一个时间的收藏家——喜欢把美好瞬间反复回味，把珍贵的记忆珍藏心底。你的专注力很强，一旦沉浸在一件事里就会忘了时间。",
       "shadow": "太执着于某个过去的瞬间，偶尔会错过眼前的风景。",
       "advice": "不是所有指针都要停在最美好的那一分钟。勇敢地上紧发条，下一个美好时刻正在等你。"
     },
-    "visualTag": "透明胸腔、老式座钟心脏、后背发条旋钮、指针定格、复古呆萌",
-    "visualPrompt": "可爱搞怪奇幻拟人，胸腔透明，里面镶嵌一台复古精致老式座钟作为心脏，后背有圆形发条旋钮，时钟指针永远定格在最温柔的瞬间，整个人停留在美好回忆里，安静复古又呆萌。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "胸腔里可见座钟心脏、后背发条旋钮、指针停留在特殊时刻",
+    "visualPrompt": "clock-heart human, antique mantel clock beating in chest cavity, winding key protruding from back, clock hands frozen at a significant moment, mechanical anatomy surrealism"
   },
   {
     "id": 22,
     "name": "雾隐客",
     "emoji": "🌫️",
-    "concept": "身体由柔软白雾凝聚而成，情绪稳定时是人形，生气难过就散开成一片温柔雾气，雾里闪烁细碎记忆光点，朦胧空灵，虚无又可爱，性格佛系飘忽不定",
+    "concept": "身体由不散的白雾构成，只有情绪稳定时才勉强凝聚成人类的轮廓。一生气就扩散成整间房的雾气，别人吸入后会短暂拥有ta的记忆",
     "tagline": "刚才的雾气里……你感觉到了我吗",
-    "zodiacAffinity": ["双鱼座", "巨蟹座", "天秤座"],
-    "attributes": { "adventure": 0.3, "thought": 0.7, "social": 0.4, "rest": 0.6 },
+    "zodiacAffinity": [
+      "双鱼座",
+      "巨蟹座",
+      "天秤座"
+    ],
+    "attributes": {
+      "adventure": 0.3,
+      "thought": 0.7,
+      "social": 0.4,
+      "rest": 0.6
+    },
     "personality": {
       "resonance": "你是一个模糊边界的大师——不喜欢标签、不习惯被定义。你能理解所有人的立场，因为你的自我足够流动和包容。",
       "shadow": "太分散的存在感让人有时觉得你不真实，连你自己偶尔都想问\"我到底是谁\"。",
       "advice": "不需要为了别人的\"看得清\"而凝固成你不喜欢的样子。雾气本身就可以是一种完整的形态。"
     },
-    "visualTag": "白雾凝聚人形、情绪波动散开成雾、记忆光点闪烁、朦胧空灵",
-    "visualPrompt": "可爱搞怪奇幻拟人，身体由柔软白雾凝聚而成，情绪稳定时是人形，生气难过就散开成一片温柔雾气，雾里闪烁细碎记忆光点，朦胧空灵，虚无又可爱，性格佛系飘忽不定。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "白雾构成的人形、情绪波动时轮廓模糊扩散、雾中有记忆碎片闪回",
+    "visualPrompt": "mist hermit, humanoid form made of dense white fog, body blurring and dispersing with emotion, memory fragments shimmering inside the mist, ethereal vagueness surrealism"
   },
   {
     "id": 23,
     "name": "镜骨人",
     "emoji": "🦴",
-    "concept": "皮肉通透，全身骨骼全部是镜面材质，每一根骨头都会倒映出观看者的真实样子，关节镜面拼接精致，清冷通透，看透人心的温柔怪人，猎奇不恐怖",
-    "tagline": "你在我骨头里看到了谁？那就是真正的你",
-    "zodiacAffinity": ["天蝎座", "水瓶座", "处女座"],
-    "attributes": { "adventure": 0.2, "thought": 0.9, "social": 0.3, "rest": 0.5 },
+    "concept": "所有骨骼都是镜子——照X光只能看到医生自己的倒影。每根骨头反映的是观察者最真实的自我，所以大多数人都不敢直视ta",
+    "tagline": "你在我镜子里看到了谁？那就是真正的你",
+    "zodiacAffinity": [
+      "天蝎座",
+      "水瓶座",
+      "处女座"
+    ],
+    "attributes": {
+      "adventure": 0.2,
+      "thought": 0.9,
+      "social": 0.3,
+      "rest": 0.5
+    },
     "personality": {
       "resonance": "你像一面诚实的镜子——别人在你面前会不自觉地卸下伪装，暴露出真实的样子。你有一种让人\"做自己\"的魔力。",
       "shadow": "看得太透的人容易被恐惧——有些人还没准备好面对真实的自己。",
       "advice": "你的洞察力是一份珍贵的礼物。温柔地使用它——不是所有人都准备好照镜子。但你不需要为了让人舒服而磨砂自己。"
     },
-    "visualTag": "通透皮肉、镜面骨骼、每根骨头反射观看者、关节镜面拼接",
-    "visualPrompt": "可爱搞怪奇幻拟人，皮肉通透，全身骨骼全部是镜面材质，每一根骨头都会倒映出观看者的真实样子，关节镜面拼接精致，清冷通透，看透人心的温柔怪人，猎奇不恐怖。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "透明皮肉下可见镜子骨骼、每根骨头反射观察者面容、关节处镜面拼接",
+    "visualPrompt": "mirror-bone entity, transparent flesh revealing skeleton made of mirrors, each bone reflecting the viewer's true face, jointed mirror fragments, reflective anatomy surrealism"
   },
   {
     "id": 24,
     "name": "书页肺",
     "emoji": "📖",
-    "concept": "胸腔通透，两片肺叶是不停轻轻翻动的老旧书页，呼吸时嘴唇飘出轻盈发光文字字母，每一次呼吸都在更新故事，书卷气满满，文艺温柔怪诞风",
-    "tagline": "我的每一口呼吸都在重写历史",
-    "zodiacAffinity": ["双子座", "射手座", "双鱼座"],
-    "attributes": { "adventure": 0.5, "thought": 0.9, "social": 0.6, "rest": 0.1 },
+    "concept": "肺里装满了不停翻动的书页，每吸一口气就翻过一页故事，每呼一口气就念出一段古老的文字。说话时嘴唇间飘出被遗忘的语言字母",
+    "tagline": "我的每一页翻动都在重写历史",
+    "zodiacAffinity": [
+      "双子座",
+      "射手座",
+      "双鱼座"
+    ],
+    "attributes": {
+      "adventure": 0.5,
+      "thought": 0.9,
+      "social": 0.6,
+      "rest": 0.1
+    },
     "personality": {
       "resonance": "你是一个知识的永动体——阅读、思考、输出、再阅读。你的人生靠表达来呼吸，分享观点对你来说和吃饭喝水一样自然。",
       "shadow": "输出太快有时候会\"缺氧\"——还没来得及消化就急着表达，偶尔言不及义。",
       "advice": "你有无限的创造力和知识储备。偶尔深度呼吸，让书页在肺里停一停，积淀后的表达会更有力量。"
     },
-    "visualTag": "透明胸腔、书页肺叶翻动、呼气飘出文字字母、文艺怪诞",
-    "visualPrompt": "可爱搞怪奇幻拟人，胸腔通透，两片肺叶是不停轻轻翻动的老旧书页，呼吸时嘴唇飘出轻盈发光文字字母，每一次呼吸都在更新故事，书卷气满满，文艺温柔怪诞风。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "胸腔透明可见翻动的书页肺叶、呼气时字母飘出、文字在气管里流动",
+    "visualPrompt": "page-lung scholar, transparent chest showing lungs made of flipping book pages, exhaled letters drifting from lips, text flowing through windpipe, bibliophile anatomy surrealism"
   },
   {
     "id": 25,
     "name": "根脉行者",
     "emoji": "🌱",
-    "concept": "脚底长出柔软细根须扎进地面，走路时根须一路生长，走过的地方自动开出奇异可爱小花，根须流淌微光记忆，接地气、温柔治愈，自然系怪人",
+    "concept": "脚底连接着无数细根，每走一步根就扎进地面汲取记忆和故事。走过的地方会开出奇异的花，花蕊里传出那个地方过去的回声",
     "tagline": "每一步都在和大地交换心事",
-    "zodiacAffinity": ["金牛座", "巨蟹座", "摩羯座"],
-    "attributes": { "adventure": 0.5, "thought": 0.4, "social": 0.6, "rest": 0.7 },
+    "zodiacAffinity": [
+      "金牛座",
+      "巨蟹座",
+      "摩羯座"
+    ],
+    "attributes": {
+      "adventure": 0.5,
+      "thought": 0.4,
+      "social": 0.6,
+      "rest": 0.7
+    },
     "personality": {
       "resonance": "你是大地型的思考者——在实践中生长智慧，在行走中积累洞察。你不是那种关在屋里空想的人，你的灵感来自触地的每一步。",
       "shadow": "根扎得太深偶尔会害怕拔起来去新的地方。",
       "advice": "你的根让你稳健，但别忘了——最美的花开在最远的路上。带着你的根，放心去走。"
     },
-    "visualTag": "脚底细根须扎入地面、走路开花、微光记忆流淌、自然治愈",
-    "visualPrompt": "可爱搞怪奇幻拟人，脚底长出柔软细根须扎进地面，走路时根须一路生长，走过的地方自动开出奇异可爱小花，根须流淌微光记忆，接地气、温柔治愈，自然系怪人。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "脚底无数细根深入地面、身后留一路奇异花朵、根须间流淌着收集的记忆",
+    "visualPrompt": "root-walker, soles connected to countless thin roots burrowing into earth, trail of blooming strange flowers behind, memories flowing through root tendrils, grounded wanderer surrealism"
   },
   {
     "id": 26,
     "name": "齿轮瞳孔",
     "emoji": "⚙️",
-    "concept": "温柔人形，双眼虹膜是精密机械圆环，瞳孔里是层层咬合的迷你小齿轮，眼神冷静聪慧，自带解析一切的气场，理智呆萌，机械感与可爱融合",
+    "concept": "眼睛里是无数精密咬合的微型齿轮，转动时能\"看穿\"任何系统的运行逻辑——从机械钟表到社会规则到人心算计",
     "tagline": "世界是一台巨大的机器……而我看到了每一颗螺丝",
-    "zodiacAffinity": ["处女座", "摩羯座", "水瓶座"],
-    "attributes": { "adventure": 0.2, "thought": 1.0, "social": 0.2, "rest": 0.3 },
+    "zodiacAffinity": [
+      "处女座",
+      "摩羯座",
+      "水瓶座"
+    ],
+    "attributes": {
+      "adventure": 0.2,
+      "thought": 1,
+      "social": 0.2,
+      "rest": 0.3
+    },
     "personality": {
       "resonance": "你的大脑是一个精密的解析引擎——能看到复杂系统背后的简单规则，在混沌中找到秩序。你是人群里的\"逻辑锚点\"。",
       "shadow": "过度依赖逻辑分析，偶尔会忽略\"不合理但真实\"的人类情感。",
       "advice": "你的理性是超能力。但偶尔让齿轮慢下来，用\"心\"而不是\"眼光\"去感受——有些东西不需要被\"看穿\"才值得存在。"
     },
-    "visualTag": "机械虹膜、齿轮瞳孔、精密眼神、理智呆萌、机械可爱风",
-    "visualPrompt": "可爱搞怪奇幻拟人，温柔人形，双眼虹膜是精密机械圆环，瞳孔里是层层咬合的迷你小齿轮，眼神冷静聪慧，自带解析一切的气场，理智呆萌，机械感与可爱融合。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "瞳孔中可见咬合的微型齿轮、虹膜是精密机械环、眼光中有计算的光流",
+    "visualPrompt": "gear-pupil analyst, eyes containing interlocking micro-gears in irises, mechanical precision gaze, streams of analytical light from pupils, clockwork vision surrealism"
   },
   {
     "id": 27,
     "name": "虚空胃",
     "emoji": "🕳️",
-    "concept": "腹部有一颗迷你可爱悬浮小黑洞，能吃掉坏情绪、烦心事、尴尬回忆，吸入的东西螺旋流转，消化后排出温暖金色星光，温柔治愈小垃圾桶，呆萌宇宙体质",
+    "concept": "肚子里是一个微型黑洞，能吃下任何东西——食物、坏情绪、别人的秘密、甚至一整个糟糕的下午。消化后排出温暖的星光",
     "tagline": "把你今天的不开心喂给我……我帮你消化掉",
-    "zodiacAffinity": ["天蝎座", "巨蟹座", "双鱼座"],
-    "attributes": { "adventure": 0.3, "thought": 0.6, "social": 0.5, "rest": 0.6 },
+    "zodiacAffinity": [
+      "天蝎座",
+      "巨蟹座",
+      "双鱼座"
+    ],
+    "attributes": {
+      "adventure": 0.3,
+      "thought": 0.6,
+      "social": 0.5,
+      "rest": 0.6
+    },
     "personality": {
       "resonance": "你是朋友圈里的\"情感垃圾桶执行官\"——不是贬义，而是你天生有一种把负面情绪转化为温暖的能力。任何人都可以在你面前卸下重担。",
       "shadow": "吸收太多他人的\"暗物质\"，偶尔忘了排放——黑洞也有饱和的时候。",
       "advice": "你的包容力是宇宙级的。但记得给自己设一个\"事件视界\"——不是所有黑洞都需要吞下一切。偶尔关掉引力，只为自己呼吸。"
     },
-    "visualTag": "腹部迷你黑洞、螺旋吸入、排出金色星光、治愈垃圾桶、宇宙体质",
-    "visualPrompt": "可爱搞怪奇幻拟人，腹部有一颗迷你可爱悬浮小黑洞，能吃掉坏情绪、烦心事、尴尬回忆，吸入的东西螺旋流转，消化后排出温暖金色星光，温柔治愈小垃圾桶，呆萌宇宙体质。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "腹部是一个微型黑洞、可见物质螺旋吸入、排出的温暖星光盘旋上升",
+    "visualPrompt": "void-stomach, miniature black hole in abdomen, visible accretion disk of consumed matter, warm starlight particles rising from event horizon, cosmic digestion surrealism"
   },
   {
     "id": 28,
     "name": "默片脸",
     "emoji": "🎞️",
-    "concept": "脸部永远平静无表情，脸前悬浮老式黑白默片字幕卡，随情绪自动切换「开心、尴尬、震惊、委屈」文字卡片，自带复古放映机趣味感，沙雕文艺、反差可爱",
+    "concept": "脸上不显示表情，而是在脸前投射黑白默片的字卡——\"震惊\"\"感动\"\"尴尬\"。情绪变化时胶片快速切换，发出老式放映机的咔哒声",
     "tagline": "我的表情需要手动换帧……等一下，还没转到「高兴」那格",
-    "zodiacAffinity": ["天秤座", "水瓶座", "双子座"],
-    "attributes": { "adventure": 0.4, "thought": 0.7, "social": 0.5, "rest": 0.4 },
+    "zodiacAffinity": [
+      "天秤座",
+      "水瓶座",
+      "双子座"
+    ],
+    "attributes": {
+      "adventure": 0.4,
+      "thought": 0.7,
+      "social": 0.5,
+      "rest": 0.4
+    },
     "personality": {
       "resonance": "你的情绪表达方式独特而有仪式感——不随便流露情感，但每一次表达都精准到像一幅艺术品。别人的表情是水彩，你的是木版画。",
       "shadow": "有时候字幕卡切换太慢，别人会误读你的沉默为冷漠。",
       "advice": "不需要和世界共用同一套\"表情包\"。你的节奏就是你的风格——懂的人会等你放映完。"
     },
-    "visualTag": "无表情脸、默片字幕卡、情绪文字切换、复古放映机、反差可爱",
-    "visualPrompt": "可爱搞怪奇幻拟人，脸部永远平静无表情，脸前悬浮老式黑白默片字幕卡，随情绪自动切换文字卡片，自带复古放映机趣味感，沙雕文艺、反差可爱。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "面前投射默片字幕卡、切换时发出放映机咔哒声、面部始终保持平静",
+    "visualPrompt": "silent-film face, vintage title cards projected in front of expressionless face, film reel clicking sounds with each emotion change, monochrome cinema surrealism"
   },
   {
     "id": 29,
     "name": "弦音手",
     "emoji": "🎵",
-    "concept": "五根手指分别是五种乐器琴弦质感，拇指大提琴、食指小提琴、中指竖琴、无名指吉他、小指风铃，指尖触碰空气就扩散彩色音符波纹，全身流动音乐灵气，艺术治愈",
+    "concept": "每根手指是一根琴弦，拇指是大提琴的低沉，食指是小提琴的悠扬，中指是竖琴的空灵，无名指是吉他，小指是风铃。触摸任何物体都会发出对应的和弦",
     "tagline": "世界在我指尖是一首交响乐",
-    "zodiacAffinity": ["双鱼座", "狮子座", "天秤座"],
-    "attributes": { "adventure": 0.6, "thought": 0.4, "social": 0.7, "rest": 0.3 },
+    "zodiacAffinity": [
+      "双鱼座",
+      "狮子座",
+      "天秤座"
+    ],
+    "attributes": {
+      "adventure": 0.6,
+      "thought": 0.4,
+      "social": 0.7,
+      "rest": 0.3
+    },
     "personality": {
       "resonance": "你天生是一个\"通感者\"——能把触觉转化为情感、把视觉转化为旋律、把生活经验转化为一首完整的诗。你的艺术感遍布全身。",
       "shadow": "过于本能和感性，偶尔让理性的人觉得\"太飘\"而难以信任。",
       "advice": "你的感性是你触碰世界的独特方式。不需要把和弦分解成音符给每个人解释——相信你指尖的直觉，它会指引你。"
     },
-    "visualTag": "五指五种琴弦质感、触碰空气扩散音符波纹、音乐灵气、艺术治愈",
-    "visualPrompt": "可爱搞怪奇幻拟人，五根手指分别是五种乐器琴弦质感，拇指大提琴、食指小提琴、中指竖琴、无名指吉他、小指风铃，指尖触碰空气就扩散彩色音符波纹，全身流动音乐灵气，艺术治愈。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "五根手指是不同的琴弦材质、触摸物体时有音符波纹扩散、掌心的弧度像音箱",
+    "visualPrompt": "string-fingers musician, each finger made of a different instrument's string, musical note ripples emanating from touch, palm curved like a soundbox, synesthetic hand surrealism"
   },
   {
     "id": 30,
     "name": "灯塔眼",
     "emoji": "🔦",
-    "concept": "双眼是迷你灯塔光束，左眼射出温暖暖黄光，专门照亮别人前路，右眼射出冷蓝深光，只照亮自己的内心，外表温柔阳光，内里孤独细腻，治愈又有层次",
+    "concept": "双眼是两座微型灯塔，左眼射出暖黄的光为他人照亮前路，右眼射出冷蓝的光只能照亮自己内里的深渊。需要定期补充\"希望\"作为灯油",
     "tagline": "照亮你很容易……照亮自己比较难",
-    "zodiacAffinity": ["狮子座", "射手座", "白羊座"],
-    "attributes": { "adventure": 0.7, "thought": 0.4, "social": 0.8, "rest": 0.2 },
+    "zodiacAffinity": [
+      "狮子座",
+      "射手座",
+      "白羊座"
+    ],
+    "attributes": {
+      "adventure": 0.7,
+      "thought": 0.4,
+      "social": 0.8,
+      "rest": 0.2
+    },
     "personality": {
       "resonance": "你是天生的引路人——朋友迷路时第一个想到你，团队低迷时你自然成为精神支柱。你像灯塔一样稳定而温暖，给人方向感。",
       "shadow": "一直在给别人照明，偶尔忘了自己的航道上也有暗礁。",
       "advice": "你是最亮的光源——但灯塔也需要维护。给自己像给别人一样的耐心和温柔，你的光才能照得更久更远。"
     },
-    "visualTag": "双眼迷你灯塔、左眼暖黄右眼冷蓝、照亮他人与自我、治愈层次感",
-    "visualPrompt": "可爱搞怪奇幻拟人，双眼是迷你灯塔光束，左眼射出温暖暖黄光，专门照亮别人前路，右眼射出冷蓝深光，只照亮自己的内心，外表温柔阳光，内里孤独细腻，治愈又有层次。人物结构完整、比例可爱、画面干净、细节饱满、高清渲染"
+    "visualTag": "双眼化为灯塔、左眼暖黄光束右眼冷蓝探照光、以他人希望为燃料",
+    "visualPrompt": "lighthouse eyes, left eye emitting warm amber beacon beam guiding others, right eye projecting cold blue light into own inner depths, hope-fueled lantern gaze surrealism"
   }
 ]
